@@ -37,6 +37,10 @@
           <span class="sous-titre">Actualités</span>
         </li>
         <li>
+          <a href="flash-lab.html">Flash Lab</a>
+          <span class="sous-titre">Le blog</span>
+        </li>
+        <li>
           <a href="hors-les-murs.html">Hors les murs</a>
           <span class="sous-titre">Sorties et bons plans</span>
         </li>
@@ -66,6 +70,29 @@
 
       <article class="evenement">
         <div class="evenement-image">
+          <img src="images/arts-et-metiers.jpg" alt="MuAM - Musée des Arts et Métiers, Le Cnam">
+        </div>
+        <div class="evenement-contenu">
+          <h2>&#127963;&#65039; Musée des Arts et Métiers</h2>
+
+          <div class="evenement-details">
+            <p><strong>&#128205; 60 rue Réaumur - 75003 Paris</strong></p>
+            <p><strong>&#128197; Du mardi au dimanche, de 10h à 18h</strong></p>
+            <p><strong>&#127769; Nocturne le vendredi jusqu'à 21h</strong></p>
+            <p><strong>&#128222; <a href="tel:+33153018200" class="contact-tel">01 53 01 82 00</a></strong></p>
+          </div>
+
+          <p class="evenement-texte">
+            Chaque jour, des visites, démonstrations et ateliers sont proposés : découvrez le programme !
+          </p>
+          <a href="https://www.arts-et-metiers.net/agenda/recherche?f%5B0%5D=agenda_manifestation%3A132" class="cta" target="_blank" rel="noopener">Voir le programme</a>
+          <a href="https://www.arts-et-metiers.net/" class="cta" target="_blank" rel="noopener">Site du musée</a>
+        </div>
+      </article>
+
+      <!-- data-fin = dernier jour de l'événement (AAAA-MM-JJ) : après cette date, « Déjà passé » s'affiche tout seul -->
+      <article class="evenement" data-fin="2026-10-17">
+        <div class="evenement-image">
           <img src="images/abeilles.jpg" alt="Animation autour des abeilles">
         </div>
         <div class="evenement-contenu">
@@ -78,7 +105,7 @@
           </div>
 
           <p class="evenement-texte">
-            Un après-midi convivial et ludique autour des abeilles ! Au programme : ateliers créatifs, rencontres, gourmandises et convivialité.
+            Une après-midi conviviale et ludique autour des abeilles ! Au programme : ateliers créatifs, rencontres, gourmandises et convivialité.
           </p>
 
           <div class="stands-container">
@@ -97,8 +124,8 @@
                 <p><strong>Stand de pots de miel</strong><br><small>Distribution avec ticket</small></p>
               </div>
               <div class="stand">
-                <div class="stand-icone">&#129658;</div>
-                <p><strong>Rencontre avec l'acupuncteur</strong></p>
+                <div class="stand-icone">&#129489;&#8205;&#127806;</div>
+                <p><strong>Rencontre avec l'apiculteur</strong></p>
               </div>
               <div class="stand">
                 <div class="stand-icone">&#129374;</div>
@@ -113,7 +140,7 @@
         </div>
       </article>
 
-      <article class="evenement">
+      <article class="evenement" data-fin="2026-10-17">
         <div class="evenement-image">
           <img src="images/fete-de-la-science.png" alt="Fête de la Science - Université Paris Cité">
         </div>
@@ -141,5 +168,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="chatbot.js"></script>
 </body>
 </html>

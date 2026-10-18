@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flash Lab - 92Lab</title>
+  <meta name="description" content="Le blog photo du 92Lab : nos ateliers, sorties et événements en images.">
+  <meta property="og:title" content="92Lab">
+  <meta property="og:description" content="Le blog photo du 92Lab : nos ateliers, sorties et événements en images.">
+  <meta property="og:image" content="images/logo.png">
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="entete">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="Logo 92Lab">
+    </a>
+
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav>
+      <ul class="menu">
+        <li>
+          <a href="labo.html">Le Labo</a>
+          <span class="sous-titre">Nos ateliers</span>
+        </li>
+        <li>
+          <a href="etincelle.html">L'Étincelle</a>
+          <span class="sous-titre">Qui sommes-nous</span>
+        </li>
+        <li>
+          <a href="ca-bouge.html">Ça bouge !</a>
+          <span class="sous-titre">Actualités</span>
+        </li>
+        <li>
+          <a href="flash-lab.html" aria-current="page">Flash Lab</a>
+          <span class="sous-titre">Le blog</span>
+        </li>
+        <li>
+          <a href="hors-les-murs.html">Hors les murs</a>
+          <span class="sous-titre">Sorties et bons plans</span>
+        </li>
+        <li>
+          <a href="contact.html">Allô le Lab ?</a>
+          <span class="sous-titre">Contact</span>
+        </li>
+        <li>
+          <a href="adherer.html" class="bouton-adhesion">Rejoins l'expérience</a>
+          <span class="sous-titre">Adhérer</span>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero-page">
+      <p class="hero-accroche">Le blog</p>
+      <h1>Flash Lab</h1>
+      <p class="hero-texte">
+        Les souvenirs du 92Lab en images : ateliers, sorties, événements…
+        Clique sur une photo ou une vidéo pour la voir en grand !
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="conteneur">
+
+        <div class="filtres" role="group" aria-label="Filtrer les photos">
+          <button type="button" class="filtre actif" data-filtre="tout">Tout</button>
+          <button type="button" class="filtre" data-filtre="ateliers">Ateliers</button>
+          <button type="button" class="filtre" data-filtre="sorties">Sorties</button>
+          <button type="button" class="filtre" data-filtre="evenements">Événements</button>
+          <button type="button" class="filtre filtre-antiseche" data-filtre="antiseche">📝 Antisèche</button>
+        </div>
+
+        <!--
+          POUR AJOUTER UNE PHOTO : copie le bloc <figure> ci-dessous,
+          mets ta photo dans le dossier images/flash-lab/ puis change
+          le src, le alt, la légende et data-categorie
+          (ateliers, sorties ou evenements).
+
+          POUR UNE VIDÉO : même chose, mais ajoute class="photo photo-video"
+          et data-video="videos/ma-video.mp4" sur le <figure>, mets une image
+          d'aperçu dans le <img> et ajoute <span class="play">▶</span>
+          après le <img> (voir les exemples de la galerie).
+
+        <figure class="photo" data-categorie="ateliers">
+          <button type="button" class="photo-bouton">
+            <img src="images/flash-lab/ma-photo.jpg" alt="Description de la photo" loading="lazy">
+          </button>
+          <figcaption>
+            <span class="photo-date">Oct. 2026</span>
+            Légende de la photo
+          </figcaption>
+        </figure>
+        -->
+
+        <div class="galerie">
+
+          <figure class="photo" data-categorie="ateliers">
+            <button type="button" class="photo-bouton">
+              <img src="images/flash-lab/atelier-01.jpg" alt="Atelier de programmation : les jeunes autour de la grande table, salle Océan" loading="lazy">
+            </button>
+            <figcaption>
+              <span class="photo-date">Atelier</span>
+              Initiation à la programmation et à l'algo
+            </figcaption>
+          </figure>
+
+          <figure class="photo" data-categorie="ateliers">
+            <button type="button" class="photo-bouton">
+              <img src="images/flash-lab/atelier-02.jpg" alt="Atelier 2 : un ordinateur affichant l'éditeur de code HTML de la Mission Aurora" loading="lazy">
+            </button>
+            <figcaption>
+              <span class="photo-date">Atelier</span>
+              Initiation à la programmation et à l'algo
+            </figcaption>
+          </figure>
+
+          <figure class="photo" data-categorie="ateliers">
+            <button type="button" class="photo-bouton">
+              <img src="images/flash-lab/atelier-03.jpg" alt="Un jeune concentré devant son code Python" loading="lazy">
+            </button>
+            <figcaption>
+              <span class="photo-date">Atelier</span>
+              Initiation à la programmation et à l'algo
+            </figcaption>
+          </figure>
+
+          <figure class="photo photo-video" data-categorie="ateliers" data-video="videos/atelier-3.mp4">
+            <button type="button" class="photo-bouton">
+              <img src="images/flash-lab/atelier-3-video.jpg" alt="Vidéo de l'atelier 3" loading="lazy">
+              <span class="play" aria-hidden="true">▶</span>
+            </button>
+            <figcaption>
+              <span class="photo-date">Atelier</span>
+              Initiation à la programmation et à l'algo
+            </figcaption>
+          </figure>
+
+          <figure class="photo photo-video" data-categorie="ateliers" data-video="videos/atelier-4.mp4">
+            <button type="button" class="photo-bouton">
+              <img src="images/flash-lab/atelier-4-video.jpg" alt="Vidéo de l'atelier 4" loading="lazy">
+              <span class="play" aria-hidden="true">▶</span>
+            </button>
+            <figcaption>
+              <span class="photo-date">Atelier</span>
+              Initiation à la programmation et à l'algo
+            </figcaption>
+          </figure>
+
+        </div>
+
+        <p class="galerie-vide" hidden>Pas encore de photos dans cette catégorie, ça arrive bientôt !</p>
+
+        <div class="antiseche" hidden>
+
+          <div class="antiseche-liste">
+
+          <!--
+            POUR AJOUTER UNE ANTISÈCHE : copie le bloc <article> ci-dessous
+            et colle-le juste après ce commentaire (le plus récent en premier).
+            - Rappel de cours : garde seulement le titre et le texte
+              (supprime la ligne <a class="antiseche-lien">).
+            - Lien utile : garde la ligne <a class="antiseche-lien"> et change le href.
+
+          <article class="antiseche-item">
+            <span class="antiseche-tag">Atelier 2</span>
+            <h3>Titre de l'antisèche</h3>
+            <p>Un petit rappel ou une explication en une ou deux phrases.</p>
+            <a class="antiseche-lien" href="https://exemple.fr" target="_blank" rel="noopener">Ouvrir le lien ↗</a>
+          </article>
+          -->
+
+          <article class="antiseche-item">
+            <span class="antiseche-tag">Python</span>
+            <h3>Rappel de cours : les fonctions</h3>
+            <p>Le tableau du cours : créer une fonction avec <code>def</code>, lui donner des paramètres (a, b) et renvoyer un résultat avec <code>return</code>. Clique sur la photo pour l'agrandir.</p>
+            <a class="antiseche-image" href="images/flash-lab/cours-python-fonctions.jpg" target="_blank" rel="noopener">
+              <img src="images/flash-lab/cours-python-fonctions.jpg" alt="Tableau blanc du cours Python : fonction division et fonction multiplier avec return" loading="lazy">
+            </a>
+          </article>
+
+          <article class="antiseche-item">
+            <span class="antiseche-tag">Python</span>
+            <h3>Python.org</h3>
+            <p>Le site officiel de Python : c'est ici qu'on télécharge Python pour l'installer sur son ordinateur.</p>
+            <a class="antiseche-lien" href="https://www.python.org/" target="_blank" rel="noopener">Aller sur python.org ↗</a>
+          </article>
+
+          <article class="antiseche-item">
+            <span class="antiseche-tag">Outil</span>
+            <h3>Visual Studio Code</h3>
+            <p>L'éditeur de code gratuit pour écrire et tester ses programmes Python.</p>
+            <a class="antiseche-lien" href="https://code.visualstudio.com/" target="_blank" rel="noopener">Télécharger VS Code ↗</a>
+          </article>
+
+          <article class="antiseche-item">
+            <span class="antiseche-tag">Python</span>
+            <h3>Python Doctor : cours Python débutant</h3>
+            <p>Un cours complet pour débutants, avec des explications simples et des exemples.</p>
+            <a class="antiseche-lien" href="https://python.doctor/page-cours-python-debutant-documentation" target="_blank" rel="noopener">Ouvrir le cours ↗</a>
+          </article>
+
+          <article class="antiseche-item">
+            <span class="antiseche-tag">Python</span>
+            <h3>Le tutoriel officiel de Python</h3>
+            <p>La documentation officielle en français : pour aller plus loin une fois les bases acquises.</p>
+            <a class="antiseche-lien" href="https://docs.python.org/fr/3/tutorial/" target="_blank" rel="noopener">Ouvrir le tutoriel ↗</a>
+          </article>
+
+          <article class="antiseche-item">
+            <span class="antiseche-tag">Scratch</span>
+            <h3>Télécharger Scratch</h3>
+            <p>Pour installer Scratch sur son ordinateur et programmer même sans connexion internet.</p>
+            <a class="antiseche-lien" href="https://scratch.mit.edu/download" target="_blank" rel="noopener">Télécharger Scratch ↗</a>
+          </article>
+
+          <article class="antiseche-item">
+            <span class="antiseche-tag">Scratch</span>
+            <h3>Scratch : le tutoriel</h3>
+            <p>Un tutoriel pas à pas pour apprendre à utiliser Scratch.</p>
+            <a class="antiseche-lien" href="https://co-dev.org/scratch-le-tutoriel/" target="_blank" rel="noopener">Ouvrir le tutoriel ↗</a>
+          </article>
+
+          <article class="antiseche-item">
+            <span class="antiseche-tag">Scratch</span>
+            <h3>Faire un jeu sur Scratch</h3>
+            <p>Un guide pour créer son premier jeu avec Scratch.</p>
+            <a class="antiseche-lien" href="https://www.professeurscratch.fr/faire-un-jeu-sur-scratch" target="_blank" rel="noopener">Ouvrir le guide ↗</a>
+          </article>
+
+          </div>
+
+          <p class="antiseche-vide">Les antisèches (rappels de cours et liens utiles) arrivent bientôt !</p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo en grand">
+    <button type="button" class="lightbox-fermer" aria-label="Fermer">✕</button>
+    <button type="button" class="lightbox-nav lightbox-prec" aria-label="Photo précédente">‹</button>
+    <figure>
+      <img src="" alt="">
+      <video controls playsinline hidden></video>
+      <figcaption></figcaption>
+    </figure>
+    <button type="button" class="lightbox-nav lightbox-suiv" aria-label="Photo suivante">›</button>
+  </div>
+
+
+  <footer class="pied">
+    <a href="https://www.helloasso.com/associations/92lab/formulaires/1" target="_blank" rel="noopener" class="cta cta-don">Faire un don 💙</a>
+    <p>92Lab</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="chatbot.js"></script>
+</body>
+</html>
