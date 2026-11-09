@@ -35,13 +35,13 @@
     {
       id: 'adherer',
       mots: ['adher*', 'inscri*', 'cotisation', 'membre', 'rejoindre', 'rejoins', 'comment participer'],
-      r: '<b>Pour adhérer</b> : va sur la page « Rejoins l\'expérience ». Tu peux payer en ligne (HelloAsso, paiement sécurisé) ou en espèces / par chèque. Dans tous les cas, tu dois aussi <b>remplir le formulaire</b> de la page.<br><b>Cotisation : 15 € pour l\'année 2026/2027</b>, ateliers compris.',
+      r: '<b>Pour adhérer</b> : va sur la page « Rejoins l\'expérience ». Tu peux payer en ligne (HelloAsso, paiement sécurisé) ou en espèces / par chèque. Dans tous les cas, tu dois aussi <b>remplir le formulaire</b> de la page.<br><b>Cotisation : 15 € pour l\'année 2026/2027 (offre de lancement)</b>, ateliers compris.',
       liens: [{ t: 'Adhérer', h: 'adherer.html' }]
     },
     {
       id: 'prix',
       mots: ['prix', 'tarif*', 'combien', 'cout*', 'coute', 'payant', 'gratuit*', 'euro*', 'cher', 'cotise'],
-      r: 'L\'adhésion coûte <b>15 € pour l\'année</b> (2026/2027) et <b>les ateliers sont compris</b> dans la cotisation.',
+      r: 'L\'adhésion coûte <b>15 € pour l\'année</b> (2026/2027) : c\'est une <b>offre de lancement</b>. <b>Les ateliers sont compris</b> dans la cotisation.',
       liens: [{ t: 'Adhérer', h: 'adherer.html' }]
     },
     {
@@ -123,9 +123,15 @@
     },
     {
       id: 'materiel',
-      mots: ['don de materiel', 'donner du materiel', 'donner des ordinateurs', 'donner un ordinateur', 'donner mon ordinateur', 'materiel informatique', 'composants', 'livres', 'instruments', 'ancien ordinateur', 'vieil ordinateur', 'vieux ordinateur', 'ordinateur a donner', 'ordinateurs a donner', 'materiel a donner', 'a donner', 'ordinateurs usages', 'recuperer'],
+      mots: ['don de materiel', 'donner du materiel', 'donner des ordinateurs', 'donner des livres', 'don de livres', 'donner mes livres', 'donner un livre', 'donner un ordinateur', 'donner mon ordinateur', 'materiel informatique', 'composants', 'livres', 'instruments', 'ancien ordinateur', 'vieil ordinateur', 'vieux ordinateur', 'ordinateur a donner', 'ordinateurs a donner', 'materiel a donner', 'a donner', 'ordinateurs usages', 'recuperer'],
       r: 'Ce que vous n\'utilisez plus peut servir ici ! 🔧 Nous acceptons les <b>dons de matériel</b> : ordinateurs, composants, instruments, livres… Écrivez-nous pour qu\'on organise ça ensemble.',
       liens: [{ t: 'Nous écrire', h: 'mailto:' + MAIL + '?subject=Don%20de%20mat%C3%A9riel' }, { t: TEL1[0], h: 'tel:' + TEL1[1] }]
+    },
+    {
+      id: 'biblio',
+      mots: ['biblio*', 'bibliotheque*', 'livre*', 'magazine*', 'revue*', 'bd', 'bande dessinee*', 'emprunt*', 'pret', 'preter', 'lire', 'lecture', 'lecteur*', 'bouquin*', 'rendre', 'retour', 'garder'],
+      r: '<b>Biblio\'Lab, la bibliothèque du Lab</b> 📚 Tu peux y emprunter des livres, magazines et BD.<br>• Réservé aux <b>adhérents</b><br>• <b>1 document à la fois</b><br>• Prêt de <b>2 semaines</b><br>• <b>Sur place</b> ou en nous <b>écrivant</b> pour le réserver',
+      liens: [{ t: 'Voir le catalogue', h: 'biblio-lab.html' }, { t: 'Nous écrire', h: 'mailto:' + MAIL + '?subject=Emprunt%20Biblio%27Lab' }]
     },
     {
       id: 'sortie',
@@ -175,6 +181,7 @@
     { t: 'Faire un don', q: 'faire un don' },
     { t: 'Mécénat', q: 'mécénat entreprise' },
     { t: 'Partenariat', q: 'partenariat professionnel' },
+    { t: 'Emprunter un livre', q: 'emprunter un livre' },
     { t: 'Idées de sortie', q: 'une idée de sortie ?' },
     { t: 'Où êtes-vous ?', q: 'où êtes-vous ?' },
     { t: 'Contact', q: 'contact' }
