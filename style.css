@@ -2230,3 +2230,39 @@ section[id] { scroll-margin-top: 90px; }
   border-radius: 20px;
   margin-bottom: 14px;
 }
+
+/* Ça bouge : groupes d'ateliers par niveau */
+.actu-groupes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 18px 0;
+}
+
+.actu-groupe {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: rgba(98, 179, 209, 0.08);
+  border: 1px solid #25253a;
+  border-left: 4px solid var(--bleu-clair);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+
+.actu-groupe-niveau {
+  color: var(--bleu-clair);
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+.actu-groupe-horaire,
+.actu-groupe-theme {
+  font-weight: bold;
+  color: var(--texte);
+}
+
+.actu-groupe-anim {
+  color: #c8c8d4;
+  font-size: 0.92rem;
+}

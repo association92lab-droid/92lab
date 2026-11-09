@@ -59,13 +59,13 @@
     {
       id: 'horaires',
       mots: ['horaire*', 'heure*', 'quand', 'vendredi', 'jour*', 'planning', 'calendrier', 'annule*', 'a quelle heure', 'semaine'],
-      r: '<b>Les ateliers de programmation ont lieu tous les vendredis de 17h à 19h</b>, à l\'espace Nelly Roussel, en salle Océan.<br>Pour l\'instant, il n\'y a pas d\'ateliers les autres jours.<br>En cas d\'annulation, c\'est annoncé sur la page « Ça bouge ! ».',
+      r: '<b>Les ateliers ont lieu tous les vendredis</b>, à l\'espace Nelly Roussel, en salle Océan. Depuis le 30 octobre, c\'est adapté à chaque âge :<br>🧩 <b>Du CP à la 6ème</b> : 17h – 18h, Scratch, avec Nathan<br>💻 <b>De la 5ème à la 3ème</b> : 17h – 19h, Python, IA, Java…, avec Naïm<br>Pour l\'instant, il n\'y a pas d\'ateliers les autres jours.<br>En cas d\'annulation, c\'est annoncé sur la page « Ça bouge ! ».',
       liens: [{ t: 'Voir les actualités', h: 'ca-bouge.html' }]
     },
     {
       id: 'ateliers',
       mots: ['atelier*', 'labo', 'pole*', 'activite*', 'programmation', 'robotique', 'electronique', 'maths', 'mathematique*', 'physique', 'chimie', 'biologie', 'astronomie', 'ecologie', 'science*', 'proposez', 'faites'],
-      r: 'Le Labo, c\'est <b>six pôles</b> pour expérimenter, comprendre et créer :<br>💻 Numérique & Code · 🤖 Robotique & Électronique · 🔬 Sciences exactes · 🌍 Vivant & Univers · 📚 Accompagnement scolaire · 🎤 Rencontres & Conférences.<br>En ce moment, les ateliers de programmation ont lieu <b>le vendredi de 17h à 19h</b>.',
+      r: 'Le Labo, c\'est <b>six pôles</b> pour expérimenter, comprendre et créer :<br>💻 Numérique & Code · 🤖 Robotique & Électronique · 🔬 Sciences exactes · 🌍 Vivant & Univers · 📚 Accompagnement scolaire · 🎤 Rencontres & Conférences.<br>Les ateliers de programmation ont lieu <b>le vendredi</b> : <b>Scratch</b> du CP à la 6ème (17h – 18h, avec Nathan) et <b>Python, IA, Java…</b> de la 5ème à la 3ème (17h – 19h, avec Naïm).',
       liens: [{ t: 'Découvrir le Labo', h: 'labo.html' }]
     },
     {
