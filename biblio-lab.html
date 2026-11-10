@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblio'Lab - 92Lab</title>
+  <meta name="description" content="La bibliothèque du 92Lab : empruntez livres et magazines scientifiques.">
+  <meta property="og:title" content="92Lab">
+  <meta property="og:description" content="La bibliothèque du 92Lab : empruntez livres et magazines scientifiques.">
+  <meta property="og:image" content="images/logo.png">
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="entete">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="Logo 92Lab">
+    </a>
+
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav>
+      <ul class="menu">
+        <li>
+          <a href="labo.html">Le Labo</a>
+          <span class="sous-titre">Nos ateliers</span>
+        </li>
+        <li>
+          <a href="etincelle.html">L'Étincelle</a>
+          <span class="sous-titre">Qui sommes-nous</span>
+        </li>
+        <li>
+          <a href="ca-bouge.html">Ça bouge !</a>
+          <span class="sous-titre">Actualités</span>
+        </li>
+        <li>
+          <a href="flash-lab.html">Flash Lab</a>
+          <span class="sous-titre">Le blog</span>
+        </li>
+        <li>
+          <a href="hors-les-murs.html">Hors les murs</a>
+          <span class="sous-titre">Sorties et bons plans</span>
+        </li>
+        <li>
+          <a href="biblio-lab.html" aria-current="page">Biblio'Lab</a>
+          <span class="sous-titre">Prêt de livres et magazines</span>
+        </li>
+        <li>
+          <a href="contact.html">Allô le Lab ?</a>
+          <span class="sous-titre">Contact</span>
+        </li>
+        <li>
+          <a href="adherer.html" class="bouton-adhesion">Rejoins l'expérience</a>
+          <span class="sous-titre">Adhérer</span>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero-page">
+      <p class="hero-accroche">Prêt de livres et magazines</p>
+      <h1>Biblio'Lab</h1>
+      <p class="hero-texte hero-large">
+        Livres, magazines et BD pour nourrir ta curiosité.<br>
+        Emprunte-les, lis-les, rapporte-les !
+      </p>
+    </section>
+
+    <section class="section section-fonce">
+      <div class="conteneur">
+        <div class="regles">
+          <div class="regle">
+            <span class="regle-icone">🎫</span>
+            <h3>Pour les adhérents</h3>
+            <p>Le prêt est réservé aux membres du Lab.</p>
+          </div>
+          <div class="regle">
+            <span class="regle-icone">1️⃣</span>
+            <h3>1 document à la fois</h3>
+            <p>Tu rends celui que tu as pour en emprunter un autre.</p>
+          </div>
+          <div class="regle">
+            <span class="regle-icone">📅</span>
+            <h3>2 semaines</h3>
+            <p>C'est la durée d'un prêt. Prends ton temps, mais pas trop !</p>
+          </div>
+          <div class="regle">
+            <span class="regle-icone">🤝</span>
+            <h3>Sur place ou par message</h3>
+            <p>Viens l'emprunter au Lab, ou réserve-le en nous écrivant.</p>
+          </div>
+        </div>
+        <p class="regles-note">Pas encore membre ? <a href="adherer.html">Rejoins l'expérience</a> (15 € l'année, ateliers compris).</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="conteneur">
+
+        <div class="filtres" role="group" aria-label="Filtrer le catalogue">
+          <button type="button" class="filtre actif" data-type="tout">Tout</button>
+          <button type="button" class="filtre" data-type="livre">📖 Livres</button>
+          <button type="button" class="filtre" data-type="magazine">📰 Magazines</button>
+          <button type="button" class="filtre" data-type="bd">🚀 BD</button>
+        </div>
+
+        <div class="biblio-recherche">
+          <input type="search" class="biblio-champ" placeholder="Cherche un titre, un auteur, un thème…" aria-label="Rechercher dans le catalogue">
+          <label class="biblio-dispo"><input type="checkbox"> Disponibles seulement</label>
+        </div>
+
+        <!--
+          POUR AJOUTER UN DOCUMENT : copie un bloc <article class="livre"> de la liste
+          ci-dessous, colle-le dans la liste et change :
+            - data-type : livre, magazine ou bd
+            - data-statut : dispo (disponible) ou emprunte (déjà emprunté)
+            - data-retour="AAAA-MM-JJ" : la date de retour prévue (seulement si emprunté)
+            - l'icône dans livre-couv, le thème, le titre, l'auteur et la description
+          Pour une photo de couverture : remplace le contenu de <div class="livre-couv ...">
+          par <img src="images/biblio/ma-couverture.jpg" alt="Couverture de ..."> .
+          Quand le document est rendu, remets data-statut="dispo" et supprime data-retour.
+        -->
+
+        <div class="biblio-liste">
+
+          <article class="livre" data-type="livre" data-statut="dispo">
+            <div class="livre-couv livre-couv-livre" aria-hidden="true">🔬</div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Sciences</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Exemple : livre de sciences</h3>
+              <p class="livre-auteur">Auteur à renseigner</p>
+              <p class="livre-desc">Une courte description du livre, en une ou deux phrases.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="livre" data-statut="dispo">
+            <div class="livre-couv livre-couv-livre" aria-hidden="true">💻</div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Code</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Exemple : initiation à la programmation</h3>
+              <p class="livre-auteur">Auteur à renseigner</p>
+              <p class="livre-desc">Une courte description du livre, en une ou deux phrases.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="livre" data-statut="emprunte" data-retour="2026-11-18">
+            <div class="livre-couv livre-couv-livre" aria-hidden="true">🌌</div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Astronomie</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Exemple : livre sur l'espace</h3>
+              <p class="livre-auteur">Auteur à renseigner</p>
+              <p class="livre-desc">Une courte description du livre, en une ou deux phrases.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-statut="dispo">
+            <div class="livre-couv livre-couv-magazine" aria-hidden="true">📰</div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Sciences</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Exemple : magazine scientifique n°1</h3>
+              <p class="livre-auteur">Nom du magazine</p>
+              <p class="livre-desc">Une courte description du numéro.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-statut="dispo">
+            <div class="livre-couv livre-couv-magazine" aria-hidden="true">🌿</div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Exemple : magazine nature n°2</h3>
+              <p class="livre-auteur">Nom du magazine</p>
+              <p class="livre-desc">Une courte description du numéro.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="bd" data-statut="dispo">
+            <div class="livre-couv livre-couv-bd" aria-hidden="true">🚀</div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Sciences</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Exemple : BD scientifique</h3>
+              <p class="livre-auteur">Auteur à renseigner</p>
+              <p class="livre-desc">Une courte description de la BD.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="biblio-vide" hidden>Aucun document ne correspond à ta recherche. Essaie un autre mot !</p>
+
+        <p class="biblio-suggestion">Un livre te manque ? <a href="contact.html">Dis-le-nous</a>, on essaiera de l'ajouter.</p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pied">
+    <a href="https://www.helloasso.com/associations/92lab/formulaires/1" target="_blank" rel="noopener" class="cta cta-don">Faire un don 💙</a>
+    <p>92Lab</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="chatbot.js"></script>
+</body>
+</html>
