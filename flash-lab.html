@@ -58,7 +58,7 @@
       <p class="hero-accroche">Le blog</p>
       <h1>Flash Lab</h1>
       <p class="hero-texte">
-        Les souvenirs du 92Lab en images : ateliers, sorties, événements…
+        Le blog du 92Lab : opportunités, souvenirs en images, antisèches…
         Clique sur une photo ou une vidéo pour la voir en grand !
       </p>
     </section>
@@ -71,6 +71,7 @@
           <button type="button" class="filtre" data-filtre="ateliers">Ateliers</button>
           <button type="button" class="filtre" data-filtre="sorties">Sorties</button>
           <button type="button" class="filtre" data-filtre="evenements">Événements</button>
+          <button type="button" class="filtre filtre-opportunites" data-filtre="opportunites">💡 Opportunités</button>
           <button type="button" class="filtre filtre-antiseche" data-filtre="antiseche">📝 Antisèche</button>
         </div>
 
@@ -95,6 +96,41 @@
           </figcaption>
         </figure>
         -->
+
+        <div class="billets">
+
+          <!--
+            POUR AJOUTER UN ARTICLE : copie le bloc <article class="billet"> ci-dessous et colle-le
+            en premier dans cette liste (le plus récent en premier).
+            - data-categorie : opportunites
+            - data-fin="AAAA-MM-JJ" (facultatif) : après cette date, « Terminé » s'affiche tout seul.
+          -->
+
+          <article class="billet" data-categorie="opportunites" data-fin="2027-02-05">
+            <div class="billet-image">
+              <img src="images/stage-dauphine.jpg" alt="Stage d'observation de 3ème au CEREMADE et au LAMSADE, Université Paris Dauphine-PSL" loading="lazy">
+            </div>
+            <div class="billet-corps">
+              <div class="billet-meta">
+                <span class="billet-tag">💡 Opportunité</span>
+                <span class="billet-date">Du 1<sup>er</sup> au 5 février 2027</span>
+              </div>
+              <h2>🎓 Stage d'observation de 3<sup>ème</sup></h2>
+              <p class="billet-lieu">🏛️ Université Paris Dauphine-PSL · 🔬 CEREMADE (mathématiques) et LAMSADE (informatique)</p>
+              <p>
+                Les laboratoires de recherche en informatique et en mathématiques de
+                l'université Paris Dauphine-PSL proposent d'accueillir des collégiennes
+                et des collégiens pour leur stage d'observation de 3<sup>ème</sup>,
+                la semaine du 1er au 5 février 2027.
+              </p>
+              <p>Plus d'informations et détails sur les démarches :</p>
+              <a href="https://lnkd.in/eGpTf_JU" class="cta" target="_blank" rel="noopener">Voir les démarches</a>
+            </div>
+          </article>
+
+        </div>
+
+        <h2 class="galerie-titre">📸 En images</h2>
 
         <div class="galerie">
 

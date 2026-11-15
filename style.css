@@ -2346,3 +2346,41 @@ section[id] { scroll-margin-top: 90px; }
 .actus-anciennes[open] summary { margin-bottom: 16px; }
 .actus-anciennes .actu + .actu { margin-top: 20px; }
 html { scroll-behavior: smooth; }
+
+/* Flash Lab : articles de blog */
+.billets { display: flex; flex-direction: column; gap: 28px; margin-bottom: 36px; }
+.billet {
+  display: grid;
+  grid-template-columns: minmax(240px, 42%) 1fr;
+  background: #14141f;
+  border: 1px solid #25253a;
+  border-radius: 18px;
+  overflow: hidden;
+}
+.billet[hidden] { display: none; }
+.billet-image { background: #0d0d16; }
+.billet-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.billet-corps { padding: 26px 28px; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+.billet-meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 6px; }
+.billet-tag {
+  background: var(--degrade);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.billet-date { color: var(--bleu-clair); font-weight: 700; font-size: 0.95rem; }
+.billet h2 { margin: 4px 0 6px; font-size: 1.6rem; }
+.billet-lieu { color: #c9c9d6; font-size: 0.92rem; }
+.billet p { margin: 6px 0; line-height: 1.55; }
+.billet .cta { margin-top: 12px; }
+.billet.passe { opacity: 0.7; }
+.galerie-titre { margin: 8px 0 18px; font-size: 1.5rem; }
+.galerie-titre[hidden] { display: none; }
+@media (max-width: 760px) {
+  .billet { grid-template-columns: 1fr; }
+  .billet-corps { padding: 20px; }
+}

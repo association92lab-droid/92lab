@@ -54,18 +54,28 @@
   var declencheur = null;
 
   var antiseche = document.querySelector('.antiseche');
+  var billets = Array.prototype.slice.call(document.querySelectorAll('.billet'));
+  var galerieTitre = document.querySelector('.galerie-titre');
 
   function filtrer(cat) {
     var n = 0;
     var modeAntiseche = cat === 'antiseche';
     if (antiseche) antiseche.hidden = !modeAntiseche;
-    galerie.hidden = modeAntiseche;
+    var bn = 0;
+    billets.forEach(function (b) {
+      var ok = cat === 'tout' || b.getAttribute('data-categorie') === cat;
+      b.hidden = !ok;
+      if (ok) bn++;
+    });
+    var modeBillets = cat === 'opportunites';
+    galerie.hidden = modeAntiseche || modeBillets;
     photos.forEach(function (p) {
       var ok = cat === 'tout' || p.getAttribute('data-categorie') === cat;
       p.hidden = !ok;
       if (ok) n++;
     });
-    vide.hidden = modeAntiseche || n > 0;
+    if (galerieTitre) galerieTitre.hidden = modeAntiseche || modeBillets || n === 0;
+    vide.hidden = modeAntiseche || modeBillets || n > 0 || bn > 0;
     filtres.forEach(function (f) {
       f.classList.toggle('actif', f.getAttribute('data-filtre') === cat);
     });
@@ -134,11 +144,12 @@
   });
 
   if (location.hash === '#antiseche') filtrer('antiseche');
+  if (location.hash === '#opportunites') filtrer('opportunites');
 })();
 
 // Événements : mention « Déjà passé » automatique (attribut data-fin = AAAA-MM-JJ)
 (function () {
-  var evenements = document.querySelectorAll('.evenement[data-fin]');
+  var evenements = document.querySelectorAll('.evenement[data-fin], .billet[data-fin]');
   if (!evenements.length) return;
   var aujourdhui;
   try {
@@ -151,6 +162,7 @@
     if (aujourdhui <= ev.getAttribute('data-fin')) return;
     ev.classList.add('passe');
     var titre = ev.querySelector('h2');
+    if (ev.classList.contains('billet')) { var meta = ev.querySelector('.billet-meta'); var bp = document.createElement('span'); bp.className = 'badge-passe'; bp.textContent = 'Terminé'; meta.appendChild(bp); return; }
     var badge = document.createElement('span');
     badge.className = 'badge-passe';
     badge.textContent = 'Déjà passé';

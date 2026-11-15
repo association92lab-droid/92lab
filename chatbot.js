@@ -119,8 +119,8 @@
       id: 'stage3',
       fin: '2027-02-05',
       mots: ['stage 3eme', 'stage de 3eme', 'stage d observation', 'stage de troisieme', 'stage college', 'stage', 'troisieme', '3eme', 'collegien*', 'collegienne*', 'dauphine', 'ceremade', 'lamsade', 'observation'],
-      r: '<b>Stage d\'observation de 3ème</b> 🎓<br>Les laboratoires de recherche en informatique et en mathématiques de l\'université <b>Paris Dauphine-PSL</b> (CEREMADE et LAMSADE) accueillent des collégiennes et des collégiens pour leur stage d\'observation de 3ème, <b>la semaine du 1er au 5 février 2027</b>.<br>Les démarches sont détaillées dans « Hors les murs ».',
-      liens: [{ t: 'Voir les démarches', h: 'https://lnkd.in/eGpTf_JU' }, { t: 'Hors les murs', h: 'hors-les-murs.html' }]
+      r: '<b>Stage d\'observation de 3ème</b> 🎓<br>Les laboratoires de recherche en informatique et en mathématiques de l\'université <b>Paris Dauphine-PSL</b> (CEREMADE et LAMSADE) accueillent des collégiennes et des collégiens pour leur stage d\'observation de 3ème, <b>la semaine du 1er au 5 février 2027</b>.<br>Les démarches sont détaillées dans Flash Lab, rubrique « Opportunités ».',
+      liens: [{ t: 'Voir les démarches', h: 'https://lnkd.in/eGpTf_JU' }, { t: 'Voir l\'opportunité', h: 'flash-lab.html#opportunites' }]
     },
     {
       id: 'partenariat',
