@@ -25,16 +25,8 @@
     <nav>
       <ul class="menu">
         <li>
-          <a href="labo.html">Le Labo</a>
-          <span class="sous-titre">Nos ateliers</span>
-        </li>
-        <li>
           <a href="etincelle.html">L'Étincelle</a>
           <span class="sous-titre">Qui sommes-nous</span>
-        </li>
-        <li>
-          <a href="ca-bouge.html">Ça bouge !</a>
-          <span class="sous-titre">Actualités</span>
         </li>
         <li>
           <a href="flash-lab.html">Flash Lab</a>
@@ -43,6 +35,10 @@
         <li>
           <a href="hors-les-murs.html">Hors les murs</a>
           <span class="sous-titre">Sorties et bons plans</span>
+        </li>
+        <li>
+          <a href="biblio-lab.html">Biblio'Lab</a>
+          <span class="sous-titre">Prêt de livres et magazines</span>
         </li>
         <li>
           <a href="contact.html">Allô le Lab ?</a>
@@ -58,6 +54,13 @@
 
   <main>
 
+    <a class="flash-info" href="#ca-bouge">
+      <span class="flash-label"><span class="flash-point"></span>Flash info</span>
+      <span class="flash-texte">Les ateliers ont repris ! Du CP à la 6<sup>ème</sup> : 17h–18h (Scratch) · De la 5<sup>ème</sup> à la 3<sup>ème</sup> : 17h–19h (Python, IA, Java…)</span>
+      <span class="flash-lien">Lire →</span>
+    </a>
+    <!-- Flash info : change le texte ci-dessus quand une info importante doit être vue dès l'arrivée sur le site. -->
+
     <section class="video-fond">
       <video autoplay muted loop playsinline>
         <source src="videos/video.mp4" type="video/mp4">
@@ -65,8 +68,171 @@
       <button class="bouton-son" type="button" aria-label="Activer le son">🔇</button>
     </section>
 
+
     <section class="accueil">
       <h1>Ensemble, nous construirons les ponts vers l'excellence scientifique.</h1>
+      <a href="adherer.html" class="cta">Rejoins l'expérience</a>
+    </section>
+
+    <section class="section section-accueil" id="ca-bouge">
+      <div class="conteneur">
+        <div class="titre-section">
+          <p class="hero-accroche">Actualités</p>
+          <h2>Ça bouge !</h2>
+          <p class="titre-section-texte">Toute la vie du 92Lab : ateliers, événements et informations importantes.</p>
+        </div>
+      </div>
+      <div class="actus">
+        <article class="actu">
+          <div class="actu-date">
+            <span class="actu-jour">30</span>
+            <span class="actu-mois">Oct. 2026</span>
+          </div>
+          <div class="actu-contenu">
+            <span class="actu-badge">Atelier</span>
+            <h2>Reprise des ateliers : un nouveau format selon l'âge</h2>
+            <p>
+              Les vacances sont terminées : les ateliers ont repris le vendredi
+              30 octobre ! À partir de cette date, les cours sont adaptés à
+              chaque âge et animés par Nathan et Naïm :
+            </p>
+            <div class="actu-groupes">
+              <div class="actu-groupe">
+                <span class="actu-groupe-niveau">Du CP à la 6<sup>ème</sup></span>
+                <span class="actu-groupe-horaire">🕔 17h – 18h</span>
+                <span class="actu-groupe-theme">🧩 Scratch</span>
+                <span class="actu-groupe-anim">avec Nathan</span>
+              </div>
+              <div class="actu-groupe">
+                <span class="actu-groupe-niveau">De la 5<sup>ème</sup> à la 3<sup>ème</sup></span>
+                <span class="actu-groupe-horaire">🕔 17h – 19h</span>
+                <span class="actu-groupe-theme">💻 Python, IA, Java…</span>
+                <span class="actu-groupe-anim">avec Naïm</span>
+              </div>
+            </div>
+            <p class="actu-infos">
+              📅 Tous les vendredis · 📍 Espace Nelly Roussel, salle Océan
+            </p>
+          </div>
+        </article>
+
+        <details class="actus-anciennes">
+          <summary>Voir les actualités précédentes</summary>
+          <article class="actu actu-annulee">
+                    <div class="actu-date">
+                      <span class="actu-jour">09</span>
+                      <span class="actu-mois">Oct. 2026</span>
+                    </div>
+                    <div class="actu-contenu">
+                      <span class="actu-badge badge-annule">Annulé</span>
+                      <h2>Atelier de programmation annulé</h2>
+                      <p>
+                        Nous sommes au regret de vous informer que l'atelier de
+                        programmation de ce vendredi 9 octobre est annulé en raison de
+                        l'absence de l'animateur. Nous nous excusons pour la gêne
+                        occasionnée et vous retrouvons dès le vendredi suivant.
+                      </p>
+                    </div>
+                  </article>
+
+          <article class="actu">
+                    <div class="actu-date">
+                      <span class="actu-jour">11</span>
+                      <span class="actu-mois">Sept. 2026</span>
+                    </div>
+                    <div class="actu-contenu">
+                      <span class="actu-badge">Atelier</span>
+                      <h2>Ateliers de programmation</h2>
+                      <p>
+                        Retrouvez-nous tous les vendredis de 17h à 19h pour nos ateliers
+                        de programmation, à l'espace Nelly Roussel, en salle Océan.
+                      </p>
+                      <p class="actu-infos">
+                        📅 Tous les vendredis · 🕔 17h – 19h · 📍 Espace Nelly Roussel, salle Océan
+                      </p>
+                    </div>
+                  </article>
+        </details>
+      </div>
+    </section>
+
+    <section class="section section-accueil" id="labo">
+      <div class="conteneur">
+        <div class="titre-section">
+          <p class="hero-accroche">Nos ateliers</p>
+          <h2>Le Labo</h2>
+          <p class="titre-section-texte">Six pôles pour expérimenter, comprendre et créer.</p>
+        </div>
+      </div>
+      <div class="poles">
+
+        <article class="pole">
+          <div class="pole-icone">💻</div>
+          <h2>Numérique &amp; Code</h2>
+          <p class="pole-desc">Donner vie à ses idées avec un ordinateur.</p>
+          <ul class="pole-liste">
+            <li>Programmation</li>
+            <li>Modélisation</li>
+          </ul>
+        </article>
+
+        <article class="pole">
+          <div class="pole-icone">🤖</div>
+          <h2>Robotique &amp; Électronique</h2>
+          <p class="pole-desc">Concevoir, assembler et programmer des machines.</p>
+          <ul class="pole-liste">
+            <li>Robotique</li>
+            <li>Électronique</li>
+          </ul>
+        </article>
+
+        <article class="pole">
+          <div class="pole-icone">🔬</div>
+          <h2>Sciences Exactes</h2>
+          <p class="pole-desc">Comprendre les lois qui régissent le monde.</p>
+          <ul class="pole-liste">
+            <li>Mathématiques</li>
+            <li>Physique-Chimie</li>
+          </ul>
+        </article>
+
+        <article class="pole">
+          <div class="pole-icone">🌍</div>
+          <h2>Vivant &amp; Univers</h2>
+          <p class="pole-desc">Explorer la nature, de la cellule aux étoiles.</p>
+          <ul class="pole-liste">
+            <li>Biologie</li>
+            <li>Astronomie</li>
+            <li>Écologie</li>
+          </ul>
+        </article>
+
+        <article class="pole">
+          <div class="pole-icone">📚</div>
+          <h2>Accompagnement scolaire</h2>
+          <p class="pole-desc">Un soutien pour gagner en confiance et réussir.</p>
+          <ul class="pole-liste">
+            <li>Aide aux devoirs</li>
+            <li>Méthodologie</li>
+          </ul>
+        </article>
+
+        <article class="pole">
+          <div class="pole-icone">🎤</div>
+          <h2>Rencontres &amp; Conférences</h2>
+          <p class="pole-desc">Échanger avec des professionnels et découvrir des parcours inspirants.</p>
+          <ul class="pole-liste">
+            <li>Conférences</li>
+            <li>Rencontres de métiers</li>
+            <li>Témoignages</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="appel">
+      <h2>Curieux ?</h2>
       <a href="adherer.html" class="cta">Rejoins l'expérience</a>
     </section>
 

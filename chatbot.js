@@ -60,13 +60,13 @@
       id: 'horaires',
       mots: ['horaire*', 'heure*', 'quand', 'vendredi', 'jour*', 'planning', 'calendrier', 'annule*', 'a quelle heure', 'semaine'],
       r: '<b>Les ateliers ont lieu tous les vendredis</b>, à l\'espace Nelly Roussel, en salle Océan. Depuis le 30 octobre, c\'est adapté à chaque âge :<br>🧩 <b>Du CP à la 6ème</b> : 17h – 18h, Scratch, avec Nathan<br>💻 <b>De la 5ème à la 3ème</b> : 17h – 19h, Python, IA, Java…, avec Naïm<br>Pour l\'instant, il n\'y a pas d\'ateliers les autres jours.<br>En cas d\'annulation, c\'est annoncé sur la page « Ça bouge ! ».',
-      liens: [{ t: 'Voir les actualités', h: 'ca-bouge.html' }]
+      liens: [{ t: 'Voir les actualités', h: 'index.html#ca-bouge' }]
     },
     {
       id: 'ateliers',
       mots: ['atelier*', 'labo', 'pole*', 'activite*', 'programmation', 'robotique', 'electronique', 'maths', 'mathematique*', 'physique', 'chimie', 'biologie', 'astronomie', 'ecologie', 'science*', 'proposez', 'faites'],
       r: 'Le Labo, c\'est <b>six pôles</b> pour expérimenter, comprendre et créer :<br>💻 Numérique & Code · 🤖 Robotique & Électronique · 🔬 Sciences exactes · 🌍 Vivant & Univers · 📚 Accompagnement scolaire · 🎤 Rencontres & Conférences.<br>Les ateliers de programmation ont lieu <b>le vendredi</b> : <b>Scratch</b> du CP à la 6ème (17h – 18h, avec Nathan) et <b>Python, IA, Java…</b> de la 5ème à la 3ème (17h – 19h, avec Naïm).',
-      liens: [{ t: 'Découvrir le Labo', h: 'labo.html' }]
+      liens: [{ t: 'Découvrir le Labo', h: 'index.html#labo' }]
     },
     {
       id: 'age',
@@ -116,6 +116,13 @@
       liens: [{ t: 'Écrire au Lab', h: 'mailto:' + MAIL + '?subject=Soutenir%20le%2092Lab%20(parrainage%20%2F%20m%C3%A9c%C3%A9nat)' }, { t: TEL1[0], h: 'tel:' + TEL1[1] }, { t: 'En savoir plus', h: 'contact.html#mecenat' }]
     },
     {
+      id: 'stage3',
+      fin: '2027-02-05',
+      mots: ['stage 3eme', 'stage de 3eme', 'stage d observation', 'stage de troisieme', 'stage college', 'stage', 'troisieme', '3eme', 'collegien*', 'collegienne*', 'dauphine', 'ceremade', 'lamsade', 'observation'],
+      r: '<b>Stage d\'observation de 3ème</b> 🎓<br>Les laboratoires de recherche en informatique et en mathématiques de l\'université <b>Paris Dauphine-PSL</b> (CEREMADE et LAMSADE) accueillent des collégiennes et des collégiens pour leur stage d\'observation de 3ème, <b>la semaine du 1er au 5 février 2027</b>.<br>Les démarches sont détaillées dans « Hors les murs ».',
+      liens: [{ t: 'Voir les démarches', h: 'https://lnkd.in/eGpTf_JU' }, { t: 'Hors les murs', h: 'hors-les-murs.html' }]
+    },
+    {
       id: 'partenariat',
       mots: ['partenaire*', 'partenariat*', 'professionnel*', 'metier*', 'stagiaire*', 'stage*', 'conference*', 'visite*', 'coacher', 'orienter', 'orientation', 'temoignage*', 'intervenant*', 'collaborer', 'collaboration'],
       r: '<b>Professionnels, ouvrez les portes de votre métier !</b> 🤝 Vous pouvez :<br>• présenter votre métier aux jeunes<br>• accueillir un stagiaire (collégiens et lycéens cherchent des stages d\'observation)<br>• donner une conférence<br>• faire visiter votre entreprise<br>• coacher et orienter<br>• proposer un projet commun, un défi ou un atelier sur mesure<br>Un échange, un café, une idée : parlons-en !',
@@ -130,14 +137,14 @@
     {
       id: 'biblio',
       mots: ['biblio*', 'bibliotheque*', 'livre*', 'magazine*', 'revue*', 'bd', 'bande dessinee*', 'emprunt*', 'pret', 'preter', 'lire', 'lecture', 'lecteur*', 'bouquin*', 'rendre', 'retour', 'garder'],
-      r: '<b>Biblio\'Lab, la bibliothèque du Lab</b> 📚 Tu peux y emprunter des livres, magazines et BD.<br>• Réservé aux <b>adhérents</b><br>• <b>1 document à la fois</b><br>• Prêt de <b>2 semaines</b><br>• <b>Sur place</b> ou en nous <b>écrivant</b> pour le réserver',
+      r: '<b>Biblio\'Lab, la bibliothèque du Lab</b> 📚 Tu peux y emprunter des livres, magazines et BD (Images Doc, Les Savanturiers, Virgule, Cosinus…).<br>• Réservé aux <b>adhérents</b><br>• <b>1 document à la fois</b><br>• Prêt de <b>2 semaines</b><br>• <b>Sur place</b> ou en nous <b>écrivant</b> pour le réserver',
       liens: [{ t: 'Voir le catalogue', h: 'biblio-lab.html' }, { t: 'Nous écrire', h: 'mailto:' + MAIL + '?subject=Emprunt%20Biblio%27Lab' }]
     },
     {
       id: 'sortie',
       mots: ['weekend', 'week end', 'ce week end', 'que faire', 'quoi faire', 'on fait quoi', 'idee*', 'sortie*', 'sortir', 'bon plan', 'bons plans', 'agenda', 'evenement*', 'hors les murs', 'animation*', 'a faire', 'programme', 'vacances', 'mercredi', 'samedi', 'dimanche', 'occuper'],
       r: 'Des idées de sorties et de bons plans, c\'est dans <b>« Hors les murs »</b> ! 🧭 Tu y trouves nos événements (ceux qui sont terminés sont marqués « Déjà passé ») et des lieux à visiter, comme le Musée des Arts et Métiers, ouvert du mardi au dimanche.',
-      liens: [{ t: 'Voir Hors les murs', h: 'hors-les-murs.html' }, { t: 'Ça bouge ! (actus)', h: 'ca-bouge.html' }]
+      liens: [{ t: 'Voir Hors les murs', h: 'hors-les-murs.html' }, { t: 'Ça bouge ! (actus)', h: 'index.html#ca-bouge' }]
     },
     {
       id: 'muam',

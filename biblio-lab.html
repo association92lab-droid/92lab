@@ -25,16 +25,8 @@
     <nav>
       <ul class="menu">
         <li>
-          <a href="labo.html">Le Labo</a>
-          <span class="sous-titre">Nos ateliers</span>
-        </li>
-        <li>
           <a href="etincelle.html">L'Étincelle</a>
           <span class="sous-titre">Qui sommes-nous</span>
-        </li>
-        <li>
-          <a href="ca-bouge.html">Ça bouge !</a>
-          <span class="sous-titre">Actualités</span>
         </li>
         <li>
           <a href="flash-lab.html">Flash Lab</a>
@@ -109,6 +101,14 @@
           <button type="button" class="filtre" data-type="bd">🚀 BD</button>
         </div>
 
+        <div class="filtres filtres-series" role="group" aria-label="Filtrer par collection">
+          <button type="button" class="filtre actif" data-serie="tout">Toutes les collections</button>
+          <button type="button" class="filtre" data-serie="images-doc">Images Doc</button>
+          <button type="button" class="filtre" data-serie="savanturiers">Les Savanturiers</button>
+          <button type="button" class="filtre" data-serie="virgule">Virgule</button>
+          <button type="button" class="filtre" data-serie="autres">Autres</button>
+        </div>
+
         <div class="biblio-recherche">
           <input type="search" class="biblio-champ" placeholder="Cherche un titre, un auteur, un thème…" aria-label="Rechercher dans le catalogue">
           <label class="biblio-dispo"><input type="checkbox"> Disponibles seulement</label>
@@ -122,92 +122,835 @@
             - data-retour="AAAA-MM-JJ" : la date de retour prévue (seulement si emprunté)
             - l'icône dans livre-couv, le thème, le titre, l'auteur et la description
           Pour une photo de couverture : remplace le contenu de <div class="livre-couv ...">
-          par <img src="images/biblio/ma-couverture.jpg" alt="Couverture de ..."> .
+          par <img src="images/biblio/ma-couverture.jpg" alt="Couverture de ..."> (et ajoute la classe livre-couv-img).
+          data-serie : images-doc, savanturiers, virgule ou autres (pour le filtre par collection).
           Quand le document est rendu, remets data-statut="dispo" et supprime data-retour.
         -->
 
         <div class="biblio-liste">
 
-          <article class="livre" data-type="livre" data-statut="dispo">
-            <div class="livre-couv livre-couv-livre" aria-hidden="true">🔬</div>
-            <div class="livre-corps">
-              <div class="livre-tags">
-                <span class="livre-tag">Sciences</span>
-                <span class="livre-statut"></span>
-              </div>
-              <h3>Exemple : livre de sciences</h3>
-              <p class="livre-auteur">Auteur à renseigner</p>
-              <p class="livre-desc">Une courte description du livre, en une ou deux phrases.</p>
-              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
-            </div>
-          </article>
-
-          <article class="livre" data-type="livre" data-statut="dispo">
-            <div class="livre-couv livre-couv-livre" aria-hidden="true">💻</div>
-            <div class="livre-corps">
-              <div class="livre-tags">
-                <span class="livre-tag">Code</span>
-                <span class="livre-statut"></span>
-              </div>
-              <h3>Exemple : initiation à la programmation</h3>
-              <p class="livre-auteur">Auteur à renseigner</p>
-              <p class="livre-desc">Une courte description du livre, en une ou deux phrases.</p>
-              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
-            </div>
-          </article>
-
-          <article class="livre" data-type="livre" data-statut="emprunte" data-retour="2026-11-18">
-            <div class="livre-couv livre-couv-livre" aria-hidden="true">🌌</div>
-            <div class="livre-corps">
-              <div class="livre-tags">
-                <span class="livre-tag">Astronomie</span>
-                <span class="livre-statut"></span>
-              </div>
-              <h3>Exemple : livre sur l'espace</h3>
-              <p class="livre-auteur">Auteur à renseigner</p>
-              <p class="livre-desc">Une courte description du livre, en une ou deux phrases.</p>
-              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
-            </div>
-          </article>
-
-          <article class="livre" data-type="magazine" data-statut="dispo">
-            <div class="livre-couv livre-couv-magazine" aria-hidden="true">📰</div>
-            <div class="livre-corps">
-              <div class="livre-tags">
-                <span class="livre-tag">Sciences</span>
-                <span class="livre-statut"></span>
-              </div>
-              <h3>Exemple : magazine scientifique n°1</h3>
-              <p class="livre-auteur">Nom du magazine</p>
-              <p class="livre-desc">Une courte description du numéro.</p>
-              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
-            </div>
-          </article>
-
-          <article class="livre" data-type="magazine" data-statut="dispo">
-            <div class="livre-couv livre-couv-magazine" aria-hidden="true">🌿</div>
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-les-oiseaux-marins-de-bretagne.jpg" alt="Couverture de Les oiseaux marins de Bretagne" loading="lazy"></div>
             <div class="livre-corps">
               <div class="livre-tags">
                 <span class="livre-tag">Nature</span>
                 <span class="livre-statut"></span>
               </div>
-              <h3>Exemple : magazine nature n°2</h3>
-              <p class="livre-auteur">Nom du magazine</p>
-              <p class="livre-desc">Une courte description du numéro.</p>
+              <h3>Les oiseaux marins de Bretagne</h3>
+              <p class="livre-auteur">Images Doc · N° 151 · juillet 2001</p>
+              <p class="livre-desc">Les macareux et leurs falaises, la moissonneuse du futur et le premier Tour de France (1903).</p>
               <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
             </div>
           </article>
 
-          <article class="livre" data-type="bd" data-statut="dispo">
-            <div class="livre-couv livre-couv-bd" aria-hidden="true">🚀</div>
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-sur-la-piste-du-mandrill.jpg" alt="Couverture de Sur la piste du mandrill" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Sur la piste du mandrill</h3>
+              <p class="livre-auteur">Images Doc · N° 173 · mai 2003</p>
+              <p class="livre-desc">Le mandrill, les secrets des papillons, les pollens, et un mousquetaire de Louis XIII.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-proteger-les-animaux.jpg" alt="Couverture de Protéger les animaux" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Protéger les animaux</h3>
+              <p class="livre-auteur">Images Doc</p>
+              <p class="livre-desc">Protéger les animaux, les champions du voyage, le snowboard et le groupe Tokio Hotel.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-les-mille-metiers-du-chien.jpg" alt="Couverture de Les mille métiers du chien" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Les mille métiers du chien</h3>
+              <p class="livre-auteur">Images Doc</p>
+              <p class="livre-desc">Tous les métiers du chien, l&#x27;énergie nucléaire expliquée, et à la recherche de fabuleux trésors.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-le-panda-geant.jpg" alt="Couverture de Le panda géant" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Le panda géant</h3>
+              <p class="livre-auteur">Images Doc · N° 213 · septembre 2006</p>
+              <p class="livre-desc">Le panda géant, alerte aux tornades et enquête sur la momie la plus vieille du monde.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-la-revolution-francaise.jpg" alt="Couverture de La Révolution française" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Histoire</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>La Révolution française</h3>
+              <p class="livre-auteur">Images Doc · N° 214 · octobre 2006</p>
+              <p class="livre-desc">La Révolution française, le chêne et ses habitants, et la Fête de la Science.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-le-tigre-de-siberie.jpg" alt="Couverture de Le tigre de Sibérie" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Le tigre de Sibérie</h3>
+              <p class="livre-auteur">Images Doc · N° 216 · décembre 2006</p>
+              <p class="livre-desc">Le tigre de Sibérie, les illusions d&#x27;optique et l&#x27;histoire fondante du chocolat.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-etonnants-cameleons.jpg" alt="Couverture de Étonnants caméléons" loading="lazy"></div>
             <div class="livre-corps">
               <div class="livre-tags">
                 <span class="livre-tag">Sciences</span>
                 <span class="livre-statut"></span>
               </div>
-              <h3>Exemple : BD scientifique</h3>
-              <p class="livre-auteur">Auteur à renseigner</p>
-              <p class="livre-desc">Une courte description de la BD.</p>
+              <h3>Étonnants caméléons</h3>
+              <p class="livre-auteur">Images Doc · N° 217 · janvier 2007</p>
+              <p class="livre-desc">Les caméléons, les robots sont partout ! et Molière avec la maquette d&#x27;un théâtre en cadeau.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-geantes-girafes.jpg" alt="Couverture de Géantes girafes" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Géantes girafes</h3>
+              <p class="livre-auteur">Images Doc · N° 218 · février 2007</p>
+              <p class="livre-desc">Les girafes, la Pythie messagère des dieux, et les secrets des champions.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-pole-nord-pole-sud.jpg" alt="Couverture de Pôle Nord, pôle Sud" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Sciences</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Pôle Nord, pôle Sud</h3>
+              <p class="livre-auteur">Images Doc · N° 219 · mars 2007</p>
+              <p class="livre-desc">Un numéro pour tout comprendre aux pôles, avec une grande frise des changements climatiques.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-sur-la-piste-de-l-ours.jpg" alt="Couverture de Sur la piste de l&#x27;ours" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Sur la piste de l&#x27;ours</h3>
+              <p class="livre-auteur">Images Doc · N° 222 · juin 2007</p>
+              <p class="livre-desc">L&#x27;ours brun, la grande pyramide d&#x27;Égypte, le commerce équitable et le tennis.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-special-mer.jpg" alt="Couverture de Spécial mer" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Spécial mer</h3>
+              <p class="livre-auteur">Images Doc · N° 223 · juillet 2007</p>
+              <p class="livre-desc">Plongée dans la mer, le surf (un sport extrême) et Ann Bonny, pirate des Caraïbes.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-mustang-fils-du-vent.jpg" alt="Couverture de Mustang, fils du vent" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Mustang, fils du vent</h3>
+              <p class="livre-auteur">Images Doc · N° 225 · septembre 2007</p>
+              <p class="livre-desc">Les chevaux du monde en écran géant, et la vie d&#x27;une princesse celte.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-les-derniers-mustangs-du-canada.jpg" alt="Couverture de Les derniers mustangs du Canada" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Les derniers mustangs du Canada</h3>
+              <p class="livre-auteur">Images Doc</p>
+              <p class="livre-desc">Les chevaux sauvages du Canada, la grippe (peur ou pas peur ?) et ce qu&#x27;il y a sous Paris.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-louis-xiv-le-roi-soleil.jpg" alt="Couverture de Louis XIV, le Roi-Soleil" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Histoire</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Louis XIV, le Roi-Soleil</h3>
+              <p class="livre-auteur">Images Doc</p>
+              <p class="livre-desc">Le Roi-Soleil, une fête au château de Versailles et le mystérieux chat sauvage.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-infatigable-ecureuil.jpg" alt="Couverture de Infatigable écureuil !" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Infatigable écureuil !</h3>
+              <p class="livre-auteur">Images Doc</p>
+              <p class="livre-desc">L&#x27;écureuil, la vie étonnante d&#x27;un arbre mort et un voyage dans l&#x27;école du futur.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-l-ours-blanc-sos-sa-banquise-fond.jpg" alt="Couverture de L&#x27;ours blanc : SOS, sa banquise fond !" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>L&#x27;ours blanc : SOS, sa banquise fond !</h3>
+              <p class="livre-auteur">Images Doc · N° 241 · janvier 2009</p>
+              <p class="livre-desc">L&#x27;ours polaire face au réchauffement, et comment marche un GPS ?</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-la-biodiversite-le-tresor-de-la-planete.jpg" alt="Couverture de La biodiversité, le trésor de la planète" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>La biodiversité, le trésor de la planète</h3>
+              <p class="livre-auteur">Images Doc · N° 244 · avril 2009</p>
+              <p class="livre-desc">Pourquoi la biodiversité est un trésor à protéger.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-l-hyene-une-sale-bete.jpg" alt="Couverture de L&#x27;hyène, une sale bête ?" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>L&#x27;hyène, une sale bête ?</h3>
+              <p class="livre-auteur">Images Doc · N° 245 · mai 2009</p>
+              <p class="livre-desc">L&#x27;hyène, pourquoi l&#x27;or est-il précieux ?, et Toussaint Louverture, le premier héros noir.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-les-secrets-de-l-animation-3d.jpg" alt="Couverture de Les secrets de l&#x27;animation 3D" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Sciences</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Les secrets de l&#x27;animation 3D</h3>
+              <p class="livre-auteur">Images Doc · N° 246 · juin 2009</p>
+              <p class="livre-desc">Dans les coulisses de L&#x27;Âge de glace 3, et l&#x27;histoire du vélo en super dépliant.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-faut-il-avoir-peur-du-loup.jpg" alt="Couverture de Faut-il avoir peur du loup ?" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Faut-il avoir peur du loup ?</h3>
+              <p class="livre-auteur">Images Doc</p>
+              <p class="livre-desc">Le loup, un tableau mystère en dépliant, et tous fans de judo avec Teddy Riner.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-petit-phoque-deviendra-grand.jpg" alt="Couverture de Petit phoque deviendra grand" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Petit phoque deviendra grand</h3>
+              <p class="livre-auteur">Images Doc · N° 251 · janvier 2010</p>
+              <p class="livre-desc">Le bébé phoque, à bord d&#x27;un brise-glace géant, et l&#x27;actu expliquée en photo.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-chiens-de-traineaux-heros-du-grand-froid.jpg" alt="Couverture de Chiens de traîneaux : héros du grand froid" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Chiens de traîneaux : héros du grand froid</h3>
+              <p class="livre-auteur">Images Doc · N° 264 · décembre 2010</p>
+              <p class="livre-desc">Les chiens de traîneaux, l&#x27;invention du braille et le chantier d&#x27;une cathédrale.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-un-sous-marin.jpg" alt="Couverture de Un sous-marin" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Sciences</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Un sous-marin</h3>
+              <p class="livre-auteur">Images Doc · N° 266 · février 2011</p>
+              <p class="livre-desc">Dossier sciences : un sous-marin, les lémuriens acrobates et Guillaume le Conquérant.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-le-japon-c-est-fou.jpg" alt="Couverture de Le Japon, c&#x27;est fou !" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Monde</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Le Japon, c&#x27;est fou !</h3>
+              <p class="livre-auteur">Images Doc · N° 267 · mars 2011</p>
+              <p class="livre-desc">Dossier Japon, la bataille de Waterloo, Van Gogh et une mission en Antarctique.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-special-jeux.jpg" alt="Couverture de Spécial jeux" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Jeux</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Spécial jeux</h3>
+              <p class="livre-auteur">Images Doc</p>
+              <p class="livre-desc">Un numéro spécial jeux : aéroports, gladiateurs à Rome, le mémo des animaux et une BD enquête.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-trop-forts-les-chinois.jpg" alt="Couverture de Trop forts, les Chinois !" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Monde</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Trop forts, les Chinois !</h3>
+              <p class="livre-auteur">Images Doc</p>
+              <p class="livre-desc">Inventions, records et empereurs chinois, la Grande Muraille et le Nouvel An chinois à Paris.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-ma-vie-d-abeille-en-bd.jpg" alt="Couverture de Ma vie d&#x27;abeille (en BD)" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Ma vie d&#x27;abeille (en BD)</h3>
+              <p class="livre-auteur">Images Doc</p>
+              <p class="livre-desc">La vie d&#x27;une abeille en BD, on avance au solaire, et à l&#x27;assaut de la canopée amazonienne.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-d-ou-viendra-l-electricite-demain.jpg" alt="Couverture de D&#x27;où viendra l&#x27;électricité demain ?" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Sciences</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>D&#x27;où viendra l&#x27;électricité demain ?</h3>
+              <p class="livre-auteur">Images Doc</p>
+              <p class="livre-desc">L&#x27;énergie de demain, Thomas Edison invente l&#x27;ampoule (BD), la centrale solaire au Maroc.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-on-peut-proteger-la-terre.jpg" alt="Couverture de On peut protéger la terre !" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>On peut protéger la terre !</h3>
+              <p class="livre-auteur">Images Doc</p>
+              <p class="livre-desc">Wangari Maathai, la femme qui plantait des arbres (BD), la ferme d&#x27;hier et de demain, rencontre avec Pierre Rabhi.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-le-chat-un-fauve-dans-ta-maison.jpg" alt="Couverture de Le chat : un fauve dans ta maison" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Le chat : un fauve dans ta maison</h3>
+              <p class="livre-auteur">Images Doc · mars 2014</p>
+              <p class="livre-desc">Le chat, le chat sacré d&#x27;Égypte (BD) et un double poster sur les félins.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="images-doc" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/images-doc-les-animaux-fascinants-de-la-jungle.jpg" alt="Couverture de Les animaux fascinants de la jungle" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Les animaux fascinants de la jungle</h3>
+              <p class="livre-auteur">Images Doc · juillet 2014</p>
+              <p class="livre-desc">Spécial Brésil, les stars du Mondial 2014 et Pelé, le roi du foot.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="savanturiers" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/savanturiers-sur-la-piste-du-boson-de-higgs.jpg" alt="Couverture de Sur la piste du boson de Higgs" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Sciences</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Sur la piste du boson de Higgs</h3>
+              <p class="livre-auteur">Les Savanturiers · N° 3</p>
+              <p class="livre-desc">Particules, LHC et collisions : un voyage au cœur de la matière avec les chercheurs du CEA.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="savanturiers" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/savanturiers-nom-de-code-co.jpg" alt="Couverture de Nom de code : CO₂" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Sciences</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Nom de code : CO₂</h3>
+              <p class="livre-auteur">Les Savanturiers · N° 4</p>
+              <p class="livre-desc">Cycle du carbone, gaz à effet de serre et stations de mesure.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="savanturiers" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/savanturiers-une-etoile-est-nee.jpg" alt="Couverture de Une étoile est née !" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Sciences</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Une étoile est née !</h3>
+              <p class="livre-auteur">Les Savanturiers · N° 8</p>
+              <p class="livre-desc">Observer le ciel : télescopes au Chili et caméra infrarouge.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="savanturiers" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/savanturiers-a-la-recherche-du-temps-perdu.jpg" alt="Couverture de À la recherche du temps perdu" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Sciences</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>À la recherche du temps perdu</h3>
+              <p class="livre-auteur">Les Savanturiers · N° 10</p>
+              <p class="livre-desc">Les archives climatiques naturelles, du bateau au laboratoire.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="savanturiers" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/savanturiers-lumiere-sur-la-matiere-noire.jpg" alt="Couverture de Lumière sur la matière noire" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Sciences</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Lumière sur la matière noire</h3>
+              <p class="livre-auteur">Les Savanturiers · N° 19 · mars 2017</p>
+              <p class="livre-desc">Cosmologie : comment traquer la matière noire.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="savanturiers" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/savanturiers-phytoremediation-des-plantes-pour-depoll.jpg" alt="Couverture de Phytoremédiation : des plantes pour dépolluer ?" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Sciences</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Phytoremédiation : des plantes pour dépolluer ?</h3>
+              <p class="livre-auteur">Les Savanturiers · N° 21 · octobre 2017</p>
+              <p class="livre-desc">Traiter les sols contaminés de Fukushima avec des plantes.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="savanturiers" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/savanturiers-l-eau-et-la-glace-memoires-du-temps.jpg" alt="Couverture de L&#x27;eau et la glace, mémoires du temps" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Sciences</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>L&#x27;eau et la glace, mémoires du temps</h3>
+              <p class="livre-auteur">Les Savanturiers · N° 23 · février 2018</p>
+              <p class="livre-desc">Le cycle de l&#x27;eau étape par étape, en Antarctique.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="savanturiers" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/savanturiers-la-chimie-verte-pour-un-futur-durable.jpg" alt="Couverture de La chimie verte, pour un futur durable" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Sciences</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>La chimie verte, pour un futur durable</h3>
+              <p class="livre-auteur">Les Savanturiers · N° 24 · avril 2018</p>
+              <p class="livre-desc">Les 12 principes de la chimie verte.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="savanturiers" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/savanturiers-les-medicaments-comprendre-et-soigner-le.jpg" alt="Couverture de Les médicaments : comprendre et soigner le vivant" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Sciences</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Les médicaments : comprendre et soigner le vivant</h3>
+              <p class="livre-auteur">Les Savanturiers · N° 25 · septembre 2018</p>
+              <p class="livre-desc">De la recherche à la mise sur le marché d&#x27;un médicament.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="savanturiers" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/savanturiers-beton-et-acier-un-mariage-fait-pour-dure.jpg" alt="Couverture de Béton et acier : un mariage fait pour durer" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Sciences</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Béton et acier : un mariage fait pour durer</h3>
+              <p class="livre-auteur">Les Savanturiers · N° 26 · décembre 2018</p>
+              <p class="livre-desc">Ouille, ça rouille ! Comment le béton armé résiste au temps.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="savanturiers" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/savanturiers-coraux-attention-monde-fragile.jpg" alt="Couverture de Coraux : attention, monde fragile" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Coraux : attention, monde fragile</h3>
+              <p class="livre-auteur">Les Savanturiers · N° 27 · février 2019</p>
+              <p class="livre-desc">Les récifs coralliens, un monde fragile : il est encore temps d&#x27;agir.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="savanturiers" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/savanturiers-des-essais-nucleaires-sous-surveillance.jpg" alt="Couverture de Des essais nucléaires sous surveillance" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Sciences</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Des essais nucléaires sous surveillance</h3>
+              <p class="livre-auteur">Les Savanturiers · N° 28 · juin 2019</p>
+              <p class="livre-desc">Un travail de détective pour surveiller les essais nucléaires.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="virgule" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/virgule-neologismes-quand-les-ecrivains-inventen.jpg" alt="Couverture de Néologismes : quand les écrivains inventent des mots" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Littérature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Néologismes : quand les écrivains inventent des mots</h3>
+              <p class="livre-auteur">Virgule · N° 182 · mars 2020</p>
+              <p class="livre-desc">Le magazine de français et de littérature des 10-15 ans : néologismes, la querelle d&#x27;Homère.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="virgule" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/virgule-utopies-quand-les-ecrivains-inventent-le.jpg" alt="Couverture de Utopies : quand les écrivains inventent leur monde idéal" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Littérature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Utopies : quand les écrivains inventent leur monde idéal</h3>
+              <p class="livre-auteur">Virgule · N° 185 · juin 2020</p>
+              <p class="livre-desc">Test : quel utopiste êtes-vous ? Poster : la prétérition.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="virgule" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/virgule-le-baroque.jpg" alt="Couverture de Le baroque" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Littérature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Le baroque</h3>
+              <p class="livre-auteur">Virgule · N° 187 · septembre 2020</p>
+              <p class="livre-desc">Un grand courant littéraire, le procès d&#x27;une empoisonneuse, un emploi du temps en cadeau.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="virgule" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/virgule-baudelaire-200-ans-deja.jpg" alt="Couverture de Baudelaire, 200 ans déjà !" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Littérature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Baudelaire, 200 ans déjà !</h3>
+              <p class="livre-auteur">Virgule · N° 196 · juin 2021</p>
+              <p class="livre-desc">Portrait de Baudelaire, le conditionnel, les chiffres romains.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="virgule" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/virgule-baleines-et-monstres-marins-dans-la-litt.jpg" alt="Couverture de Baleines et monstres marins dans la littérature" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Littérature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Baleines et monstres marins dans la littérature</h3>
+              <p class="livre-auteur">Virgule · N° 197 · juillet/août 2021</p>
+              <p class="livre-desc">Jonas, Sindbad, Moby Dick, Capitaine Nemo… avec 14 pages de jeux et de BD.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="virgule" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/virgule-les-miserables-de-victor-hugo.jpg" alt="Couverture de Les Misérables de Victor Hugo" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Littérature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Les Misérables de Victor Hugo</h3>
+              <p class="livre-auteur">Virgule · N° 201 · décembre 2021</p>
+              <p class="livre-desc">Dossier Les Misérables, poésie : qu&#x27;est-ce qu&#x27;un haïku ?</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="virgule" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/virgule-agatha-christie-la-reine-du-crime.jpg" alt="Couverture de Agatha Christie, la reine du crime" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Littérature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Agatha Christie, la reine du crime</h3>
+              <p class="livre-auteur">Virgule · N° 202 · janvier 2022</p>
+              <p class="livre-desc">Dossier Agatha Christie, la métonymie, l&#x27;histoire du dictionnaire.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="virgule" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/virgule-moliere.jpg" alt="Couverture de Molière !" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Littérature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Molière !</h3>
+              <p class="livre-auteur">Virgule · N° 203 · février 2022</p>
+              <p class="livre-desc">Numéro spécial Molière : sa vie, ses œuvres, extraits à lire.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="autres" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/autres-comment-un-futur-bebe-grandit-il-dans-le.jpg" alt="Couverture de Comment un futur bébé grandit-il dans le ventre de sa mère ?" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Sciences</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Comment un futur bébé grandit-il dans le ventre de sa mère ?</h3>
+              <p class="livre-auteur">Le Journal des Incollables · N° 15 · mars/avril 2014</p>
+              <p class="livre-desc">Dossier corps humain. Toutes tes questions, toutes nos réponses !</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="autres" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/autres-la-petite-encyclopedie-de-mon-corps.jpg" alt="Couverture de La petite encyclopédie de mon corps" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Sciences</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>La petite encyclopédie de mon corps</h3>
+              <p class="livre-auteur">Youpi J&#x27;ai compris ! · Hors-série (5-8 ans)</p>
+              <p class="livre-desc">Je découvre, j&#x27;expérimente, j&#x27;apprends : le corps humain pour les petits.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="autres" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/autres-la-vie-secrete-des-felins.jpg" alt="Couverture de La vie secrète des félins" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Culture</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>La vie secrète des félins</h3>
+              <p class="livre-auteur">L&#x27;Éléphant Junior · N° 4 · mars 2021</p>
+              <p class="livre-desc">La culture générale en jeux : la liberté de la presse en BD, nature et monde.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="autres" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/autres-le-cerveau-et-la-memoire.jpg" alt="Couverture de Le cerveau et la mémoire" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Sciences</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Le cerveau et la mémoire</h3>
+              <p class="livre-auteur">Cosinus · N° 191 · mars 2017</p>
+              <p class="livre-desc">Le magazine de maths et de sciences : comment apprend-on ?</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="autres" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/autres-ma-petite-encyclopedie-des-animaux.jpg" alt="Couverture de Ma petite encyclopédie des animaux" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Ma petite encyclopédie des animaux</h3>
+              <p class="livre-auteur">Youpi J&#x27;ai compris ! · Hors-série (5-8 ans)</p>
+              <p class="livre-desc">Je découvre, je joue, j&#x27;apprends : les animaux pour les petits.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="autres" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/autres-pourquoi-des-animaux-sont-ils-en-danger.jpg" alt="Couverture de Pourquoi des animaux sont-ils en danger ?" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Pourquoi des animaux sont-ils en danger ?</h3>
+              <p class="livre-auteur">Le Journal des Incollables · N° 3</p>
+              <p class="livre-desc">Dossier animaux (dès 8 ans) : océans, couleurs des yeux, Le Chat Potté.</p>
+              <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
+            </div>
+          </article>
+
+          <article class="livre" data-type="magazine" data-serie="autres" data-statut="dispo">
+            <div class="livre-couv livre-couv-img"><img src="images/biblio/autres-qu-est-ce-que-la-pollution.jpg" alt="Couverture de Qu&#x27;est-ce que la pollution ?" loading="lazy"></div>
+            <div class="livre-corps">
+              <div class="livre-tags">
+                <span class="livre-tag">Nature</span>
+                <span class="livre-statut"></span>
+              </div>
+              <h3>Qu&#x27;est-ce que la pollution ?</h3>
+              <p class="livre-auteur">Le Journal des Incollables · N° 18 · mai/juin 2014</p>
+              <p class="livre-desc">Dossier nature : la pollution, les léopards et les guépards, l&#x27;apiculteur…</p>
               <a class="livre-emprunt" href="contact.html">Je l'emprunte</a>
             </div>
           </article>

@@ -2266,3 +2266,83 @@ section[id] { scroll-margin-top: 90px; }
   color: #c8c8d4;
   font-size: 0.92rem;
 }
+
+/* Image d'événement en format paysage : affichée en entier (texte lisible) */
+.evenement-image.evenement-image-paysage {
+  flex-basis: 380px;
+  height: auto;
+}
+
+.evenement-image.evenement-image-paysage img {
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .evenement-image.evenement-image-paysage {
+    flex-basis: auto;
+    height: auto;
+  }
+}
+
+/* Biblio'Lab : couvertures photo (format portrait) */
+.biblio-liste { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+.livre-couv-img { height: auto; background: #0d0d16; }
+.livre-couv-img img { aspect-ratio: 3 / 4; object-position: top; display: block; }
+.filtres-series { margin-top: -8px; }
+.filtres-series .filtre { font-size: 0.9rem; }
+
+/* Accueil : flash info + sections Ça bouge / Le Labo */
+.flash-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 12px 20px;
+  background: var(--degrade);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.98rem;
+  text-align: center;
+}
+.flash-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  background: rgba(0, 0, 0, 0.28);
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+.flash-point {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ff5d5d;
+  animation: flash-pulse 1.4s ease-in-out infinite;
+}
+@keyframes flash-pulse { 50% { opacity: 0.25; transform: scale(1.4); } }
+.flash-lien { font-weight: 700; text-decoration: underline; }
+.flash-info:hover .flash-lien { text-decoration: none; }
+.section-accueil { scroll-margin-top: 90px; }
+.titre-section { text-align: center; margin-bottom: 28px; }
+.titre-section h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); margin: 4px 0 8px; }
+.titre-section-texte { color: #c9c9d6; margin: 0; }
+.actus-anciennes { margin-top: 24px; }
+.actus-anciennes summary {
+  cursor: pointer;
+  text-align: center;
+  color: var(--bleu-clair);
+  font-weight: 700;
+  padding: 12px;
+  list-style: none;
+}
+.actus-anciennes summary::-webkit-details-marker { display: none; }
+.actus-anciennes[open] summary { margin-bottom: 16px; }
+.actus-anciennes .actu + .actu { margin-top: 20px; }
+html { scroll-behavior: smooth; }
