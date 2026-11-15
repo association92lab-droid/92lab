@@ -63,6 +63,8 @@
 
   function compter(rub) {
     if (rub === 'opportunites') return billets.length;
+    if (rub === 'radar') return document.querySelectorAll('.radar-carte').length;
+    if (rub === 'antiseche') return document.querySelectorAll('.antiseche-item').length;
     return photos.filter(function (p) { return p.getAttribute('data-categorie') === rub; }).length;
   }
   tetes.forEach(function (t) {
@@ -81,7 +83,10 @@
     var n = 0;
     var tout = cat === 'tout';
     var modeAntiseche = cat === 'antiseche';
-    if (antiseche) antiseche.hidden = !modeAntiseche;
+    if (antiseche) antiseche.hidden = !(modeAntiseche || tout);
+    document.querySelectorAll('.antiseche-item').forEach(function (x, i) {
+      x.classList.toggle('apercu-cache', tout && i >= APERCU);
+    });
     var bn = 0;
     billets.forEach(function (b) {
       var ok = tout || b.getAttribute('data-categorie') === cat;
@@ -89,7 +94,17 @@
       if (ok) bn++;
     });
     var modeRadar = cat === 'radar';
-    if (radarBloc) radarBloc.hidden = !modeRadar;
+    if (radarBloc) {
+      radarBloc.hidden = !(modeRadar || tout);
+      radarBloc.classList.toggle('radar-apercu', tout);
+      if (tout) {
+        var reset = radarBloc.querySelector('.radar-filtre[data-radar="tout"]');
+        if (reset) reset.click();
+      }
+      radarBloc.querySelectorAll('.radar-carte').forEach(function (x, i) {
+        x.classList.toggle('apercu-cache', tout && i >= APERCU);
+      });
+    }
     var modeBillets = cat === 'opportunites' || modeRadar;
     galerie.hidden = modeAntiseche || modeBillets;
     var compteurs = {};
@@ -283,7 +298,7 @@
   var quiz = [];
   try { quiz = JSON.parse(data.textContent); } catch (e) { return; }
   var zone = document.querySelector('.quiz-zone');
-  var NOMS = { maths: 'Maths', francais: 'Français', sciences: 'Sciences', 'histoire-geo': 'Histoire-géo', anglais: 'Anglais' };
+  var NOMS = { maths: 'Maths', francais: 'Français', 'histoire-geo-emc': 'Histoire-Géo-EMC', technologie: 'Technologie', 'physique-chimie': 'Physique-Chimie', svt: 'SVT', anglais: 'Anglais' };
 
   function el(tag, cls, txt) {
     var e = document.createElement(tag);
