@@ -246,3 +246,151 @@
   dispo.addEventListener('change', appliquer);
   appliquer();
 })();
+
+// Le Dojo : filtre par matière + quiz interactifs
+(function () {
+  var liste = document.querySelector('.quiz-liste');
+  var data = document.getElementById('quiz-data');
+  if (!liste || !data) return;
+  var quiz = [];
+  try { quiz = JSON.parse(data.textContent); } catch (e) { return; }
+  var zone = document.querySelector('.quiz-zone');
+  var NOMS = { maths: 'Maths', francais: 'Français', sciences: 'Sciences', 'histoire-geo': 'Histoire-géo', anglais: 'Anglais' };
+
+  function el(tag, cls, txt) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (txt !== undefined) e.textContent = txt;
+    return e;
+  }
+
+  quiz.forEach(function (qz) {
+    var c = el('article', 'quiz-carte');
+    c.setAttribute('data-matiere', qz.matiere);
+    var meta = el('div', 'fiche-meta');
+    meta.appendChild(el('span', 'fiche-tag', NOMS[qz.matiere] || qz.matiere));
+    meta.appendChild(el('span', 'fiche-niveau', qz.niveau));
+    c.appendChild(meta);
+    c.appendChild(el('h3', '', qz.titre));
+    c.appendChild(el('p', '', qz.desc + ' (' + qz.questions.length + ' questions)'));
+    var b = el('button', 'cta', 'Commencer le quiz');
+    b.type = 'button';
+    b.addEventListener('click', function () { demarrer(qz); });
+    c.appendChild(b);
+    liste.appendChild(c);
+  });
+
+  function demarrer(qz) {
+    var i = 0, score = 0;
+    liste.hidden = true;
+    zone.hidden = false;
+    zone.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    function question() {
+      zone.innerHTML = '';
+      var q = qz.questions[i];
+      var haut = el('div', 'quiz-haut');
+      haut.appendChild(el('span', '', qz.titre));
+      haut.appendChild(el('span', '', 'Question ' + (i + 1) + ' / ' + qz.questions.length));
+      zone.appendChild(haut);
+      var barre = el('div', 'quiz-barre');
+      var rempli = el('span');
+      rempli.style.width = (i / qz.questions.length * 100) + '%';
+      barre.appendChild(rempli);
+      zone.appendChild(barre);
+      zone.appendChild(el('h3', 'quiz-question', q.q));
+      var choix = el('div', 'quiz-choix');
+      var retour = el('p', 'quiz-retour');
+      var actions = el('div', 'quiz-actions');
+      var boutons = [];
+      q.r.forEach(function (txt, k) {
+        var b = el('button', '', txt);
+        b.type = 'button';
+        b.addEventListener('click', function () {
+          boutons.forEach(function (x, j) {
+            x.disabled = true;
+            if (j === q.ok) x.classList.add('juste');
+          });
+          if (k === q.ok) { score++; retour.textContent = '✅ Bravo ! ' + q.expl; }
+          else { b.classList.add('faux'); retour.textContent = '❌ Pas tout à fait. ' + q.expl; }
+          var suite = el('button', 'cta', i + 1 < qz.questions.length ? 'Question suivante' : 'Voir mon score');
+          suite.type = 'button';
+          suite.addEventListener('click', function () {
+            i++;
+            if (i < qz.questions.length) question(); else fin();
+          });
+          actions.appendChild(suite);
+          suite.focus();
+        });
+        boutons.push(b);
+        choix.appendChild(b);
+      });
+      zone.appendChild(choix);
+      zone.appendChild(retour);
+      zone.appendChild(actions);
+    }
+
+    function fin() {
+      zone.innerHTML = '';
+      var n = qz.questions.length;
+      zone.appendChild(el('h3', 'quiz-question', qz.titre));
+      zone.appendChild(el('p', 'quiz-score', score + ' / ' + n));
+      var msg = score === n ? 'Parfait, tu maîtrises ! 🏆' : score >= n / 2 ? 'Bien joué ! Encore un petit effort pour le sans-faute.' : 'Relis la fiche de révision et retente ta chance, tu vas y arriver !';
+      zone.appendChild(el('p', '', msg));
+      var actions = el('div', 'quiz-actions');
+      var r = el('button', 'cta', 'Recommencer');
+      r.type = 'button';
+      r.addEventListener('click', function () { demarrer(qz); });
+      var q2 = el('button', 'cta', 'Tous les quiz');
+      q2.type = 'button';
+      q2.addEventListener('click', function () { zone.hidden = true; liste.hidden = false; });
+      actions.appendChild(r);
+      actions.appendChild(q2);
+      zone.appendChild(actions);
+    }
+    question();
+  }
+
+  var boutons = document.querySelectorAll('.filtre[data-matiere]');
+  var vide = document.querySelector('.dojo-vide');
+  function filtrer(m) {
+    var total = 0;
+    document.querySelectorAll('.dojo-bloc').forEach(function (bloc) {
+      var n = 0;
+      bloc.querySelectorAll('[data-matiere]').forEach(function (x) {
+        var ok = m === 'tout' || x.getAttribute('data-matiere') === m;
+        x.hidden = !ok;
+        if (ok) n++;
+      });
+      bloc.hidden = n === 0;
+      total += n;
+    });
+    zone.hidden = true;
+    liste.hidden = false;
+    vide.hidden = total > 0;
+    boutons.forEach(function (b) { b.classList.toggle('actif', b.getAttribute('data-matiere') === m); });
+  }
+  boutons.forEach(function (b) {
+    b.addEventListener('click', function () { filtrer(b.getAttribute('data-matiere')); });
+  });
+})();
+
+// Le Radar : filtre par type
+(function () {
+  var cartes = document.querySelectorAll('.radar-carte');
+  if (!cartes.length) return;
+  var boutons = document.querySelectorAll('.filtre[data-radar]');
+  var vide = document.querySelector('.radar-vide');
+  boutons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = b.getAttribute('data-radar'), n = 0;
+      cartes.forEach(function (c) {
+        var ok = t === 'tout' || c.getAttribute('data-type') === t;
+        c.hidden = !ok;
+        if (ok) n++;
+      });
+      vide.hidden = n > 0;
+      boutons.forEach(function (x) { x.classList.toggle('actif', x === b); });
+    });
+  });
+})();

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Radar - 92Lab</title>
+  <meta name="description" content="Le Radar du 92Lab : vidéos, articles et liens à explorer pour rester curieux de sciences.">
+  <meta property="og:title" content="92Lab">
+  <meta property="og:description" content="Le Radar du 92Lab : vidéos, articles et liens à explorer pour rester curieux de sciences.">
+  <meta property="og:image" content="images/logo.png">
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="entete">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="Logo 92Lab">
+    </a>
+
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav>
+      <ul class="menu">
+        <li>
+          <a href="etincelle.html">L'Étincelle</a>
+          <span class="sous-titre">Qui sommes-nous</span>
+        </li>
+        <li>
+          <a href="flash-lab.html">Flash Lab</a>
+          <span class="sous-titre">Le blog</span>
+        </li>
+        <li>
+          <a href="hors-les-murs.html">Hors les murs</a>
+          <span class="sous-titre">Sorties et bons plans</span>
+        </li>
+        <li>
+          <a href="biblio-lab.html">Biblio'Lab</a>
+          <span class="sous-titre">Prêt de livres et magazines</span>
+        </li>
+        <li>
+          <a href="dojo.html">Le Dojo</a>
+          <span class="sous-titre">Fiches de révision et quiz</span>
+        </li>
+        <li>
+          <a href="radar.html" aria-current="page">Le Radar</a>
+          <span class="sous-titre">À voir, à lire, à explorer</span>
+        </li>
+        <li>
+          <a href="contact.html">Allô le Lab ?</a>
+          <span class="sous-titre">Contact</span>
+        </li>
+        <li>
+          <a href="adherer.html" class="bouton-adhesion">Rejoins l'expérience</a>
+          <span class="sous-titre">Adhérer</span>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero-page">
+      <p class="hero-accroche">À voir, à lire, à explorer</p>
+      <h1>Le Radar</h1>
+      <p class="hero-texte">
+        Vidéos, articles et liens repérés par le Lab pour nourrir ta curiosité scientifique.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="conteneur">
+
+        <div class="filtres" role="group" aria-label="Filtrer par type">
+          <button type="button" class="filtre actif" data-radar="tout">Tout</button>
+          <button type="button" class="filtre" data-radar="video">▶️ Vidéos</button>
+          <button type="button" class="filtre" data-radar="article">📰 Articles</button>
+          <button type="button" class="filtre" data-radar="lien">🔗 Liens</button>
+        </div>
+
+        <!--
+          POUR AJOUTER UN CONTENU : copie un bloc <article class="radar-carte"> et colle-le en premier
+          dans la liste (le plus récent en premier). Change data-type (video, article ou lien),
+          la classe radar-tag-… du badge, le titre, la source, la description et le lien.
+        -->
+
+        <div class="radar-liste">
+          <article class="radar-carte" data-type="lien">
+            <span class="radar-tag radar-tag-lien">🔗 Lien</span>
+            <h3>Futura Sciences</h3>
+            <p class="radar-source">futura-sciences.com</p>
+            <p class="radar-desc">Un média scientifique grand public : actualités, dossiers et explications sur la nature, l'espace, la santé et les technologies.</p>
+            <a class="cta" href="https://www.futura-sciences.com/" target="_blank" rel="noopener">Ouvrir ↗</a>
+          </article>
+
+          <article class="radar-carte" data-type="lien">
+            <span class="radar-tag radar-tag-lien">🔗 Lien</span>
+            <h3>Universcience</h3>
+            <p class="radar-source">universcience.fr</p>
+            <p class="radar-desc">Le site de la Cité des sciences et du Palais de la découverte : expositions, ressources et idées de visites à Paris.</p>
+            <a class="cta" href="https://www.universcience.fr/" target="_blank" rel="noopener">Ouvrir ↗</a>
+          </article>
+
+          <article class="radar-carte" data-type="lien">
+            <span class="radar-tag radar-tag-lien">🔗 Lien</span>
+            <h3>Lumni</h3>
+            <p class="radar-source">lumni.fr</p>
+            <p class="radar-desc">Des vidéos et des ressources éducatives gratuites, de la maternelle au lycée, sur toutes les matières.</p>
+            <a class="cta" href="https://www.lumni.fr/" target="_blank" rel="noopener">Ouvrir ↗</a>
+          </article>
+        </div>
+
+        <p class="galerie-vide radar-vide" hidden>Rien dans cette catégorie pour l'instant, ça arrive bientôt !</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <a href="https://www.helloasso.com/associations/92lab/formulaires/1" target="_blank" rel="noopener" class="cta cta-don">Faire un don 💙</a>
+    <p>92Lab</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="chatbot.js"></script>
+</body>
+</html>

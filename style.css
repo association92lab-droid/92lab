@@ -2389,3 +2389,34 @@ html { scroll-behavior: smooth; }
 .carte-reseau { max-width: 760px; margin: 0 auto; text-align: center; align-items: center; }
 .carte-reseau .cta { margin-top: 14px; display: inline-block; }
 .reseau-logo { width: min(300px, 80%); height: auto; border-radius: 16px; background: #fff; margin-bottom: 10px; }
+
+/* Le Dojo + Le Radar */
+.dojo-bloc { margin-top: 36px; }
+.dojo-titre { font-size: 1.5rem; margin: 0 0 18px; }
+.fiches, .quiz-liste, .radar-liste { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 22px; }
+.fiche, .quiz-carte, .radar-carte { background: #14141f; border: 1px solid #25253a; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+.fiche[hidden], .quiz-carte[hidden], .radar-carte[hidden], .dojo-bloc[hidden], .quiz-liste[hidden] { display: none; }
+.fiche h3, .quiz-carte h3, .radar-carte h3 { margin: 4px 0 0; font-size: 1.15rem; }
+.fiche p, .quiz-carte p, .radar-desc { margin: 0; color: #c9c9d6; line-height: 1.5; }
+.fiche-meta { display: flex; gap: 8px; align-items: center; }
+.fiche-tag, .radar-tag { background: var(--degrade); color: #fff; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; padding: 3px 10px; border-radius: 999px; }
+.fiche-niveau { color: var(--bleu-clair); font-size: 0.85rem; font-weight: 700; }
+.fiche details { width: 100%; margin-top: 8px; }
+.fiche summary { cursor: pointer; color: var(--bleu-clair); font-weight: 700; }
+.fiche details ul { margin: 10px 0 0; padding-left: 20px; line-height: 1.6; }
+.quiz-carte .cta, .radar-carte .cta { margin-top: auto; align-self: flex-start; border: 0; cursor: pointer; font: inherit; }
+.quiz-zone { background: #14141f; border: 1px solid #25253a; border-radius: 18px; padding: 24px; max-width: 720px; margin: 0 auto; }
+.quiz-haut { display: flex; justify-content: space-between; color: var(--bleu-clair); font-weight: 700; font-size: 0.9rem; margin-bottom: 10px; }
+.quiz-barre { height: 6px; background: #25253a; border-radius: 999px; overflow: hidden; margin-bottom: 18px; }
+.quiz-barre span { display: block; height: 100%; background: var(--degrade); transition: width 0.3s; }
+.quiz-question { font-size: 1.25rem; margin: 0 0 16px; }
+.quiz-choix { display: flex; flex-direction: column; gap: 10px; }
+.quiz-choix button { text-align: left; padding: 12px 16px; border-radius: 12px; border: 1px solid #34344d; background: #1b1b2b; color: #fff; font: inherit; cursor: pointer; }
+.quiz-choix button:hover:not(:disabled) { border-color: var(--bleu-clair); }
+.quiz-choix button.juste { border-color: #4cc38a; background: rgba(76, 195, 138, 0.18); }
+.quiz-choix button.faux { border-color: #ff6b6b; background: rgba(255, 107, 107, 0.16); }
+.quiz-retour { margin-top: 14px; line-height: 1.5; }
+.quiz-actions { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+.quiz-actions .cta { border: 0; cursor: pointer; font: inherit; }
+.quiz-score { font-size: 2.4rem; font-weight: 800; margin: 6px 0; }
+.radar-source { color: var(--bleu-clair) !important; font-size: 0.85rem; }

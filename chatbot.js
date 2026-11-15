@@ -71,7 +71,7 @@
     {
       id: 'age',
       mots: ['age*', 'ans', 'a partir de', 'trop jeune', 'trop vieux', 'enfant*', 'ecole', 'college', 'lycee', 'primaire'],
-      r: 'Les ateliers sont ouverts <b>à partir de 8 ans</b>.'
+      r: 'Les ateliers sont ouverts <b>du CP à la 3ème</b> : du CP à la 6ème (Scratch) et de la 5ème à la 3ème (Python, IA, Java…).<br>Les fiches de révision et quiz du Dojo s\'adressent aux élèves <b>du CE2 à la 3ème</b>.',liens: [{ t: 'Voir les horaires', h: 'index.html#ca-bouge' }]
     },
     {
       id: 'ordi',
@@ -120,7 +120,7 @@
       fin: '2027-02-05',
       mots: ['stage 3eme', 'stage de 3eme', 'stage d observation', 'stage de troisieme', 'stage college', 'stage', 'troisieme', '3eme', 'collegien*', 'collegienne*', 'dauphine', 'ceremade', 'lamsade', 'observation'],
       r: '<b>Stage d\'observation de 3ème</b> 🎓<br>Les laboratoires de recherche en informatique et en mathématiques de l\'université <b>Paris Dauphine-PSL</b> (CEREMADE et LAMSADE) accueillent des collégiennes et des collégiens pour leur stage d\'observation de 3ème, <b>la semaine du 1er au 5 février 2027</b>.<br>Les démarches sont détaillées dans Flash Lab, rubrique « Opportunités ».',
-      liens: [{ t: 'Voir les démarches', h: 'https://lnkd.in/eGpTf_JU' }, { t: 'Voir l\'opportunité', h: 'flash-lab.html#opportunites' }]
+      liens: [{ t: 'Voir les démarches', h: 'https://www.ceremade.dauphine.fr/fr/actualites/stage-dobservation-de-3eme-2027.html' }, { t: 'Voir l\'opportunité', h: 'flash-lab.html#opportunites' }]
     },
     {
       id: 'partenariat',
@@ -139,6 +139,18 @@
       mots: ['biblio*', 'bibliotheque*', 'livre*', 'magazine*', 'revue*', 'bd', 'bande dessinee*', 'emprunt*', 'pret', 'preter', 'lire', 'lecture', 'lecteur*', 'bouquin*', 'rendre', 'retour', 'garder'],
       r: '<b>Biblio\'Lab, la bibliothèque du Lab</b> 📚 Tu peux y emprunter des livres, magazines et BD (Images Doc, Les Savanturiers, Virgule, Cosinus…).<br>• Réservé aux <b>adhérents</b><br>• <b>1 document à la fois</b><br>• Prêt de <b>2 semaines</b><br>• <b>Sur place</b> ou en nous <b>écrivant</b> pour le réserver',
       liens: [{ t: 'Voir le catalogue', h: 'biblio-lab.html' }, { t: 'Nous écrire', h: 'mailto:' + MAIL + '?subject=Emprunt%20Biblio%27Lab' }]
+    },
+    {
+      id: 'dojo',
+      mots: ['dojo', 'quiz*', 'quizz*', 'fiche*', 'fiche de revision', 'fiches de revision', 'revision*', 'reviser', 'm entrainer', 's entrainer', 'entrainement', 'exercice*', 'test en ligne', 'tests en ligne', 'controle*', 'interro*'],
+      r: '<b>Le Dojo</b> 🥋 C\'est l\'espace pour s\'entraîner : des <b>fiches de révision</b> et des <b>quiz</b> corrigés en ligne, pour réviser à son rythme, <b>du CE2 à la 3ème</b> (en lien avec l\'accompagnement scolaire).',
+      liens: [{ t: 'Aller au Dojo', h: 'dojo.html' }]
+    },
+    {
+      id: 'radar',
+      mots: ['radar', 'video*', 'article*', 'documentaire*', 'lien utile', 'liens utiles', 'site de science', 'sites de sciences', 'chaine*', 'youtube', 'me cultiver', 'en savoir plus sur les sciences'],
+      r: '<b>Le Radar</b> 📡 Les vidéos, articles et liens que le Lab a repérés pour nourrir ta curiosité scientifique : à voir, à lire, à explorer !',
+      liens: [{ t: 'Ouvrir le Radar', h: 'radar.html' }]
     },
     {
       id: 'sortie',
