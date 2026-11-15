@@ -2388,3 +2388,4 @@ html { scroll-behavior: smooth; }
 /* L'Étincelle : réseau */
 .carte-reseau { max-width: 760px; margin: 0 auto; text-align: center; align-items: center; }
 .carte-reseau .cta { margin-top: 14px; display: inline-block; }
+.reseau-logo { width: min(300px, 80%); height: auto; border-radius: 16px; background: #fff; margin-bottom: 10px; }
