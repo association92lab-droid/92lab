@@ -41,12 +41,8 @@
           <span class="sous-titre">Prêt de livres et magazines</span>
         </li>
         <li>
-          <a href="dojo.html">Le Dojo</a>
-          <span class="sous-titre">Fiches de révision et quiz</span>
-        </li>
-        <li>
-          <a href="radar.html">Le Radar</a>
-          <span class="sous-titre">À voir, à lire, à explorer</span>
+          <a href="level-up.html">Level Up</a>
+          <span class="sous-titre">Aide à la scolarité</span>
         </li>
         <li>
           <a href="contact.html">Allô le Lab ?</a>
@@ -66,7 +62,7 @@
       <p class="hero-accroche">Le blog</p>
       <h1>Flash Lab</h1>
       <p class="hero-texte">
-        Le blog du 92Lab : opportunités, souvenirs en images, antisèches…
+        Le blog du 92Lab : opportunités, souvenirs en images, radar à curiosités, antisèches…
         Clique sur une photo ou une vidéo pour la voir en grand !
       </p>
     </section>
@@ -80,6 +76,7 @@
           <button type="button" class="filtre" data-filtre="sorties">Sorties</button>
           <button type="button" class="filtre" data-filtre="evenements">Événements</button>
           <button type="button" class="filtre filtre-opportunites" data-filtre="opportunites">💡 Opportunités</button>
+          <button type="button" class="filtre filtre-radar" data-filtre="radar">📡 Radar</button>
           <button type="button" class="filtre filtre-antiseche" data-filtre="antiseche">📝 Antisèche</button>
         </div>
 
@@ -197,6 +194,51 @@
         </div>
 
         <p class="galerie-vide" hidden>Pas encore de photos dans cette catégorie, ça arrive bientôt !</p>
+
+        <div class="radar" hidden>
+          <p class="radar-intro">📡 <strong>Le Radar</strong> : les vidéos, articles et liens repérés par le Lab pour nourrir ta curiosité scientifique.</p>
+
+          <div class="filtres radar-filtres" role="group" aria-label="Filtrer le Radar par type">
+            <button type="button" class="radar-filtre filtre actif" data-radar="tout">Tout</button>
+            <button type="button" class="radar-filtre filtre" data-radar="video">▶️ Vidéos</button>
+            <button type="button" class="radar-filtre filtre" data-radar="article">📰 Articles</button>
+            <button type="button" class="radar-filtre filtre" data-radar="lien">🔗 Liens</button>
+          </div>
+
+          <!--
+            POUR AJOUTER UN CONTENU : copie un bloc <article class="radar-carte"> et colle-le en premier
+            dans la liste (le plus récent en premier). Change data-type (video, article ou lien),
+            la classe radar-tag-… du badge, le titre, la source, la description et le lien.
+          -->
+
+          <div class="radar-liste">
+            <article class="radar-carte" data-type="lien">
+              <span class="radar-tag radar-tag-lien">🔗 Lien</span>
+              <h3>Futura Sciences</h3>
+              <p class="radar-source">futura-sciences.com</p>
+              <p class="radar-desc">Un média scientifique grand public : actualités, dossiers et explications sur la nature, l'espace, la santé et les technologies.</p>
+              <a class="cta" href="https://www.futura-sciences.com/" target="_blank" rel="noopener">Ouvrir ↗</a>
+            </article>
+
+            <article class="radar-carte" data-type="lien">
+              <span class="radar-tag radar-tag-lien">🔗 Lien</span>
+              <h3>Universcience</h3>
+              <p class="radar-source">universcience.fr</p>
+              <p class="radar-desc">Le site de la Cité des sciences et du Palais de la découverte : expositions, ressources et idées de visites à Paris.</p>
+              <a class="cta" href="https://www.universcience.fr/" target="_blank" rel="noopener">Ouvrir ↗</a>
+            </article>
+
+            <article class="radar-carte" data-type="lien">
+              <span class="radar-tag radar-tag-lien">🔗 Lien</span>
+              <h3>Lumni</h3>
+              <p class="radar-source">lumni.fr</p>
+              <p class="radar-desc">Des vidéos et des ressources éducatives gratuites, de la maternelle au lycée, sur toutes les matières.</p>
+              <a class="cta" href="https://www.lumni.fr/" target="_blank" rel="noopener">Ouvrir ↗</a>
+            </article>
+          </div>
+
+          <p class="galerie-vide radar-vide" hidden>Rien dans cette catégorie pour l'instant, ça arrive bientôt !</p>
+        </div>
 
         <div class="antiseche" hidden>
 

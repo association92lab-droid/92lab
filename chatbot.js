@@ -71,7 +71,7 @@
     {
       id: 'age',
       mots: ['age*', 'ans', 'a partir de', 'trop jeune', 'trop vieux', 'enfant*', 'ecole', 'college', 'lycee', 'primaire'],
-      r: 'Les ateliers sont ouverts <b>du CP à la 3ème</b> : du CP à la 6ème (Scratch) et de la 5ème à la 3ème (Python, IA, Java…).<br>Les fiches de révision et quiz du Dojo s\'adressent aux élèves <b>du CE2 à la 3ème</b>.',liens: [{ t: 'Voir les horaires', h: 'index.html#ca-bouge' }]
+      r: 'Les ateliers sont ouverts <b>du CP à la 3ème</b> : du CP à la 6ème (Scratch) et de la 5ème à la 3ème (Python, IA, Java…).<br>Les fiches de révision et quiz de Level Up s\'adressent aux élèves <b>du CE2 à la 3ème</b>.',liens: [{ t: 'Voir les horaires', h: 'index.html#ca-bouge' }]
     },
     {
       id: 'ordi',
@@ -142,15 +142,15 @@
     },
     {
       id: 'dojo',
-      mots: ['dojo', 'quiz*', 'quizz*', 'fiche*', 'fiche de revision', 'fiches de revision', 'revision*', 'reviser', 'm entrainer', 's entrainer', 'entrainement', 'exercice*', 'test en ligne', 'tests en ligne', 'controle*', 'interro*'],
-      r: '<b>Le Dojo</b> 🥋 C\'est l\'espace pour s\'entraîner : des <b>fiches de révision</b> et des <b>quiz</b> corrigés en ligne, pour réviser à son rythme, <b>du CE2 à la 3ème</b> (en lien avec l\'accompagnement scolaire).',
-      liens: [{ t: 'Aller au Dojo', h: 'dojo.html' }]
+      mots: ['dojo', 'level up', 'levelup', 'level-up', 'aide a la scolarite', 'scolarite', 'quiz*', 'quizz*', 'fiche*', 'fiche de revision', 'fiches de revision', 'revision*', 'reviser', 'm entrainer', 's entrainer', 'entrainement', 'exercice*', 'test en ligne', 'tests en ligne', 'controle*', 'interro*'],
+      r: '<b>Level Up</b> 🚀 C\'est l\'espace d\'aide à la scolarité pour s\'entraîner : des <b>fiches de révision</b> et des <b>quiz</b> corrigés en ligne, pour réviser à son rythme, <b>du CE2 à la 3ème</b> (en lien avec l\'accompagnement scolaire).',
+      liens: [{ t: 'Aller à Level Up', h: 'level-up.html' }]
     },
     {
       id: 'radar',
       mots: ['radar', 'video*', 'article*', 'documentaire*', 'lien utile', 'liens utiles', 'site de science', 'sites de sciences', 'chaine*', 'youtube', 'me cultiver', 'en savoir plus sur les sciences'],
-      r: '<b>Le Radar</b> 📡 Les vidéos, articles et liens que le Lab a repérés pour nourrir ta curiosité scientifique : à voir, à lire, à explorer !',
-      liens: [{ t: 'Ouvrir le Radar', h: 'radar.html' }]
+      r: '<b>Le Radar</b> 📡 Dans Flash Lab, les vidéos, articles et liens que le Lab a repérés pour nourrir ta curiosité scientifique : à voir, à lire, à explorer !',
+      liens: [{ t: 'Ouvrir le Radar', h: 'flash-lab.html#radar' }]
     },
     {
       id: 'sortie',

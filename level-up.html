@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level Up - 92Lab</title>
+  <meta name="description" content="Level Up, l'aide à la scolarité du 92Lab : fiches de révision et quiz pour s'entraîner et réussir à l'école.">
+  <meta property="og:title" content="92Lab">
+  <meta property="og:description" content="Level Up, l'aide à la scolarité du 92Lab : fiches de révision et quiz pour s'entraîner et réussir à l'école.">
+  <meta property="og:image" content="images/logo.png">
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="entete">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="Logo 92Lab">
+    </a>
+
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav>
+      <ul class="menu">
+        <li>
+          <a href="etincelle.html">L'Étincelle</a>
+          <span class="sous-titre">Qui sommes-nous</span>
+        </li>
+        <li>
+          <a href="flash-lab.html">Flash Lab</a>
+          <span class="sous-titre">Le blog</span>
+        </li>
+        <li>
+          <a href="hors-les-murs.html">Hors les murs</a>
+          <span class="sous-titre">Sorties et bons plans</span>
+        </li>
+        <li>
+          <a href="biblio-lab.html">Biblio'Lab</a>
+          <span class="sous-titre">Prêt de livres et magazines</span>
+        </li>
+        <li>
+          <a href="level-up.html" aria-current="page">Level Up</a>
+          <span class="sous-titre">Aide à la scolarité</span>
+        </li>
+        <li>
+          <a href="contact.html">Allô le Lab ?</a>
+          <span class="sous-titre">Contact</span>
+        </li>
+        <li>
+          <a href="adherer.html" class="bouton-adhesion">Rejoins l'expérience</a>
+          <span class="sous-titre">Adhérer</span>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero-page">
+      <p class="hero-accroche">Aide à la scolarité</p>
+      <h1>Level Up</h1>
+      <p class="hero-texte">
+        Fiches de révision et quiz : révise, entraîne-toi et monte de niveau à ton rythme. Du CE2 à la 3ème !
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="conteneur">
+
+        <div class="filtres" role="group" aria-label="Filtrer par matière">
+          <button type="button" class="filtre actif" data-matiere="tout">Tout</button>
+          <button type="button" class="filtre" data-matiere="maths">Maths</button>
+          <button type="button" class="filtre" data-matiere="francais">Français</button>
+          <button type="button" class="filtre" data-matiere="sciences">Sciences</button>
+          <button type="button" class="filtre" data-matiere="histoire-geo">Histoire-géo</button>
+          <button type="button" class="filtre" data-matiere="anglais">Anglais</button>
+        </div>
+
+        <div class="dojo-bloc">
+          <h2 class="dojo-titre">📝 Fiches de révision</h2>
+
+          <!--
+            POUR AJOUTER UNE FICHE : copie un bloc <article class="fiche"> et change
+            data-matiere (maths, francais, sciences, histoire-geo ou anglais), le niveau, le titre
+            et le contenu. Pour une fiche en PDF ou en lien, remplace le bloc details par :
+            <a class="cta" href="fiches/ma-fiche.pdf" target="_blank" rel="noopener">Ouvrir la fiche</a>
+          -->
+
+          <div class="fiches">
+            <article class="fiche" data-matiere="maths">
+              <div class="fiche-meta"><span class="fiche-tag">Maths</span><span class="fiche-niveau">6ème</span></div>
+              <h3>Les fractions : l'essentiel</h3>
+              <p>Lire, comparer et simplifier des fractions simples.</p>
+              <details>
+                <summary>Voir la fiche</summary>
+                <ul>
+                  <li>Une fraction <strong>a/b</strong> : on partage en <strong>b</strong> parts égales et on en prend <strong>a</strong>.</li>
+                  <li>Le dénominateur (en bas) dit en combien de parts on partage ; le numérateur (en haut) dit combien on en prend.</li>
+                  <li>On additionne deux fractions de même dénominateur en additionnant les numérateurs : 3/4 + 1/4 = 4/4 = 1.</li>
+                  <li>On simplifie en divisant en haut et en bas par le même nombre : 2/4 = 1/2.</li>
+                  <li>Prendre 1/2 d'une quantité, c'est la diviser par 2.</li>
+                </ul>
+              </details>
+            </article>
+
+            <article class="fiche" data-matiere="sciences">
+              <div class="fiche-meta"><span class="fiche-tag">Sciences</span><span class="fiche-niveau">CE2 – 6ème</span></div>
+              <h3>Les états de l'eau : l'essentiel</h3>
+              <p>Solide, liquide, gaz et les changements d'état.</p>
+              <details>
+                <summary>Voir la fiche</summary>
+                <ul>
+                  <li>L'eau existe sous trois états : <strong>solide</strong> (glace), <strong>liquide</strong> et <strong>gazeux</strong> (vapeur d'eau).</li>
+                  <li>À pression normale, elle <strong>gèle à 0 °C</strong> (solidification) et <strong>bout à 100 °C</strong> (ébullition).</li>
+                  <li>Solide → liquide : <strong>fusion</strong>. Liquide → gaz : <strong>vaporisation</strong>. Gaz → liquide : <strong>condensation</strong>.</li>
+                  <li>La vapeur d'eau est invisible. Ce qu'on voit au-dessus d'une casserole, ce sont de minuscules gouttelettes.</li>
+                </ul>
+              </details>
+            </article>
+          </div>
+        </div>
+
+        <div class="dojo-bloc">
+          <h2 class="dojo-titre">🎯 Quiz pour s'entraîner</h2>
+
+          <!--
+            POUR AJOUTER UN QUIZ : dans le bloc script id="quiz-data" en bas de page, copie un quiz
+            complet (de son accolade ouvrante à son accolade fermante, sans oublier la virgule entre
+            deux quiz) et change l'id, la matière, le niveau, le titre, la description et les questions.
+            Pour chaque question : "q" = la question, "r" = les 4 réponses, "ok" = le numéro de la
+            bonne réponse (0 = la première, 1 = la deuxième…), "expl" = l'explication affichée après.
+            Le quiz apparaît tout seul dans la liste.
+          -->
+
+          <div class="quiz-liste"></div>
+          <div class="quiz-zone" hidden></div>
+        </div>
+
+        <p class="galerie-vide dojo-vide" hidden>Pas encore de contenu pour cette matière, ça arrive bientôt !</p>
+      </div>
+    </section>
+
+    <script type="application/json" id="quiz-data">
+[
+  {
+    "id": "fractions",
+    "matiere": "maths",
+    "niveau": "6ème",
+    "titre": "Les fractions",
+    "desc": "Vérifie que tu maîtrises les fractions simples.",
+    "questions": [
+      {
+        "q": "Quelle fraction représente la moitié d'un gâteau ?",
+        "r": [
+          "1/2",
+          "1/3",
+          "2/3",
+          "1/4"
+        ],
+        "ok": 0,
+        "expl": "La moitié, c'est 1 part sur 2 : 1/2."
+      },
+      {
+        "q": "Combien font 3/4 + 1/4 ?",
+        "r": [
+          "1",
+          "4/8",
+          "3/16",
+          "2"
+        ],
+        "ok": 0,
+        "expl": "Les dénominateurs sont identiques : 3 + 1 = 4 quarts, soit 4/4 = 1 entier."
+      },
+      {
+        "q": "Quelle fraction est égale à 2/4 ?",
+        "r": [
+          "1/2",
+          "2/8",
+          "4/2",
+          "1/4"
+        ],
+        "ok": 0,
+        "expl": "On divise le numérateur et le dénominateur par 2 : 2/4 = 1/2."
+      },
+      {
+        "q": "Combien font les 1/2 de 20 ?",
+        "r": [
+          "10",
+          "5",
+          "40",
+          "2"
+        ],
+        "ok": 0,
+        "expl": "Prendre la moitié, c'est diviser par 2 : 20 ÷ 2 = 10."
+      },
+      {
+        "q": "Quelle est la plus grande de ces fractions ?",
+        "r": [
+          "1/2",
+          "1/4",
+          "3/4",
+          "1/8"
+        ],
+        "ok": 2,
+        "expl": "3/4 est supérieur à 1/2 (=2/4), à 1/4 et à 1/8."
+      }
+    ]
+  },
+  {
+    "id": "eau",
+    "matiere": "sciences",
+    "niveau": "CE2 – 6ème",
+    "titre": "Les états de l'eau",
+    "desc": "Solide, liquide, gaz : que sais-tu de l'eau ?",
+    "questions": [
+      {
+        "q": "À quelle température l'eau liquide gèle-t-elle (à pression normale) ?",
+        "r": [
+          "0 °C",
+          "10 °C",
+          "−10 °C",
+          "100 °C"
+        ],
+        "ok": 0,
+        "expl": "L'eau se solidifie à 0 °C."
+      },
+      {
+        "q": "À quelle température l'eau bout-elle (à pression normale) ?",
+        "r": [
+          "50 °C",
+          "100 °C",
+          "150 °C",
+          "0 °C"
+        ],
+        "ok": 1,
+        "expl": "L'eau bout à 100 °C."
+      },
+      {
+        "q": "Comment s'appelle le passage de l'état liquide à l'état gazeux ?",
+        "r": [
+          "La fusion",
+          "La solidification",
+          "La vaporisation",
+          "La condensation"
+        ],
+        "ok": 2,
+        "expl": "Liquide → gaz : c'est la vaporisation (évaporation ou ébullition)."
+      },
+      {
+        "q": "La glace, c'est de l'eau à l'état…",
+        "r": [
+          "liquide",
+          "solide",
+          "gazeux",
+          "de fumée"
+        ],
+        "ok": 1,
+        "expl": "La glace est l'état solide de l'eau."
+      },
+      {
+        "q": "De quoi est formé un nuage ?",
+        "r": [
+          "De fumée",
+          "De vapeur d'eau invisible",
+          "De petites gouttelettes d'eau et de cristaux de glace",
+          "D'air chaud seulement"
+        ],
+        "ok": 2,
+        "expl": "Un nuage est fait de minuscules gouttelettes d'eau et de cristaux de glace en suspension."
+      }
+    ]
+  }
+]
+    </script>
+  </main>
+
+  <footer class="pied">
+    <a href="https://www.helloasso.com/associations/92lab/formulaires/1" target="_blank" rel="noopener" class="cta cta-don">Faire un don 💙</a>
+    <p>92Lab</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="chatbot.js"></script>
+</body>
+</html>

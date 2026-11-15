@@ -2420,3 +2420,7 @@ html { scroll-behavior: smooth; }
 .quiz-actions .cta { border: 0; cursor: pointer; font: inherit; }
 .quiz-score { font-size: 2.4rem; font-weight: 800; margin: 6px 0; }
 .radar-source { color: var(--bleu-clair) !important; font-size: 0.85rem; }
+
+.radar[hidden] { display: none; }
+.radar-intro { text-align: center; color: #c9c9d6; margin: 0 0 18px; }
+.radar-filtres { margin-bottom: 24px; }

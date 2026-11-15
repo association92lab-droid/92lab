@@ -43,7 +43,7 @@
   if (!galerie) return;
 
   var photos = Array.prototype.slice.call(galerie.querySelectorAll('.photo'));
-  var filtres = document.querySelectorAll('.filtre');
+  var filtres = document.querySelectorAll('.filtre[data-filtre]');
   var vide = document.querySelector('.galerie-vide');
   var box = document.querySelector('.lightbox');
   var boxImg = box.querySelector('img');
@@ -54,6 +54,7 @@
   var declencheur = null;
 
   var antiseche = document.querySelector('.antiseche');
+  var radarBloc = document.querySelector('.radar');
   var billets = Array.prototype.slice.call(document.querySelectorAll('.billet'));
   var galerieTitre = document.querySelector('.galerie-titre');
 
@@ -67,7 +68,9 @@
       b.hidden = !ok;
       if (ok) bn++;
     });
-    var modeBillets = cat === 'opportunites';
+    var modeRadar = cat === 'radar';
+    if (radarBloc) radarBloc.hidden = !modeRadar;
+    var modeBillets = cat === 'opportunites' || modeRadar;
     galerie.hidden = modeAntiseche || modeBillets;
     photos.forEach(function (p) {
       var ok = cat === 'tout' || p.getAttribute('data-categorie') === cat;
@@ -145,6 +148,7 @@
 
   if (location.hash === '#antiseche') filtrer('antiseche');
   if (location.hash === '#opportunites') filtrer('opportunites');
+  if (location.hash === '#radar') filtrer('radar');
 })();
 
 // Événements : mention « Déjà passé » automatique (attribut data-fin = AAAA-MM-JJ)
@@ -379,7 +383,7 @@
 (function () {
   var cartes = document.querySelectorAll('.radar-carte');
   if (!cartes.length) return;
-  var boutons = document.querySelectorAll('.filtre[data-radar]');
+  var boutons = document.querySelectorAll('.radar-filtre[data-radar]');
   var vide = document.querySelector('.radar-vide');
   boutons.forEach(function (b) {
     b.addEventListener('click', function () {
