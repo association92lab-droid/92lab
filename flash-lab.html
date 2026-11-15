@@ -237,10 +237,14 @@
             POUR AJOUTER UN CONTENU : copie un bloc <article class="radar-carte"> et colle-le en premier
             dans la liste (le plus récent en premier). Change data-type (video, article ou lien),
             la classe radar-tag-… du badge, le titre, la source, la description et le lien.
+          IMAGE : mets ta photo avec <div class="radar-image"><img src="images/radar/mon-image.jpg" alt=""></div>
+          (dossier images/radar), ou pour une vidéo YouTube : <div class="radar-image" data-youtube="CODE_DE_LA_VIDEO"></div>
+          (la vignette s'affiche toute seule). Sans image, utilise un emoji dans le div : <div class="radar-image radar-image-a">🔭</div>.
           -->
 
           <div class="radar-liste">
             <article class="radar-carte" data-type="lien">
+              <div class="radar-image radar-image-a" aria-hidden="true">🔭</div>
               <span class="radar-tag radar-tag-lien">🔗 Lien</span>
               <h3>Futura Sciences</h3>
               <p class="radar-source">futura-sciences.com</p>
@@ -249,6 +253,7 @@
             </article>
 
             <article class="radar-carte" data-type="lien">
+              <div class="radar-image radar-image-b" aria-hidden="true">🏛️</div>
               <span class="radar-tag radar-tag-lien">🔗 Lien</span>
               <h3>Universcience</h3>
               <p class="radar-source">universcience.fr</p>
@@ -257,6 +262,7 @@
             </article>
 
             <article class="radar-carte" data-type="lien">
+              <div class="radar-image radar-image-c" aria-hidden="true">🎓</div>
               <span class="radar-tag radar-tag-lien">🔗 Lien</span>
               <h3>Lumni</h3>
               <p class="radar-source">lumni.fr</p>

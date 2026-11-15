@@ -422,3 +422,15 @@
     });
   });
 })();
+
+// Radar : vignette automatique des vidéos YouTube (data-youtube = code de la vidéo)
+(function () {
+  document.querySelectorAll('.radar-image[data-youtube]').forEach(function (d) {
+    var img = document.createElement('img');
+    img.src = 'https://i.ytimg.com/vi/' + d.getAttribute('data-youtube') + '/hqdefault.jpg';
+    img.alt = '';
+    img.loading = 'lazy';
+    d.appendChild(img);
+    d.classList.add('radar-image-video');
+  });
+})();
