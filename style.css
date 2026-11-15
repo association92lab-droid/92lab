@@ -2451,3 +2451,9 @@ html { scroll-behavior: smooth; }
 
 .apercu-cache { display: none !important; }
 .radar-apercu .radar-intro, .radar-apercu .radar-filtres, .radar-apercu .radar-vide { display: none; }
+
+/* Police : Space Grotesk pour le menu, les titres, les boutons et les filtres */
+:root { --police-titre: 'Space Grotesk', Arial, sans-serif; }
+.menu a, .menu .sous-titre, h1, h2, h3, .cta, .filtre, .bouton-adhesion, .hero-accroche, .flash-label, .rubrique-lien { font-family: var(--police-titre); }
+.menu > li > a { font-weight: 600; }
+.menu a.bouton-adhesion { font-weight: 700; }
