@@ -2424,3 +2424,14 @@ html { scroll-behavior: smooth; }
 .radar[hidden] { display: none; }
 .radar-intro { text-align: center; color: #c9c9d6; margin: 0 0 18px; }
 .radar-filtres { margin-bottom: 24px; }
+
+/* Flash Lab : rubriques en aperçu */
+.rubrique-tete { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin: 28px 0 14px; }
+.rubrique-tete[hidden], .rubrique-bientot[hidden], .rubrique-lien[hidden] { display: none; }
+.rubrique-tete h2 { margin: 0; font-size: 1.5rem; }
+.galerie-tete { grid-column: 1 / -1; margin-top: 22px; }
+.rubrique-lien { background: none; border: 0; color: var(--bleu-clair); font: inherit; font-weight: 700; cursor: pointer; padding: 4px 0; }
+.rubrique-lien:hover { text-decoration: underline; }
+.rubrique-bientot { grid-column: 1 / -1; border: 1px dashed #34344d; border-radius: 16px; padding: 22px; text-align: center; color: #c9c9d6; }
+.rubrique-bientot p { margin: 0 0 6px; }
+.rubrique-bientot a { color: var(--bleu-clair); font-weight: 700; }

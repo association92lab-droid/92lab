@@ -56,15 +56,35 @@
   var antiseche = document.querySelector('.antiseche');
   var radarBloc = document.querySelector('.radar');
   var billets = Array.prototype.slice.call(document.querySelectorAll('.billet'));
-  var galerieTitre = document.querySelector('.galerie-titre');
+
+  var tetes = Array.prototype.slice.call(document.querySelectorAll('.rubrique-tete'));
+  var bientots = Array.prototype.slice.call(document.querySelectorAll('.rubrique-bientot'));
+  var APERCU = 3;
+
+  function compter(rub) {
+    if (rub === 'opportunites') return billets.length;
+    return photos.filter(function (p) { return p.getAttribute('data-categorie') === rub; }).length;
+  }
+  tetes.forEach(function (t) {
+    var lien = t.querySelector('.rubrique-lien');
+    var rub = t.getAttribute('data-rub');
+    var total = compter(rub);
+    if (total <= (rub === 'opportunites' ? 1 : APERCU)) lien.hidden = true;
+    else lien.textContent = 'Voir tout (' + total + ')';
+    lien.addEventListener('click', function () {
+      filtrer(rub);
+      window.scrollTo({ top: document.querySelector('.filtres').getBoundingClientRect().top + window.pageYOffset - 100, behavior: 'smooth' });
+    });
+  });
 
   function filtrer(cat) {
     var n = 0;
+    var tout = cat === 'tout';
     var modeAntiseche = cat === 'antiseche';
     if (antiseche) antiseche.hidden = !modeAntiseche;
     var bn = 0;
     billets.forEach(function (b) {
-      var ok = cat === 'tout' || b.getAttribute('data-categorie') === cat;
+      var ok = tout || b.getAttribute('data-categorie') === cat;
       b.hidden = !ok;
       if (ok) bn++;
     });
@@ -72,12 +92,15 @@
     if (radarBloc) radarBloc.hidden = !modeRadar;
     var modeBillets = cat === 'opportunites' || modeRadar;
     galerie.hidden = modeAntiseche || modeBillets;
+    var compteurs = {};
     photos.forEach(function (p) {
-      var ok = cat === 'tout' || p.getAttribute('data-categorie') === cat;
+      var c = p.getAttribute('data-categorie');
+      var ok = tout ? (compteurs[c] = (compteurs[c] || 0) + 1) <= APERCU : c === cat;
       p.hidden = !ok;
       if (ok) n++;
     });
-    if (galerieTitre) galerieTitre.hidden = modeAntiseche || modeBillets || n === 0;
+    tetes.forEach(function (t) { t.hidden = !tout; });
+    bientots.forEach(function (x) { x.hidden = !tout; });
     vide.hidden = modeAntiseche || modeBillets || n > 0 || bn > 0;
     filtres.forEach(function (f) {
       f.classList.toggle('actif', f.getAttribute('data-filtre') === cat);
@@ -146,6 +169,7 @@
     else if (e.key === 'ArrowRight') afficher(courante + 1);
   });
 
+  filtrer('tout');
   if (location.hash === '#antiseche') filtrer('antiseche');
   if (location.hash === '#opportunites') filtrer('opportunites');
   if (location.hash === '#radar') filtrer('radar');
