@@ -2384,3 +2384,7 @@ html { scroll-behavior: smooth; }
   .billet { grid-template-columns: 1fr; }
   .billet-corps { padding: 20px; }
 }
+
+/* L'Étincelle : réseau */
+.carte-reseau { max-width: 760px; margin: 0 auto; text-align: center; align-items: center; }
+.carte-reseau .cta { margin-top: 14px; display: inline-block; }
