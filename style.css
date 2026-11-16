@@ -2526,3 +2526,8 @@ html { scroll-behavior: smooth; }
   .billet-image { max-height: none; padding: 14px 14px 0; }
 }
 .billet-image { background: transparent; }
+
+/* Billets : même largeur que deux cartes de la grille du dessous (3 colonnes, espace 22 px) */
+@media (min-width: 900px) {
+  .billet { max-width: calc((100% - 44px) * 2 / 3 + 22px); grid-template-columns: 200px 1fr; }
+}
