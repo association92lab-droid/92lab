@@ -167,6 +167,7 @@
           <div class="filtres radar-filtres radar-themes" role="group" aria-label="Filtrer le Radar par thème">
             <button type="button" class="radar-theme filtre actif" data-theme="tout">Tous les thèmes</button>
             <button type="button" class="radar-theme filtre" data-theme="aeronautique">✈️ Aéronautique</button>
+            <button type="button" class="radar-theme filtre" data-theme="physique">⚛️ Physique</button>
             <button type="button" class="radar-theme filtre" data-theme="culture">🔬 Culture scientifique</button>
           </div>
 
@@ -180,6 +181,15 @@
           -->
 
           <div class="radar-liste">
+            <article class="radar-carte" data-type="article" data-theme="physique">
+              <div class="radar-image"><img src="images/radar/antimatiere.jpg" alt="Un positron piégé au centre d'un dispositif de physique" loading="lazy"></div>
+              <div class="radar-tags"><span class="radar-tag radar-tag-article">📰 Article</span><span class="radar-tag radar-tag-theme">⚛️ Physique</span></div>
+              <h3>« La plus grande découverte du siècle » : une expérience sur l’antimatière approche du test qui pourrait ébranler la physique !</h3>
+              <p class="radar-source">futura-sciences.com</p>
+              <p class="radar-desc">Des physiciens de l'université Northwestern ont maintenu un seul positron, l'antiparticule de l'électron, pendant des mois dans un piège. Objectif : comparer précisément ses propriétés à celles de l'électron.</p>
+              <a class="cta" href="https://www.futura-sciences.com/sciences/actualites/antimatiere-plus-grande-decouverte-siecle-experience-antimatiere-approche-test-pourrait-ebranler-physique-138693/" target="_blank" rel="noopener">Lire l'article ↗</a>
+            </article>
+
             <article class="radar-carte" data-type="article" data-theme="aeronautique">
               <div class="radar-image"><img src="images/radar/syndrome-de-kessler.jpg" alt="Des milliers de satellites et de débris en orbite autour de la Terre" loading="lazy"></div>
               <div class="radar-tags"><span class="radar-tag radar-tag-article">📰 Article</span><span class="radar-tag radar-tag-theme">✈️ Aéronautique</span></div>
@@ -419,7 +429,7 @@
     <p>92Lab</p>
   </footer>
 
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
   <script src="chatbot.js?v=3"></script>
 </body>
 </html>
