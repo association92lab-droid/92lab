@@ -2457,3 +2457,5 @@ html { scroll-behavior: smooth; }
 .menu a, .menu .sous-titre, h1, h2, h3, .cta, .filtre, .bouton-adhesion, .hero-accroche, .flash-label, .rubrique-lien { font-family: var(--police-titre); }
 .menu > li > a { font-weight: 600; }
 .menu a.bouton-adhesion { font-weight: 700; }
+
+.fiche details h4 { margin: 16px 0 4px; font-size: 1rem; }

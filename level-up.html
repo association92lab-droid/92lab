@@ -110,6 +110,55 @@
               </details>
             </article>
 
+            <article class="fiche" data-matiere="maths">
+              <div class="fiche-meta"><span class="fiche-tag">Maths</span><span class="fiche-niveau">3ème</span></div>
+              <h3>Le programme de maths de 3ème</h3>
+              <p>Tout ce qu'il faut connaître en un coup d'œil, avant le brevet.</p>
+              <details>
+                <summary>Voir la fiche</summary>
+                <h4>🔢 Nombres et calculs</h4>
+                <ul>
+                  <li>Fractions et opérations</li>
+                  <li>Puissances de 10</li>
+                  <li>Nombres premiers, PGCD</li>
+                  <li>Calcul littéral</li>
+                  <li>Équations et inéquations</li>
+                  <li>Racines carrées</li>
+                </ul>
+                <h4>📐 Géométrie</h4>
+                <ul>
+                  <li>Théorème de Pythagore</li>
+                  <li>Théorème de Thalès</li>
+                  <li>Trigonométrie</li>
+                  <li>Transformations du plan</li>
+                  <li>Géométrie dans l'espace</li>
+                  <li>Angles et parallélisme</li>
+                </ul>
+                <h4>📊 Fonctions et grandeurs</h4>
+                <ul>
+                  <li>Proportionnalité</li>
+                  <li>Fonctions linéaires et affines</li>
+                  <li>Vitesse, débit, échelles</li>
+                  <li>Grandeurs composées</li>
+                  <li>Conversions d'unités</li>
+                </ul>
+                <h4>📈 Probabilités et statistiques</h4>
+                <ul>
+                  <li>Moyenne, médiane, étendue</li>
+                  <li>Probabilités simples</li>
+                  <li>Expériences aléatoires</li>
+                  <li>Arbres de probabilités</li>
+                  <li>Statistiques à deux variables</li>
+                </ul>
+                <h4>💻 Algorithmique et programmation</h4>
+                <ul>
+                  <li>Scratch : boucles et conditions</li>
+                  <li>Variables et instructions</li>
+                  <li>Déplacements et tracés</li>
+                </ul>
+              </details>
+            </article>
+
             <article class="fiche" data-matiere="physique-chimie">
               <div class="fiche-meta"><span class="fiche-tag">Physique-Chimie</span><span class="fiche-niveau">CE2 – 6ème</span></div>
               <h3>Les états de l'eau : l'essentiel</h3>
@@ -274,6 +323,125 @@
         ],
         "ok": 2,
         "expl": "Un nuage est fait de minuscules gouttelettes d'eau et de cristaux de glace en suspension."
+      }
+    ]
+  },
+  {
+    "id": "maths-3eme",
+    "matiere": "maths",
+    "niveau": "3ème",
+    "titre": "Maths 3ème : le programme",
+    "desc": "Un tour du programme de 3ème pour te préparer au brevet.",
+    "questions": [
+      {
+        "q": "Dans un triangle rectangle, les côtés de l'angle droit mesurent 3 cm et 4 cm. Combien mesure l'hypoténuse ?",
+        "r": [
+          "5 cm",
+          "7 cm",
+          "6 cm",
+          "12 cm"
+        ],
+        "ok": 0,
+        "expl": "Pythagore : 3² + 4² = 9 + 16 = 25, et √25 = 5."
+      },
+      {
+        "q": "Combien font 10³ × 10² ?",
+        "r": [
+          "10¹",
+          "10⁶",
+          "100⁵",
+          "10⁵"
+        ],
+        "ok": 3,
+        "expl": "On additionne les exposants : 3 + 2 = 5, donc 10⁵."
+      },
+      {
+        "q": "Quel est le PGCD de 12 et 18 ?",
+        "r": [
+          "2",
+          "36",
+          "6",
+          "3"
+        ],
+        "ok": 2,
+        "expl": "Les diviseurs communs de 12 et 18 sont 1, 2, 3 et 6. Le plus grand est 6."
+      },
+      {
+        "q": "Quelle est la solution de l'équation 2x + 3 = 11 ?",
+        "r": [
+          "x = 7",
+          "x = 5",
+          "x = 14",
+          "x = 4"
+        ],
+        "ok": 3,
+        "expl": "2x = 11 − 3 = 8, donc x = 8 ÷ 2 = 4."
+      },
+      {
+        "q": "Dans un triangle ABC, M est sur [AB], N est sur [AC] et (MN) est parallèle à (BC). Quelle égalité est vraie (Thalès) ?",
+        "r": [
+          "AM × AB = AN × AC",
+          "AM/AB = AN/AC",
+          "AM/MB = AN/AC",
+          "AM/AB = AC/AN"
+        ],
+        "ok": 1,
+        "expl": "Thalès : AM/AB = AN/AC = MN/BC."
+      },
+      {
+        "q": "Si f(x) = 3x, combien vaut f(4) ?",
+        "r": [
+          "12",
+          "34",
+          "81",
+          "7"
+        ],
+        "ok": 0,
+        "expl": "On remplace x par 4 : f(4) = 3 × 4 = 12."
+      },
+      {
+        "q": "Une voiture parcourt 90 km en 1 h 30 min. Quelle est sa vitesse moyenne ?",
+        "r": [
+          "90 km/h",
+          "60 km/h",
+          "45 km/h",
+          "120 km/h"
+        ],
+        "ok": 1,
+        "expl": "v = d ÷ t = 90 ÷ 1,5 = 60 km/h."
+      },
+      {
+        "q": "Quelle est la médiane de cette série : 3 ; 5 ; 8 ; 10 ; 14 ?",
+        "r": [
+          "10",
+          "14",
+          "8,0 et 10",
+          "8"
+        ],
+        "ok": 3,
+        "expl": "Il y a 5 valeurs rangées dans l'ordre : la médiane est celle du milieu, c'est-à-dire 8."
+      },
+      {
+        "q": "On lance un dé équilibré à 6 faces. Quelle est la probabilité d'obtenir un nombre pair ?",
+        "r": [
+          "1/6",
+          "1/3",
+          "1/2",
+          "2/3"
+        ],
+        "ok": 2,
+        "expl": "Il y a 3 faces paires (2, 4, 6) sur 6 : 3/6 = 1/2."
+      },
+      {
+        "q": "En Scratch, quel bloc permet de répéter 10 fois une instruction ?",
+        "r": [
+          "aller à x : 10 y : 10",
+          "répéter 10 fois",
+          "si … alors",
+          "attendre 10 secondes"
+        ],
+        "ok": 1,
+        "expl": "Le bloc « répéter 10 fois » est une boucle : il rejoue les instructions placées à l'intérieur."
       }
     ]
   }
