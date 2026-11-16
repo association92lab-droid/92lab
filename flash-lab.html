@@ -167,6 +167,7 @@
           <div class="filtres radar-filtres radar-themes" role="group" aria-label="Filtrer le Radar par thème">
             <button type="button" class="radar-theme filtre actif" data-theme="tout">Tous les thèmes</button>
             <button type="button" class="radar-theme filtre" data-theme="aeronautique">✈️ Aéronautique</button>
+            <button type="button" class="radar-theme filtre" data-theme="mathematiques">📐 Mathématiques</button>
             <button type="button" class="radar-theme filtre" data-theme="physique">⚛️ Physique</button>
             <button type="button" class="radar-theme filtre" data-theme="culture">🔬 Culture scientifique</button>
           </div>
@@ -181,6 +182,15 @@
           -->
 
           <div class="radar-liste">
+            <article class="radar-carte" data-type="article" data-theme="mathematiques">
+              <div class="radar-image"><img src="images/radar/premiers-algorithmes.jpg" alt="Un savant du Moyen Âge écrivant des figures géométriques à la plume" loading="lazy"></div>
+              <div class="radar-tags"><span class="radar-tag radar-tag-article">📰 Article</span><span class="radar-tag radar-tag-theme">📐 Mathématiques</span></div>
+              <h3>Si vous lisez ceci, c’est grâce à eux : comment les premiers algorithmes ont transformé le monde</h3>
+              <p class="radar-source">futura-sciences.com</p>
+              <p class="radar-desc">De la Mésopotamie à l'algèbre d'al-Khwârizmî, en passant par Euclide : l'histoire des premiers algorithmes, ceux qui ont ouvert la voie à l'informatique d'aujourd'hui.</p>
+              <a class="cta" href="https://www.futura-sciences.com/sciences/actualites/histoire-si-vous-lisez-ceci-cest-grace-eux-premiers-algorithmes-ont-transforme-monde-122199/" target="_blank" rel="noopener">Lire l'article ↗</a>
+            </article>
+
             <article class="radar-carte" data-type="article" data-theme="physique">
               <div class="radar-image"><img src="images/radar/antimatiere.jpg" alt="Un positron piégé au centre d'un dispositif de physique" loading="lazy"></div>
               <div class="radar-tags"><span class="radar-tag radar-tag-article">📰 Article</span><span class="radar-tag radar-tag-theme">⚛️ Physique</span></div>
@@ -429,7 +439,7 @@
     <p>92Lab</p>
   </footer>
 
-  <script src="script.js?v=7"></script>
+  <script src="script.js?v=8"></script>
   <script src="chatbot.js?v=3"></script>
 </body>
 </html>
