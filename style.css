@@ -2459,3 +2459,9 @@ html { scroll-behavior: smooth; }
 .menu a.bouton-adhesion { font-weight: 700; }
 
 .fiche details h4 { margin: 16px 0 4px; font-size: 1rem; }
+
+/* Level Up : niveaux et chapitres */
+.filtres-niveau { margin-top: 12px; }
+.filtres-niveau[hidden] { display: none; }
+.filtres-niveau .filtre { font-size: 0.9rem; padding: 6px 16px; }
+.chapitre-titre { grid-column: 1 / -1; margin: 10px 0 -6px; font-size: 1.1rem; color: var(--bleu-clair); }

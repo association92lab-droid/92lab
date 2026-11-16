@@ -396,14 +396,62 @@
 
   var boutons = document.querySelectorAll('.filtre[data-matiere]');
   var vide = document.querySelector('.dojo-vide');
-  function filtrer(m) {
+  var rangNiveau = document.querySelector('.filtres-niveau');
+  var NIVEAUX = ['CE2', 'CM1', 'CM2', '6ème', '5ème', '4ème', '3ème'];
+  var matiere = 'tout', niveau = 'tous';
+
+  // Niveaux d'une carte : "3ème · Géométrie" -> ['3ème'] ; "CE2 – 6ème" -> tous les niveaux de CE2 à 6ème
+  function niveauxDe(x) {
+    var n = x.querySelector('.fiche-niveau');
+    var t = n ? n.textContent : '';
+    var trouves = NIVEAUX.filter(function (v) { return t.indexOf(v) !== -1; });
+    if (trouves.length === 2 && /–|-/.test(t.split('·')[0])) {
+      return NIVEAUX.slice(NIVEAUX.indexOf(trouves[0]), NIVEAUX.indexOf(trouves[1]) + 1);
+    }
+    return trouves;
+  }
+  function chapitreDe(x) {
+    var n = x.querySelector('.fiche-niveau');
+    var p = n ? n.textContent.split('·') : [];
+    return p.length > 1 ? p[1].trim() : '';
+  }
+
+  function construireNiveaux() {
+    rangNiveau.innerHTML = '';
+    if (matiere === 'tout') { rangNiveau.hidden = true; return; }
+    var presents = {};
+    document.querySelectorAll('.fiche[data-matiere="' + matiere + '"], .quiz-carte[data-matiere="' + matiere + '"]').forEach(function (x) {
+      niveauxDe(x).forEach(function (v) { presents[v] = true; });
+    });
+    var liste = NIVEAUX.filter(function (v) { return presents[v]; });
+    if (liste.length === 0) { rangNiveau.hidden = true; return; }
+    ['tous'].concat(liste).forEach(function (v) {
+      var b = el('button', 'filtre' + (v === niveau ? ' actif' : ''), v === 'tous' ? 'Tous niveaux' : v);
+      b.type = 'button';
+      b.setAttribute('data-niveau', v);
+      b.addEventListener('click', function () { niveau = v; afficher(); });
+      rangNiveau.appendChild(b);
+    });
+    rangNiveau.hidden = false;
+  }
+
+  function afficher() {
     var total = 0;
+    document.querySelectorAll('.chapitre-titre').forEach(function (h) { h.remove(); });
     document.querySelectorAll('.dojo-bloc').forEach(function (bloc) {
-      var n = 0;
+      var n = 0, dernier = null;
       bloc.querySelectorAll('[data-matiere]').forEach(function (x) {
-        var ok = m === 'tout' || x.getAttribute('data-matiere') === m;
+        var ok = matiere === 'tout' || x.getAttribute('data-matiere') === matiere;
+        if (ok && niveau !== 'tous') ok = niveauxDe(x).indexOf(niveau) !== -1;
         x.hidden = !ok;
-        if (ok) n++;
+        if (ok) {
+          n++;
+          var ch = chapitreDe(x);
+          if (matiere !== 'tout' && niveau !== 'tous' && ch && ch !== dernier) {
+            x.parentNode.insertBefore(el('h3', 'chapitre-titre', ch), x);
+          }
+          dernier = ch;
+        }
       });
       bloc.hidden = n === 0;
       total += n;
@@ -411,10 +459,16 @@
     zone.hidden = true;
     liste.hidden = false;
     vide.hidden = total > 0;
-    boutons.forEach(function (b) { b.classList.toggle('actif', b.getAttribute('data-matiere') === m); });
+    boutons.forEach(function (b) { b.classList.toggle('actif', b.getAttribute('data-matiere') === matiere); });
+    rangNiveau.querySelectorAll('.filtre').forEach(function (b) { b.classList.toggle('actif', b.getAttribute('data-niveau') === niveau); });
   }
   boutons.forEach(function (b) {
-    b.addEventListener('click', function () { filtrer(b.getAttribute('data-matiere')); });
+    b.addEventListener('click', function () {
+      matiere = b.getAttribute('data-matiere');
+      niveau = 'tous';
+      construireNiveaux();
+      afficher();
+    });
   });
 })();
 
