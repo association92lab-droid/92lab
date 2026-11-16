@@ -112,49 +112,193 @@
 
             <article class="fiche" data-matiere="maths">
               <div class="fiche-meta"><span class="fiche-tag">Maths</span><span class="fiche-niveau">3ème</span></div>
-              <h3>Le programme de maths de 3ème</h3>
-              <p>Tout ce qu'il faut connaître en un coup d'œil, avant le brevet.</p>
+              <h3>🔢 Nombres et calculs</h3>
+              <p>Fractions, puissances, PGCD, calcul littéral, équations, racines carrées.</p>
               <details>
                 <summary>Voir la fiche</summary>
-                <h4>🔢 Nombres et calculs</h4>
+                <h4>Fractions et opérations</h4>
                 <ul>
-                  <li>Fractions et opérations</li>
-                  <li>Puissances de 10</li>
-                  <li>Nombres premiers, PGCD</li>
-                  <li>Calcul littéral</li>
-                  <li>Équations et inéquations</li>
-                  <li>Racines carrées</li>
+                  <li>On additionne ou soustrait avec le <strong>même dénominateur</strong> : 1/2 + 1/3 = 3/6 + 2/6 = 5/6.</li>
+                  <li>On multiplie : a/b × c/d = (a×c)/(b×d).</li>
+                  <li>Diviser par une fraction, c'est <strong>multiplier par son inverse</strong> : a/b ÷ c/d = a/b × d/c.</li>
                 </ul>
-                <h4>📐 Géométrie</h4>
+                <h4>Puissances de 10</h4>
                 <ul>
-                  <li>Théorème de Pythagore</li>
-                  <li>Théorème de Thalès</li>
-                  <li>Trigonométrie</li>
-                  <li>Transformations du plan</li>
-                  <li>Géométrie dans l'espace</li>
-                  <li>Angles et parallélisme</li>
+                  <li>10ⁿ × 10ᵐ = 10ⁿ⁺ᵐ et 10ⁿ ÷ 10ᵐ = 10ⁿ⁻ᵐ.</li>
+                  <li>(10ⁿ)ᵐ = 10ⁿˣᵐ et 10⁻ⁿ = 1/10ⁿ.</li>
+                  <li><strong>Écriture scientifique</strong> : a × 10ⁿ avec 1 ≤ a &lt; 10 (exemple : 4 500 = 4,5 × 10³).</li>
                 </ul>
-                <h4>📊 Fonctions et grandeurs</h4>
+                <h4>Nombres premiers, PGCD</h4>
                 <ul>
-                  <li>Proportionnalité</li>
-                  <li>Fonctions linéaires et affines</li>
-                  <li>Vitesse, débit, échelles</li>
-                  <li>Grandeurs composées</li>
-                  <li>Conversions d'unités</li>
+                  <li>Un nombre est <strong>premier</strong> s'il a exactement deux diviseurs : 1 et lui-même (2, 3, 5, 7, 11, 13…).</li>
+                  <li>Le <strong>PGCD</strong> de deux nombres est leur plus grand diviseur commun.</li>
+                  <li>Algorithme d'Euclide : PGCD(a ; b) = PGCD(b ; reste de a ÷ b), jusqu'à obtenir un reste nul.</li>
+                  <li>Pour rendre une fraction irréductible, on divise en haut et en bas par le PGCD.</li>
                 </ul>
-                <h4>📈 Probabilités et statistiques</h4>
+                <h4>Calcul littéral</h4>
                 <ul>
-                  <li>Moyenne, médiane, étendue</li>
-                  <li>Probabilités simples</li>
-                  <li>Expériences aléatoires</li>
-                  <li>Arbres de probabilités</li>
-                  <li>Statistiques à deux variables</li>
+                  <li>Distributivité : k(a + b) = ka + kb.</li>
+                  <li>Double distributivité : (a + b)(c + d) = ac + ad + bc + bd.</li>
+                  <li>Identités remarquables : (a + b)² = a² + 2ab + b² ; (a − b)² = a² − 2ab + b² ; (a + b)(a − b) = a² − b².</li>
+                  <li><strong>Factoriser</strong>, c'est transformer une somme en produit.</li>
                 </ul>
-                <h4>💻 Algorithmique et programmation</h4>
+                <h4>Équations et inéquations</h4>
                 <ul>
-                  <li>Scratch : boucles et conditions</li>
-                  <li>Variables et instructions</li>
-                  <li>Déplacements et tracés</li>
+                  <li>On garde l'égalité en faisant la même opération des deux côtés : 2x + 3 = 11 donne x = 4.</li>
+                  <li>Si un produit est nul, l'un de ses facteurs est nul : A × B = 0 donne A = 0 ou B = 0.</li>
+                  <li>Pour une inéquation, <strong>on change le sens</strong> quand on multiplie ou divise par un nombre négatif.</li>
+                </ul>
+                <h4>Racines carrées</h4>
+                <ul>
+                  <li>√a est le nombre positif dont le carré vaut a : √49 = 7.</li>
+                  <li>√(a × b) = √a × √b et √(a/b) = √a / √b (avec a et b positifs).</li>
+                  <li>Attention : √a + √b n'est pas égal à √(a + b).</li>
+                </ul>
+              </details>
+            </article>
+
+            <article class="fiche" data-matiere="maths">
+              <div class="fiche-meta"><span class="fiche-tag">Maths</span><span class="fiche-niveau">3ème</span></div>
+              <h3>📐 Géométrie</h3>
+              <p>Pythagore, Thalès, trigonométrie, transformations, espace, angles.</p>
+              <details>
+                <summary>Voir la fiche</summary>
+                <h4>Théorème de Pythagore</h4>
+                <ul>
+                  <li>Dans un triangle ABC rectangle en A : <strong>BC² = AB² + AC²</strong> (BC est l'hypoténuse, le côté le plus long).</li>
+                  <li>Réciproque : si BC² = AB² + AC², alors le triangle est rectangle en A.</li>
+                  <li>Exemple : 3, 4, 5 → 3² + 4² = 25 = 5².</li>
+                </ul>
+                <h4>Théorème de Thalès</h4>
+                <ul>
+                  <li>Si M est sur (AB), N sur (AC) et que (MN) // (BC), alors AM/AB = AN/AC = MN/BC.</li>
+                  <li>Réciproque : si AM/AB = AN/AC (points alignés dans le même ordre), alors (MN) // (BC).</li>
+                </ul>
+                <h4>Trigonométrie</h4>
+                <ul>
+                  <li>Dans un triangle rectangle : <strong>cos = côté adjacent / hypoténuse</strong>, <strong>sin = côté opposé / hypoténuse</strong>, <strong>tan = côté opposé / côté adjacent</strong>.</li>
+                  <li>Astuce : CAH SOH TOA.</li>
+                  <li>Pour retrouver un angle, on utilise les touches cos⁻¹, sin⁻¹ ou tan⁻¹ de la calculatrice (en degrés).</li>
+                </ul>
+                <h4>Transformations du plan</h4>
+                <ul>
+                  <li>Symétries axiale et centrale, translation et rotation conservent les longueurs, les angles et les aires.</li>
+                  <li>L'homothétie de rapport k multiplie les longueurs par |k| et les <strong>aires par k²</strong>, mais elle conserve les angles.</li>
+                </ul>
+                <h4>Géométrie dans l'espace</h4>
+                <ul>
+                  <li>Pavé droit : L × l × h. Cylindre : π × r² × h.</li>
+                  <li>Pyramide et cône : (1/3) × aire de la base × hauteur.</li>
+                  <li>Boule : (4/3) × π × r³.</li>
+                  <li>Agrandissement ou réduction de rapport k : les <strong>volumes sont multipliés par k³</strong>.</li>
+                </ul>
+                <h4>Angles et parallélisme</h4>
+                <ul>
+                  <li>La somme des angles d'un triangle vaut 180°.</li>
+                  <li>Deux angles opposés par le sommet sont égaux.</li>
+                  <li>Si deux droites sont parallèles, les angles alternes-internes sont égaux, et les angles correspondants aussi.</li>
+                </ul>
+              </details>
+            </article>
+
+            <article class="fiche" data-matiere="maths">
+              <div class="fiche-meta"><span class="fiche-tag">Maths</span><span class="fiche-niveau">3ème</span></div>
+              <h3>📊 Fonctions et grandeurs</h3>
+              <p>Proportionnalité, fonctions, vitesse, grandeurs composées, conversions.</p>
+              <details>
+                <summary>Voir la fiche</summary>
+                <h4>Proportionnalité</h4>
+                <ul>
+                  <li>Deux grandeurs sont proportionnelles si on passe de l'une à l'autre en multipliant par le même nombre (le coefficient) : y = a × x.</li>
+                  <li>Augmenter de 20 %, c'est multiplier par 1,2. Diminuer de 10 %, c'est multiplier par 0,9.</li>
+                </ul>
+                <h4>Fonctions linéaires et affines</h4>
+                <ul>
+                  <li>Fonction linéaire : f(x) = ax. Sa courbe est une droite qui passe par l'origine.</li>
+                  <li>Fonction affine : f(x) = ax + b. <strong>a</strong> est le coefficient directeur (la pente), <strong>b</strong> l'ordonnée à l'origine.</li>
+                  <li>Image : on remplace x. Antécédent : on résout f(x) = le nombre cherché.</li>
+                  <li>a = (f(x₂) − f(x₁)) / (x₂ − x₁).</li>
+                </ul>
+                <h4>Vitesse, débit, échelles</h4>
+                <ul>
+                  <li>Vitesse : v = d ÷ t. Débit : volume ÷ temps.</li>
+                  <li>Échelle 1/50 000 : 1 cm sur la carte représente 50 000 cm, soit 500 m dans la réalité.</li>
+                </ul>
+                <h4>Grandeurs composées</h4>
+                <ul>
+                  <li>Une grandeur composée associe deux unités : km/h, m/s, L/min, kWh…</li>
+                  <li>Pour passer de m/s à km/h on multiplie par 3,6 (et on divise par 3,6 dans l'autre sens).</li>
+                </ul>
+                <h4>Conversions d'unités</h4>
+                <ul>
+                  <li>Longueurs : de une unité à la suivante, ×10. Aires : ×100. Volumes : ×1 000.</li>
+                  <li>1 m³ = 1 000 L ; 1 dm³ = 1 L ; 1 L = 1 000 mL.</li>
+                  <li>Durées : 1 h = 60 min = 3 600 s.</li>
+                </ul>
+              </details>
+            </article>
+
+            <article class="fiche" data-matiere="maths">
+              <div class="fiche-meta"><span class="fiche-tag">Maths</span><span class="fiche-niveau">3ème</span></div>
+              <h3>📈 Probabilités et statistiques</h3>
+              <p>Moyenne, médiane, étendue, probabilités, arbres, deux variables.</p>
+              <details>
+                <summary>Voir la fiche</summary>
+                <h4>Moyenne, médiane, étendue</h4>
+                <ul>
+                  <li>Moyenne = somme des valeurs ÷ nombre de valeurs.</li>
+                  <li><strong>Médiane</strong> : valeur qui sépare la série (rangée dans l'ordre) en deux groupes de même effectif. Si l'effectif est pair, c'est la moyenne des deux valeurs centrales.</li>
+                  <li><strong>Étendue</strong> = plus grande valeur − plus petite valeur.</li>
+                </ul>
+                <h4>Probabilités simples</h4>
+                <ul>
+                  <li>Une probabilité est toujours comprise entre 0 et 1.</li>
+                  <li>Quand toutes les issues ont autant de chances : P = nombre de cas favorables ÷ nombre de cas possibles.</li>
+                  <li>Événement contraire : P(non A) = 1 − P(A).</li>
+                </ul>
+                <h4>Expériences aléatoires</h4>
+                <ul>
+                  <li>Une expérience est aléatoire quand on connaît ses issues possibles mais pas celle qui va se produire.</li>
+                  <li>Plus on répète l'expérience, plus la fréquence observée se rapproche de la probabilité.</li>
+                </ul>
+                <h4>Arbres de probabilités</h4>
+                <ul>
+                  <li>Sur un arbre, on <strong>multiplie</strong> les probabilités le long d'un chemin.</li>
+                  <li>On <strong>additionne</strong> les chemins qui donnent le même événement.</li>
+                  <li>La somme des probabilités qui partent d'un même nœud vaut 1.</li>
+                </ul>
+                <h4>Statistiques à deux variables</h4>
+                <ul>
+                  <li>On représente deux données liées par un tableau ou un nuage de points.</li>
+                  <li>Si les points sont presque alignés, on dit qu'il y a une corrélation.</li>
+                  <li>Attention : corrélation n'est pas causalité !</li>
+                </ul>
+              </details>
+            </article>
+
+            <article class="fiche" data-matiere="maths">
+              <div class="fiche-meta"><span class="fiche-tag">Maths</span><span class="fiche-niveau">3ème</span></div>
+              <h3>💻 Algorithmique et programmation</h3>
+              <p>Scratch : boucles, conditions, variables, déplacements et tracés.</p>
+              <details>
+                <summary>Voir la fiche</summary>
+                <h4>Scratch : boucles et conditions</h4>
+                <ul>
+                  <li>Une <strong>boucle</strong> répète des instructions : « répéter n fois », « répéter jusqu'à », « répéter indéfiniment ».</li>
+                  <li>Une <strong>condition</strong> fait un choix : « si … alors … sinon … ».</li>
+                </ul>
+                <h4>Variables et instructions</h4>
+                <ul>
+                  <li>Une <strong>variable</strong> est une boîte qui porte un nom et qui garde une valeur : « mettre score à 0 », « ajouter 1 à score ».</li>
+                  <li>Un programme exécute les instructions <strong>dans l'ordre</strong>, de haut en bas.</li>
+                  <li>« Demander … et attendre » enregistre la réponse de l'utilisateur.</li>
+                </ul>
+                <h4>Déplacements et tracés</h4>
+                <ul>
+                  <li>Il faut le bloc « <strong>stylo en position d'écriture</strong> » pour tracer.</li>
+                  <li>Pour un carré : répéter 4 fois (avancer de 50, tourner de 90°).</li>
+                  <li>Pour un polygone régulier à n côtés, on tourne de <strong>360 ÷ n</strong> degrés (triangle équilatéral : 120°).</li>
+                  <li>Pour se placer : « aller à x : … y : … ».</li>
                 </ul>
               </details>
             </article>
@@ -327,121 +471,443 @@
     ]
   },
   {
-    "id": "maths-3eme",
+    "id": "maths3-nombres",
     "matiere": "maths",
     "niveau": "3ème",
-    "titre": "Maths 3ème : le programme",
-    "desc": "Un tour du programme de 3ème pour te préparer au brevet.",
+    "titre": "Maths 3ème : Nombres et calculs",
+    "desc": "Quiz du chapitre « Nombres et calculs ».",
     "questions": [
       {
-        "q": "Dans un triangle rectangle, les côtés de l'angle droit mesurent 3 cm et 4 cm. Combien mesure l'hypoténuse ?",
+        "q": "Combien font 1/2 + 1/3 ?",
         "r": [
-          "5 cm",
-          "7 cm",
-          "6 cm",
-          "12 cm"
+          "5/6",
+          "2/5",
+          "1/6",
+          "2/6"
         ],
         "ok": 0,
-        "expl": "Pythagore : 3² + 4² = 9 + 16 = 25, et √25 = 5."
+        "expl": "On met au même dénominateur : 3/6 + 2/6 = 5/6."
       },
       {
-        "q": "Combien font 10³ × 10² ?",
+        "q": "Quelle est l'écriture scientifique de 4 500 ?",
         "r": [
-          "10¹",
-          "10⁶",
-          "100⁵",
-          "10⁵"
+          "4,5 × 10²",
+          "45 × 10²",
+          "0,45 × 10⁴",
+          "4,5 × 10³"
         ],
         "ok": 3,
-        "expl": "On additionne les exposants : 3 + 2 = 5, donc 10⁵."
+        "expl": "En écriture scientifique, le premier nombre est compris entre 1 et 10 : 4 500 = 4,5 × 10³."
       },
       {
-        "q": "Quel est le PGCD de 12 et 18 ?",
+        "q": "Quel est le PGCD de 24 et 36 ?",
         "r": [
-          "2",
+          "8",
+          "72",
+          "12",
+          "6"
+        ],
+        "ok": 2,
+        "expl": "Les diviseurs communs de 24 et 36 sont 1, 2, 3, 4, 6 et 12. Le plus grand est 12."
+      },
+      {
+        "q": "Quel nombre est premier ?",
+        "r": [
+          "21",
+          "33",
+          "39",
+          "29"
+        ],
+        "ok": 3,
+        "expl": "21 = 3 × 7, 33 = 3 × 11 et 39 = 3 × 13. Seul 29 n'a que deux diviseurs : 1 et 29."
+      },
+      {
+        "q": "Développe (x + 3)².",
+        "r": [
+          "2x + 6",
+          "x² + 6x + 9",
+          "x² + 3x + 9",
+          "x² + 9"
+        ],
+        "ok": 1,
+        "expl": "(a + b)² = a² + 2ab + b² donc (x + 3)² = x² + 6x + 9."
+      },
+      {
+        "q": "Factorise x² − 9.",
+        "r": [
+          "(x − 3)(x + 3)",
+          "x(x − 9)",
+          "(x − 9)(x + 1)",
+          "(x − 3)²"
+        ],
+        "ok": 0,
+        "expl": "x² − 9 = x² − 3², c'est a² − b² = (a − b)(a + b)."
+      },
+      {
+        "q": "Résous −2x > 6.",
+        "r": [
+          "x > −3",
+          "x < −3",
+          "x > 3",
+          "x < 3"
+        ],
+        "ok": 1,
+        "expl": "On divise par −2 : le sens de l'inégalité change, donc x < −3."
+      },
+      {
+        "q": "Combien font √9 × √4 ?",
+        "r": [
+          "13",
+          "5",
           "36",
+          "6"
+        ],
+        "ok": 3,
+        "expl": "√9 = 3 et √4 = 2, donc 3 × 2 = 6."
+      }
+    ]
+  },
+  {
+    "id": "maths3-geometrie",
+    "matiere": "maths",
+    "niveau": "3ème",
+    "titre": "Maths 3ème : Géométrie",
+    "desc": "Quiz du chapitre « Géométrie ».",
+    "questions": [
+      {
+        "q": "Dans un triangle rectangle, les côtés de l'angle droit mesurent 6 cm et 8 cm. Combien mesure l'hypoténuse ?",
+        "r": [
+          "12 cm",
+          "14 cm",
+          "10 cm",
+          "48 cm"
+        ],
+        "ok": 2,
+        "expl": "6² + 8² = 36 + 64 = 100, et √100 = 10."
+      },
+      {
+        "q": "Un triangle a pour côtés 5 cm, 12 cm et 13 cm. Est-il rectangle ?",
+        "r": [
+          "On ne peut pas savoir",
+          "Oui, car 5² + 12² = 13²",
+          "Non, car 5 + 12 ≠ 13",
+          "Oui, car 5 × 12 = 60"
+        ],
+        "ok": 1,
+        "expl": "Réciproque de Pythagore : 25 + 144 = 169 = 13², donc il est rectangle."
+      },
+      {
+        "q": "(MN) // (BC) avec AM = 2, AB = 6 et AN = 3. Combien mesure AC ?",
+        "r": [
+          "6",
+          "1",
+          "9",
+          "4"
+        ],
+        "ok": 2,
+        "expl": "Thalès : AM/AB = AN/AC donc 2/6 = 3/AC, d'où AC = 3 × 6 ÷ 2 = 9."
+      },
+      {
+        "q": "Dans un triangle rectangle, que vaut le cosinus d'un angle aigu ?",
+        "r": [
+          "hypoténuse ÷ côté adjacent",
+          "côté adjacent ÷ hypoténuse",
+          "côté opposé ÷ côté adjacent",
+          "côté opposé ÷ hypoténuse"
+        ],
+        "ok": 1,
+        "expl": "cos = adjacent / hypoténuse (CAH)."
+      },
+      {
+        "q": "Une homothétie de rapport 3 agrandit une figure. Par combien l'aire est-elle multipliée ?",
+        "r": [
+          "27",
+          "9",
           "6",
           "3"
         ],
-        "ok": 2,
-        "expl": "Les diviseurs communs de 12 et 18 sont 1, 2, 3 et 6. Le plus grand est 6."
-      },
-      {
-        "q": "Quelle est la solution de l'équation 2x + 3 = 11 ?",
-        "r": [
-          "x = 7",
-          "x = 5",
-          "x = 14",
-          "x = 4"
-        ],
-        "ok": 3,
-        "expl": "2x = 11 − 3 = 8, donc x = 8 ÷ 2 = 4."
-      },
-      {
-        "q": "Dans un triangle ABC, M est sur [AB], N est sur [AC] et (MN) est parallèle à (BC). Quelle égalité est vraie (Thalès) ?",
-        "r": [
-          "AM × AB = AN × AC",
-          "AM/AB = AN/AC",
-          "AM/MB = AN/AC",
-          "AM/AB = AC/AN"
-        ],
         "ok": 1,
-        "expl": "Thalès : AM/AB = AN/AC = MN/BC."
+        "expl": "Les aires sont multipliées par k² = 3² = 9."
       },
       {
-        "q": "Si f(x) = 3x, combien vaut f(4) ?",
+        "q": "Une pyramide a une base de 12 cm² et une hauteur de 5 cm. Quel est son volume ?",
         "r": [
-          "12",
-          "34",
-          "81",
-          "7"
+          "30 cm³",
+          "60 cm³",
+          "20 cm³",
+          "17 cm³"
+        ],
+        "ok": 2,
+        "expl": "V = (1/3) × 12 × 5 = 20 cm³."
+      },
+      {
+        "q": "Un triangle a deux angles de 50° et 70°. Combien mesure le troisième ?",
+        "r": [
+          "60°",
+          "50°",
+          "120°",
+          "40°"
         ],
         "ok": 0,
-        "expl": "On remplace x par 4 : f(4) = 3 × 4 = 12."
-      },
+        "expl": "180° − 50° − 70° = 60°."
+      }
+    ]
+  },
+  {
+    "id": "maths3-fonctions",
+    "matiere": "maths",
+    "niveau": "3ème",
+    "titre": "Maths 3ème : Fonctions et grandeurs",
+    "desc": "Quiz du chapitre « Fonctions et grandeurs ».",
+    "questions": [
       {
-        "q": "Une voiture parcourt 90 km en 1 h 30 min. Quelle est sa vitesse moyenne ?",
+        "q": "Un article à 50 € augmente de 20 %. Quel est son nouveau prix ?",
         "r": [
-          "90 km/h",
-          "60 km/h",
-          "45 km/h",
-          "120 km/h"
-        ],
-        "ok": 1,
-        "expl": "v = d ÷ t = 90 ÷ 1,5 = 60 km/h."
-      },
-      {
-        "q": "Quelle est la médiane de cette série : 3 ; 5 ; 8 ; 10 ; 14 ?",
-        "r": [
-          "10",
-          "14",
-          "8,0 et 10",
-          "8"
+          "70 €",
+          "55 €",
+          "52 €",
+          "60 €"
         ],
         "ok": 3,
-        "expl": "Il y a 5 valeurs rangées dans l'ordre : la médiane est celle du milieu, c'est-à-dire 8."
+        "expl": "50 × 1,2 = 60 €."
       },
       {
-        "q": "On lance un dé équilibré à 6 faces. Quelle est la probabilité d'obtenir un nombre pair ?",
+        "q": "Si f(x) = 2x + 1, combien vaut f(3) ?",
         "r": [
-          "1/6",
-          "1/3",
-          "1/2",
-          "2/3"
+          "9",
+          "7",
+          "6",
+          "5"
+        ],
+        "ok": 1,
+        "expl": "f(3) = 2 × 3 + 1 = 7."
+      },
+      {
+        "q": "Quel est l'antécédent de 9 par la fonction f(x) = 2x + 1 ?",
+        "r": [
+          "10",
+          "4",
+          "19",
+          "5"
+        ],
+        "ok": 1,
+        "expl": "On résout 2x + 1 = 9, donc 2x = 8 et x = 4."
+      },
+      {
+        "q": "Une voiture roule à 72 km/h. Quelle est sa vitesse en m/s ?",
+        "r": [
+          "7,2 m/s",
+          "72 m/s",
+          "259 m/s",
+          "20 m/s"
+        ],
+        "ok": 3,
+        "expl": "72 ÷ 3,6 = 20 m/s."
+      },
+      {
+        "q": "Sur une carte à l'échelle 1/50 000, deux villes sont distantes de 4 cm. Quelle est la distance réelle ?",
+        "r": [
+          "200 m",
+          "20 km",
+          "2 km",
+          "4 km"
         ],
         "ok": 2,
-        "expl": "Il y a 3 faces paires (2, 4, 6) sur 6 : 3/6 = 1/2."
+        "expl": "4 × 50 000 = 200 000 cm = 2 000 m = 2 km."
       },
+      {
+        "q": "Combien de litres y a-t-il dans 1 m³ ?",
+        "r": [
+          "10 000 L",
+          "100 L",
+          "1 000 L",
+          "10 L"
+        ],
+        "ok": 2,
+        "expl": "1 m³ = 1 000 dm³ = 1 000 L."
+      },
+      {
+        "q": "Un robinet remplit 120 L en 4 minutes. Quel est son débit ?",
+        "r": [
+          "30 L/min",
+          "3 L/min",
+          "124 L/min",
+          "480 L/min"
+        ],
+        "ok": 0,
+        "expl": "120 ÷ 4 = 30 L/min."
+      }
+    ]
+  },
+  {
+    "id": "maths3-probas",
+    "matiere": "maths",
+    "niveau": "3ème",
+    "titre": "Maths 3ème : Probabilités et statistiques",
+    "desc": "Quiz du chapitre « Probabilités et statistiques ».",
+    "questions": [
+      {
+        "q": "Quelle est la moyenne de 4, 6 et 8 ?",
+        "r": [
+          "5",
+          "8",
+          "6",
+          "18"
+        ],
+        "ok": 2,
+        "expl": "(4 + 6 + 8) ÷ 3 = 18 ÷ 3 = 6."
+      },
+      {
+        "q": "Quelle est la médiane de la série 2 ; 4 ; 6 ; 8 ?",
+        "r": [
+          "4",
+          "6",
+          "20",
+          "5"
+        ],
+        "ok": 3,
+        "expl": "Effectif pair : on fait la moyenne des deux valeurs centrales, (4 + 6) ÷ 2 = 5."
+      },
+      {
+        "q": "Quelle est l'étendue de la série 3 ; 12 ; 7 ?",
+        "r": [
+          "9",
+          "22",
+          "4",
+          "15"
+        ],
+        "ok": 0,
+        "expl": "12 − 3 = 9."
+      },
+      {
+        "q": "Un sac contient 3 billes rouges et 7 billes bleues. Quelle est la probabilité de tirer une bille rouge ?",
+        "r": [
+          "3/7",
+          "3/10",
+          "7/10",
+          "1/3"
+        ],
+        "ok": 1,
+        "expl": "3 cas favorables sur 10 cas possibles : 3/10."
+      },
+      {
+        "q": "Si P(A) = 0,35, que vaut la probabilité de l'événement contraire ?",
+        "r": [
+          "0,7",
+          "0,35",
+          "1,35",
+          "0,65"
+        ],
+        "ok": 3,
+        "expl": "P(non A) = 1 − 0,35 = 0,65."
+      },
+      {
+        "q": "On lance deux fois une pièce équilibrée. Quelle est la probabilité d'obtenir deux fois « pile » ?",
+        "r": [
+          "1/2",
+          "1/3",
+          "2",
+          "1/4"
+        ],
+        "ok": 3,
+        "expl": "On multiplie sur la branche : 1/2 × 1/2 = 1/4."
+      },
+      {
+        "q": "Laquelle de ces valeurs ne peut pas être une probabilité ?",
+        "r": [
+          "0,5",
+          "1,2",
+          "0",
+          "1"
+        ],
+        "ok": 1,
+        "expl": "Une probabilité est toujours comprise entre 0 et 1."
+      }
+    ]
+  },
+  {
+    "id": "maths3-algo",
+    "matiere": "maths",
+    "niveau": "3ème",
+    "titre": "Maths 3ème : Algorithmique et programmation",
+    "desc": "Quiz du chapitre « Algorithmique et programmation ».",
+    "questions": [
       {
         "q": "En Scratch, quel bloc permet de répéter 10 fois une instruction ?",
         "r": [
-          "aller à x : 10 y : 10",
           "répéter 10 fois",
-          "si … alors",
-          "attendre 10 secondes"
+          "attendre 10 secondes",
+          "aller à x : 10 y : 10",
+          "si … alors"
+        ],
+        "ok": 0,
+        "expl": "Le bloc « répéter 10 fois » est une boucle."
+      },
+      {
+        "q": "Pour tracer un carré, combien de fois répète-t-on « avancer puis tourner de 90° » ?",
+        "r": [
+          "4 fois",
+          "2 fois",
+          "3 fois",
+          "90 fois"
+        ],
+        "ok": 0,
+        "expl": "Un carré a 4 côtés et 4 angles droits."
+      },
+      {
+        "q": "De quel angle faut-il tourner pour tracer un triangle équilatéral ?",
+        "r": [
+          "180°",
+          "120°",
+          "90°",
+          "60°"
         ],
         "ok": 1,
-        "expl": "Le bloc « répéter 10 fois » est une boucle : il rejoue les instructions placées à l'intérieur."
+        "expl": "On tourne de 360 ÷ 3 = 120° à chaque sommet."
+      },
+      {
+        "q": "La variable « score » vaut 0. On exécute trois fois « ajouter 1 à score ». Que vaut score ?",
+        "r": [
+          "3",
+          "1",
+          "0",
+          "4"
+        ],
+        "ok": 0,
+        "expl": "0 + 1 + 1 + 1 = 3."
+      },
+      {
+        "q": "Quel bloc permet de faire un choix selon une condition ?",
+        "r": [
+          "si … alors … sinon",
+          "stylo en position d'écriture",
+          "avancer de 10",
+          "répéter jusqu'à"
+        ],
+        "ok": 0,
+        "expl": "« si … alors … sinon » exécute des instructions différentes selon la condition."
+      },
+      {
+        "q": "De quel angle tourne-t-on pour tracer un hexagone régulier (6 côtés) ?",
+        "r": [
+          "30°",
+          "120°",
+          "90°",
+          "60°"
+        ],
+        "ok": 3,
+        "expl": "360 ÷ 6 = 60°."
+      },
+      {
+        "q": "Sans quel bloc le lutin ne laisse-t-il aucune trace quand il avance ?",
+        "r": [
+          "mettre score à 0",
+          "stylo en position d'écriture",
+          "attendre 1 seconde",
+          "répéter indéfiniment"
+        ],
+        "ok": 1,
+        "expl": "Il faut abaisser le stylo avec « stylo en position d'écriture »."
       }
     ]
   }
