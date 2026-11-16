@@ -2511,3 +2511,18 @@ html { scroll-behavior: smooth; }
   .billet { grid-template-columns: 1fr; max-width: none; }
   .billet-image { max-height: 190px; }
 }
+
+/* Billets : très compact, image entière (sans coupe) */
+.billet { grid-template-columns: 240px 1fr; max-width: 780px; align-items: center; }
+.billet-image { align-self: center; padding: 14px 0 14px 14px; }
+.billet-image img { width: 100%; height: auto; object-fit: contain; border-radius: 10px; }
+.billet-corps { padding: 16px 20px; }
+.billet h2 { font-size: 1.15rem; }
+.billet p { font-size: 0.88rem; margin: 3px 0; }
+.billet-lieu { font-size: 0.8rem; }
+.billet .cta { margin-top: 6px; padding: 8px 18px; font-size: 0.88rem; }
+@media (max-width: 760px) {
+  .billet { grid-template-columns: 1fr; max-width: none; }
+  .billet-image { max-height: none; padding: 14px 14px 0; }
+}
+.billet-image { background: transparent; }
