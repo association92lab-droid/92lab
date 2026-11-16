@@ -65,7 +65,7 @@
     {
       id: 'ateliers',
       mots: ['atelier*', 'labo', 'pole*', 'activite*', 'programmation', 'robotique', 'electronique', 'maths', 'mathematique*', 'physique', 'chimie', 'biologie', 'astronomie', 'ecologie', 'science*', 'proposez', 'faites'],
-      r: 'Le Labo, c\'est <b>six pôles</b> pour expérimenter, comprendre et créer :<br>💻 Numérique & Code · 🤖 Robotique & Électronique · 🔬 Sciences exactes · 🌍 Vivant & Univers · 📚 Soutien scolaire · 🎤 Rencontres & Conférences.<br>Les ateliers de programmation ont lieu <b>le vendredi</b> : <b>Scratch</b> du CP à la 6ème (17h – 18h, avec Nathan) et <b>Python, IA, Java…</b> de la 5ème à la 3ème (17h – 19h, avec Naïm).',
+      r: 'Le Labo, c\'est <b>neuf pôles</b> pour expérimenter, comprendre et créer :<br>💻 Numérique & Code · 🤖 Robotique & Électronique · 🔬 Sciences exactes · 🌍 Vivant & Univers · 📚 Soutien scolaire · 🎤 Rencontres & Conférences · 🗣️ Expression & Langues · 🧭 Sorties & Découvertes · 🏆 Concours & Défis.<br>Les ateliers de programmation ont lieu <b>le vendredi</b> : <b>Scratch</b> du CP à la 6ème (17h – 18h, avec Nathan) et <b>Python, IA, Java…</b> de la 5ème à la 3ème (17h – 19h, avec Naïm).',
       liens: [{ t: 'Découvrir le Labo', h: 'index.html#labo' }]
     },
     {
