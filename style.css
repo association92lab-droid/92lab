@@ -2531,3 +2531,8 @@ html { scroll-behavior: smooth; }
 @media (min-width: 900px) {
   .billet { max-width: calc((100% - 44px) * 2 / 3 + 22px); grid-template-columns: 200px 1fr; }
 }
+
+/* Billets : pleine largeur, alignés sur la grille du Radar */
+.billet { max-width: none; grid-template-columns: 260px 1fr; }
+@media (min-width: 900px) { .billet { max-width: none; grid-template-columns: 260px 1fr; } }
+@media (max-width: 760px) { .billet { grid-template-columns: 1fr; } }
