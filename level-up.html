@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -83,8 +83,10 @@
           <button type="button" class="filtre" data-matiere="anglais">Anglais</button>
         </div>
         <div class="filtres filtres-niveau" role="group" aria-label="Filtrer par niveau" hidden></div>
+        <div class="filtres filtres-type" role="group" aria-label="Fiches ou quiz" hidden></div>
+        <div class="index-titres" hidden></div>
 
-        <div class="dojo-bloc">
+        <div class="dojo-bloc" data-bloc="fiches">
           <h2 class="dojo-titre">📝 Fiches de révision</h2>
 
           <!--
@@ -1672,7 +1674,7 @@
           </div>
         </div>
 
-        <div class="dojo-bloc">
+        <div class="dojo-bloc" data-bloc="quiz">
           <h2 class="dojo-titre">🎯 Quiz pour s'entraîner</h2>
 
           <!--
@@ -7343,7 +7345,7 @@
     <p>92Lab</p>
   </footer>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
   <script src="chatbot.js?v=3"></script>
 </body>
 </html>

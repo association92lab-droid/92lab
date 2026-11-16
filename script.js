@@ -398,7 +398,9 @@
   var vide = document.querySelector('.dojo-vide');
   var rangNiveau = document.querySelector('.filtres-niveau');
   var NIVEAUX = ['CE2', 'CM1', 'CM2', '6ème', '5ème', '4ème', '3ème'];
-  var matiere = 'tout', niveau = 'tous';
+  var rangType = document.querySelector('.filtres-type');
+  var indexTitres = document.querySelector('.index-titres');
+  var matiere = 'tout', niveau = 'tous', type = 'tout', titre = null;
 
   // Niveaux d'une carte : "3ème · Géométrie" -> ['3ème'] ; "CE2 – 6ème" -> tous les niveaux de CE2 à 6ème
   function niveauxDe(x) {
@@ -415,6 +417,23 @@
     var p = n ? n.textContent.split('·') : [];
     return p.length > 1 ? p[1].trim() : '';
   }
+  function titreDe(x) {
+    var h = x.querySelector('h3');
+    return h ? h.textContent : '';
+  }
+  function correspond(x) {
+    if (matiere === 'tout' || x.getAttribute('data-matiere') !== matiere) return false;
+    if (niveau !== 'tous' && niveauxDe(x).indexOf(niveau) === -1) return false;
+    return true;
+  }
+
+  function bouton(texte, attr, valeur, actif, clic) {
+    var b = el('button', 'filtre' + (actif ? ' actif' : ''), texte);
+    b.type = 'button';
+    b.setAttribute(attr, valeur);
+    b.addEventListener('click', clic);
+    return b;
+  }
 
   function construireNiveaux() {
     rangNiveau.innerHTML = '';
@@ -426,13 +445,48 @@
     var liste = NIVEAUX.filter(function (v) { return presents[v]; });
     if (liste.length === 0) { rangNiveau.hidden = true; return; }
     ['tous'].concat(liste).forEach(function (v) {
-      var b = el('button', 'filtre' + (v === niveau ? ' actif' : ''), v === 'tous' ? 'Tous niveaux' : v);
-      b.type = 'button';
-      b.setAttribute('data-niveau', v);
-      b.addEventListener('click', function () { niveau = v; afficher(); });
-      rangNiveau.appendChild(b);
+      rangNiveau.appendChild(bouton(v === 'tous' ? 'Tous niveaux' : v, 'data-niveau', v, v === niveau, function () {
+        niveau = v; titre = null; afficher();
+      }));
     });
     rangNiveau.hidden = false;
+  }
+
+  function construireType() {
+    rangType.innerHTML = '';
+    if (matiere === 'tout') { rangType.hidden = true; return; }
+    [['tout', 'Fiches et quiz'], ['fiches', '📝 Fiches'], ['quiz', '🎯 Quiz']].forEach(function (t) {
+      rangType.appendChild(bouton(t[1], 'data-type', t[0], t[0] === type, function () { type = t[0]; afficher(); }));
+    });
+    rangType.hidden = false;
+  }
+
+  // Liste des titres (un seul exemplaire par titre, groupés par chapitre) pour aller droit au but
+  function construireIndex() {
+    indexTitres.innerHTML = '';
+    if (matiere === 'tout' || niveau === 'tous') { indexTitres.hidden = true; return; }
+    var vus = {}, groupes = [], courant = null;
+    document.querySelectorAll('.fiche[data-matiere="' + matiere + '"]').forEach(function (f) {
+      if (!correspond(f)) return;
+      var t = titreDe(f);
+      if (vus[t]) return;
+      vus[t] = true;
+      var ch = chapitreDe(f);
+      if (!courant || courant.nom !== ch) { courant = { nom: ch, titres: [] }; groupes.push(courant); }
+      courant.titres.push(t);
+    });
+    if (groupes.length === 0) { indexTitres.hidden = true; return; }
+    indexTitres.appendChild(el('h2', 'dojo-titre', '🔎 Trouve ton chapitre'));
+    indexTitres.appendChild(bouton('Tous les chapitres', 'data-titre', '', titre === null, function () { titre = null; afficher(); }));
+    groupes.forEach(function (g) {
+      if (g.nom) indexTitres.appendChild(el('h3', 'index-chapitre', g.nom));
+      var ligne = el('div', 'index-liste');
+      g.titres.forEach(function (t) {
+        ligne.appendChild(bouton(t, 'data-titre', t, titre === t, function () { titre = (titre === t ? null : t); afficher(); }));
+      });
+      indexTitres.appendChild(ligne);
+    });
+    indexTitres.hidden = false;
   }
 
   function afficher() {
@@ -440,14 +494,16 @@
     document.querySelectorAll('.chapitre-titre').forEach(function (h) { h.remove(); });
     document.querySelectorAll('.dojo-bloc').forEach(function (bloc) {
       var n = 0, dernier = null;
+      var genre = bloc.getAttribute('data-bloc');
+      var blocOk = type === 'tout' || type === genre;
       bloc.querySelectorAll('[data-matiere]').forEach(function (x) {
-        var ok = matiere === 'tout' || x.getAttribute('data-matiere') === matiere;
-        if (ok && niveau !== 'tous') ok = niveauxDe(x).indexOf(niveau) !== -1;
+        var ok = blocOk && (matiere === 'tout' ? true : correspond(x));
+        if (ok && titre !== null) ok = titreDe(x) === titre;
         x.hidden = !ok;
         if (ok) {
           n++;
           var ch = chapitreDe(x);
-          if (matiere !== 'tout' && niveau !== 'tous' && ch && ch !== dernier) {
+          if (matiere !== 'tout' && niveau !== 'tous' && titre === null && ch && ch !== dernier) {
             x.parentNode.insertBefore(el('h3', 'chapitre-titre', ch), x);
           }
           dernier = ch;
@@ -456,17 +512,19 @@
       bloc.hidden = n === 0;
       total += n;
     });
+    construireType();
+    construireNiveaux();
+    construireIndex();
     zone.hidden = true;
     liste.hidden = false;
     vide.hidden = total > 0;
     boutons.forEach(function (b) { b.classList.toggle('actif', b.getAttribute('data-matiere') === matiere); });
-    rangNiveau.querySelectorAll('.filtre').forEach(function (b) { b.classList.toggle('actif', b.getAttribute('data-niveau') === niveau); });
   }
   boutons.forEach(function (b) {
     b.addEventListener('click', function () {
       matiere = b.getAttribute('data-matiere');
       niveau = 'tous';
-      construireNiveaux();
+      titre = null;
       afficher();
     });
   });

@@ -2474,3 +2474,13 @@ html { scroll-behavior: smooth; }
 }
 .plateforme-encart:hover .flash-lien { text-decoration: none; }
 .plateforme-encart-carte { border-radius: 16px; margin-bottom: 22px; }
+
+/* Level Up : type (fiches / quiz) et index des chapitres */
+.filtres-type { margin-top: 12px; }
+.filtres-type[hidden], .index-titres[hidden] { display: none; }
+.filtres-type .filtre { font-size: 0.9rem; padding: 6px 16px; }
+.index-titres { margin-top: 28px; background: #101019; border: 1px solid #25253a; border-radius: 16px; padding: 20px 22px; }
+.index-titres .dojo-titre { font-size: 1.2rem; margin: 0 0 12px; }
+.index-chapitre { font-size: 0.95rem; color: var(--bleu-clair); margin: 14px 0 8px; }
+.index-liste { display: flex; flex-wrap: wrap; gap: 8px; }
+.index-titres .filtre { font-size: 0.85rem; padding: 6px 14px; }
