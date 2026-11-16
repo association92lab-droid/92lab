@@ -2487,3 +2487,7 @@ html { scroll-behavior: smooth; }
 
 .tiktok-carte { background: linear-gradient(45deg, #0b0b12, #1c1c2b 55%, #2a1020); box-shadow: 0 10px 40px rgba(37, 244, 238, 0.18), 0 0 0 1px rgba(254, 44, 85, 0.35) inset; }
 .tiktok-carte:hover { box-shadow: 0 16px 50px rgba(254, 44, 85, 0.35), 0 0 0 1px rgba(37, 244, 238, 0.5) inset; }
+
+/* Index des chapitres : parties puis chapitres, descente vers la carte */
+.index-chapitres { margin-top: 14px; padding-top: 14px; border-top: 1px solid #25253a; }
+.carte-surlignee { box-shadow: 0 0 0 2px var(--bleu-clair), 0 0 28px rgba(91, 192, 222, 0.45); transition: box-shadow 0.3s; }
