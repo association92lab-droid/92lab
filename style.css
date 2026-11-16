@@ -2484,3 +2484,6 @@ html { scroll-behavior: smooth; }
 .index-chapitre { font-size: 0.95rem; color: var(--bleu-clair); margin: 14px 0 8px; }
 .index-liste { display: flex; flex-wrap: wrap; gap: 8px; }
 .index-titres .filtre { font-size: 0.85rem; padding: 6px 14px; }
+
+.tiktok-carte { background: linear-gradient(45deg, #0b0b12, #1c1c2b 55%, #2a1020); box-shadow: 0 10px 40px rgba(37, 244, 238, 0.18), 0 0 0 1px rgba(254, 44, 85, 0.35) inset; }
+.tiktok-carte:hover { box-shadow: 0 16px 50px rgba(254, 44, 85, 0.35), 0 0 0 1px rgba(37, 244, 238, 0.5) inset; }
