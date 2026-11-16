@@ -2465,3 +2465,11 @@ html { scroll-behavior: smooth; }
 .filtres-niveau[hidden] { display: none; }
 .filtres-niveau .filtre { font-size: 0.9rem; padding: 6px 16px; }
 .chapitre-titre { grid-column: 1 / -1; margin: 10px 0 -6px; font-size: 1.1rem; color: var(--bleu-clair); }
+
+/* Flash Lab : encart plateforme collégiens */
+.plateforme-encart {
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 14px;
+  padding: 12px 20px; background: var(--degrade); color: #fff; text-decoration: none;
+  font-size: 0.98rem; text-align: center;
+}
+.plateforme-encart:hover .flash-lien { text-decoration: none; }
