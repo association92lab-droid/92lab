@@ -2473,3 +2473,4 @@ html { scroll-behavior: smooth; }
   font-size: 0.98rem; text-align: center;
 }
 .plateforme-encart:hover .flash-lien { text-decoration: none; }
+.plateforme-encart-carte { border-radius: 16px; margin-bottom: 22px; }
