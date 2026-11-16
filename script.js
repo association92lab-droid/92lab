@@ -98,8 +98,7 @@
       radarBloc.hidden = !(modeRadar || tout);
       radarBloc.classList.toggle('radar-apercu', tout);
       if (tout) {
-        var reset = radarBloc.querySelector('.radar-filtre[data-radar="tout"]');
-        if (reset) reset.click();
+        if (window.radarReset) window.radarReset();
       }
       radarBloc.querySelectorAll('.radar-carte').forEach(function (x, i) {
         x.classList.toggle('apercu-cache', tout && i >= APERCU);
@@ -554,24 +553,34 @@
   });
 })();
 
-// Le Radar : filtre par type
+// Le Radar : filtres par type et par thème
 (function () {
   var cartes = document.querySelectorAll('.radar-carte');
   if (!cartes.length) return;
-  var boutons = document.querySelectorAll('.radar-filtre[data-radar]');
+  var boutonsType = document.querySelectorAll('.radar-filtre[data-radar]');
+  var boutonsTheme = document.querySelectorAll('.radar-theme[data-theme]');
   var vide = document.querySelector('.radar-vide');
-  boutons.forEach(function (b) {
-    b.addEventListener('click', function () {
-      var t = b.getAttribute('data-radar'), n = 0;
-      cartes.forEach(function (c) {
-        var ok = t === 'tout' || c.getAttribute('data-type') === t;
-        c.hidden = !ok;
-        if (ok) n++;
-      });
-      vide.hidden = n > 0;
-      boutons.forEach(function (x) { x.classList.toggle('actif', x === b); });
+  var type = 'tout', theme = 'tout';
+  function afficher() {
+    var n = 0;
+    cartes.forEach(function (c) {
+      var ok = (type === 'tout' || c.getAttribute('data-type') === type) &&
+               (theme === 'tout' || c.getAttribute('data-theme') === theme);
+      c.hidden = !ok;
+      if (ok) n++;
     });
+    vide.hidden = n > 0;
+    boutonsType.forEach(function (x) { x.classList.toggle('actif', x.getAttribute('data-radar') === type); });
+    boutonsTheme.forEach(function (x) { x.classList.toggle('actif', x.getAttribute('data-theme') === theme); });
+  }
+  boutonsType.forEach(function (b) {
+    b.addEventListener('click', function () { type = b.getAttribute('data-radar'); afficher(); });
   });
+  boutonsTheme.forEach(function (b) {
+    b.addEventListener('click', function () { theme = b.getAttribute('data-theme'); afficher(); });
+  });
+  // Appelé par Flash Lab quand on revient sur « Tout »
+  window.radarReset = function () { type = 'tout'; theme = 'tout'; afficher(); };
 })();
 
 // Radar : vignette automatique des vidéos YouTube (data-youtube = code de la vidéo)

@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
 
@@ -164,6 +164,11 @@
             <button type="button" class="radar-filtre filtre" data-radar="article">📰 Articles</button>
             <button type="button" class="radar-filtre filtre" data-radar="lien">🔗 Liens</button>
           </div>
+          <div class="filtres radar-filtres radar-themes" role="group" aria-label="Filtrer le Radar par thème">
+            <button type="button" class="radar-theme filtre actif" data-theme="tout">Tous les thèmes</button>
+            <button type="button" class="radar-theme filtre" data-theme="aeronautique">✈️ Aéronautique</button>
+            <button type="button" class="radar-theme filtre" data-theme="culture">🔬 Culture scientifique</button>
+          </div>
 
           <!--
             POUR AJOUTER UN CONTENU : copie un bloc <article class="radar-carte"> et colle-le en premier
@@ -175,27 +180,36 @@
           -->
 
           <div class="radar-liste">
-            <article class="radar-carte" data-type="lien">
+            <article class="radar-carte" data-type="article" data-theme="aeronautique">
+              <div class="radar-image"><img src="images/radar/syndrome-de-kessler.jpg" alt="Des milliers de satellites et de débris en orbite autour de la Terre" loading="lazy"></div>
+              <div class="radar-tags"><span class="radar-tag radar-tag-article">📰 Article</span><span class="radar-tag radar-tag-theme">✈️ Aéronautique</span></div>
+              <h3>Syndrome de Kessler : qu'est-ce que c'est ?</h3>
+              <p class="radar-source">futura-sciences.com</p>
+              <p class="radar-desc">Et si les débris en orbite se multipliaient à chaque collision, jusqu'à rendre certaines orbites inutilisables ? Futura explique ce scénario théorisé en 1978 par l'astrophysicien Donald J. Kessler.</p>
+              <a class="cta" href="https://www.futura-sciences.com/sciences/definitions/debris-spatiaux-syndrome-kessler-16593/" target="_blank" rel="noopener">Lire l'article ↗</a>
+            </article>
+
+            <article class="radar-carte" data-type="lien" data-theme="culture">
               <div class="radar-image radar-image-a" aria-hidden="true">🔭</div>
-              <span class="radar-tag radar-tag-lien">🔗 Lien</span>
+              <div class="radar-tags"><span class="radar-tag radar-tag-lien">🔗 Lien</span><span class="radar-tag radar-tag-theme">🔬 Culture scientifique</span></div>
               <h3>Futura Sciences</h3>
               <p class="radar-source">futura-sciences.com</p>
               <p class="radar-desc">Un média scientifique grand public : actualités, dossiers et explications sur la nature, l'espace, la santé et les technologies.</p>
               <a class="cta" href="https://www.futura-sciences.com/" target="_blank" rel="noopener">Ouvrir ↗</a>
             </article>
 
-            <article class="radar-carte" data-type="lien">
+            <article class="radar-carte" data-type="lien" data-theme="culture">
               <div class="radar-image radar-image-b" aria-hidden="true">🏛️</div>
-              <span class="radar-tag radar-tag-lien">🔗 Lien</span>
+              <div class="radar-tags"><span class="radar-tag radar-tag-lien">🔗 Lien</span><span class="radar-tag radar-tag-theme">🔬 Culture scientifique</span></div>
               <h3>Universcience</h3>
               <p class="radar-source">universcience.fr</p>
               <p class="radar-desc">Le site de la Cité des sciences et du Palais de la découverte : expositions, ressources et idées de visites à Paris.</p>
               <a class="cta" href="https://www.universcience.fr/" target="_blank" rel="noopener">Ouvrir ↗</a>
             </article>
 
-            <article class="radar-carte" data-type="lien">
+            <article class="radar-carte" data-type="lien" data-theme="culture">
               <div class="radar-image radar-image-c" aria-hidden="true">🎓</div>
-              <span class="radar-tag radar-tag-lien">🔗 Lien</span>
+              <div class="radar-tags"><span class="radar-tag radar-tag-lien">🔗 Lien</span><span class="radar-tag radar-tag-theme">🔬 Culture scientifique</span></div>
               <h3>Lumni</h3>
               <p class="radar-source">lumni.fr</p>
               <p class="radar-desc">Des vidéos et des ressources éducatives gratuites, de la maternelle au lycée, sur toutes les matières.</p>
@@ -405,7 +419,7 @@
     <p>92Lab</p>
   </footer>
 
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=6"></script>
   <script src="chatbot.js?v=3"></script>
 </body>
 </html>

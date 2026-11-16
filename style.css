@@ -2445,7 +2445,8 @@ html { scroll-behavior: smooth; }
 .radar-image-b { background: linear-gradient(135deg, #3d35b3, #8a2a6f); }
 .radar-image-c { background: linear-gradient(135deg, #0f6e56, #62b3d1); }
 .radar-image-video::after { content: "▶"; position: absolute; width: 52px; height: 52px; border-radius: 50%; background: rgba(0,0,0,0.6); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
-.radar-carte .radar-tag { margin-top: 14px; align-self: flex-start; }
+.radar-carte .radar-tags { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; align-self: flex-start; }
+.radar-carte .radar-tag { align-self: flex-start; }
 .radar-carte .radar-source { margin-top: 4px; }
 .radar-carte .cta { margin-bottom: 20px; margin-top: 14px; }
 
@@ -2491,3 +2492,8 @@ html { scroll-behavior: smooth; }
 /* Index des chapitres : parties puis chapitres, descente vers la carte */
 .index-chapitres { margin-top: 14px; padding-top: 14px; border-top: 1px solid #25253a; }
 .carte-surlignee { box-shadow: 0 0 0 2px var(--bleu-clair), 0 0 28px rgba(91, 192, 222, 0.45); transition: box-shadow 0.3s; }
+
+/* Radar : thèmes */
+.radar-tag-theme { background: rgba(98, 179, 209, 0.15); color: var(--bleu-clair); border: 1px solid rgba(98, 179, 209, 0.45); }
+.radar-themes { margin-top: -10px; }
+.radar-apercu .radar-themes { display: none; }
