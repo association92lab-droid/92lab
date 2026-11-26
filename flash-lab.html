@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=13">
+  <link rel="stylesheet" href="style.css?v=14">
 </head>
 <body>
 
@@ -353,14 +353,16 @@
           </article>
           -->
 
-          <article class="antiseche-item">
+          <article class="antiseche-item antiseche-verrou" data-fichier="images/flash-lab/projet-final.enc" data-nom="carte-villeneuve-scratch.png">
             <span class="antiseche-tag">Scratch</span>
-            <h3>La carte de Villeneuve</h3>
-            <p>Le décor « Villeneuve en jeu » pour tes projets Scratch. Clique sur l'image pour l'agrandir, ou télécharge-la pour l'importer comme arrière-plan.</p>
-            <a class="antiseche-image" href="images/flash-lab/carte-villeneuve-scratch.png" target="_blank" rel="noopener">
-              <img src="images/flash-lab/carte-villeneuve-scratch.png" alt="Carte illustrée de Villeneuve-la-Garenne avec le parc, le stade, le collège, le marché, la bibliothèque et la Seine" loading="lazy">
-            </a>
-            <a class="antiseche-lien" href="images/flash-lab/carte-villeneuve-scratch.png" download="carte-villeneuve-scratch.png">⬇ Télécharger l'image</a>
+            <h3>Projet final : la carte de Villeneuve</h3>
+            <p>Réservé aux élèves de l'atelier : entre le mot de passe donné en atelier pour afficher et télécharger l'image.</p>
+            <form class="verrou-form" autocomplete="off">
+              <input class="verrou-champ" type="password" placeholder="🔒 Mot de passe" aria-label="Mot de passe" required>
+              <button class="antiseche-lien verrou-bouton" type="submit">Déverrouiller</button>
+            </form>
+            <p class="verrou-message" role="status" hidden></p>
+            <div class="verrou-resultat" hidden></div>
           </article>
 
           <article class="antiseche-item">
@@ -449,7 +451,7 @@
     <p>92Lab</p>
   </footer>
 
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=9"></script>
   <script src="chatbot.js?v=3"></script>
 </body>
 </html>

@@ -2536,3 +2536,12 @@ html { scroll-behavior: smooth; }
 .billet { max-width: none; grid-template-columns: 260px 1fr; }
 @media (min-width: 900px) { .billet { max-width: none; grid-template-columns: 260px 1fr; } }
 @media (max-width: 760px) { .billet { grid-template-columns: 1fr; } }
+
+/* Antisèche : carte verrouillée */
+.verrou-form { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.verrou-champ { flex: 1 1 200px; min-width: 0; padding: 10px 16px; border-radius: 999px; border: 1px solid #3a3a55; background: #0d0d16; color: #fff; font: inherit; }
+.verrou-champ:focus { outline: 2px solid var(--bleu-clair); }
+.verrou-bouton { border: 0; cursor: pointer; font: inherit; }
+.verrou-message { margin: 10px 0 0; color: #ff9aa8; }
+.verrou-image { display: block; max-width: 100%; border-radius: 12px; margin: 14px 0; }
+.verrou-resultat[hidden], .verrou-form[hidden], .verrou-message[hidden] { display: none; }

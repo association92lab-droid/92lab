@@ -594,3 +594,53 @@
     d.classList.add('radar-image-video');
   });
 })();
+
+
+// Antisèche : contenu verrouillé par mot de passe (image chiffrée AES-GCM, déchiffrée dans le navigateur)
+(function () {
+  var carte = document.querySelector('.antiseche-verrou');
+  if (!carte || !window.crypto || !window.crypto.subtle) return;
+  var form = carte.querySelector('.verrou-form');
+  var champ = carte.querySelector('.verrou-champ');
+  var msg = carte.querySelector('.verrou-message');
+  var res = carte.querySelector('.verrou-resultat');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    msg.hidden = false;
+    msg.textContent = 'Vérification…';
+    fetch(carte.getAttribute('data-fichier'))
+      .then(function (r) { if (!r.ok) throw new Error('fichier'); return r.arrayBuffer(); })
+      .then(function (buf) {
+        var d = new Uint8Array(buf);
+        var salt = d.slice(0, 16), iv = d.slice(16, 28), ct = d.slice(28);
+        return crypto.subtle.importKey('raw', new TextEncoder().encode(champ.value), 'PBKDF2', false, ['deriveKey'])
+          .then(function (base) {
+            return crypto.subtle.deriveKey({ name: 'PBKDF2', salt: salt, iterations: 250000, hash: 'SHA-256' }, base, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+          })
+          .then(function (cle) { return crypto.subtle.decrypt({ name: 'AES-GCM', iv: iv }, cle, ct); });
+      })
+      .then(function (clair) {
+        var url = URL.createObjectURL(new Blob([clair], { type: 'image/png' }));
+        res.innerHTML = '';
+        var img = document.createElement('img');
+        img.src = url;
+        img.alt = 'Carte illustrée de Villeneuve-la-Garenne : le décor du projet final';
+        img.className = 'verrou-image';
+        var dl = document.createElement('a');
+        dl.className = 'antiseche-lien';
+        dl.href = url;
+        dl.download = carte.getAttribute('data-nom');
+        dl.textContent = '⬇ Télécharger l\'image';
+        res.appendChild(img);
+        res.appendChild(dl);
+        res.hidden = false;
+        form.hidden = true;
+        msg.hidden = true;
+        champ.value = '';
+      })
+      .catch(function () {
+        msg.hidden = false;
+        msg.textContent = 'Mot de passe incorrect.';
+      });
+  });
+})();
